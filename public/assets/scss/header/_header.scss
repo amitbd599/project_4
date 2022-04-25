@@ -1,0 +1,97 @@
+/*=========================
+    Header Area 
+===========================*/
+
+.header_main {
+  .header_wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px 0;
+    flex-wrap: wrap;
+
+    @media #{$lg-layout-device} {
+      padding: 30px 0;
+    }
+    @media #{$md-layout-device} {
+      padding: 30px 0;
+    }
+    @media #{$sm-layout-device} {
+      padding: 15px 0;
+    }
+
+    .header_left {
+      .logo {
+        img {
+          @media #{$sm-layout-device} {
+            width: 100px;
+          }
+        }
+      }
+    }
+  }
+  &.header_fixed {
+    position: absolute;
+    top: 0;
+    z-index: 999;
+    padding-left: 50px;
+    padding-right: 50px;
+    background: transparent;
+    transition: 0.3s;
+
+    @media #{$lg-layout-device} {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+    @media #{$md-layout-device} {
+      padding-left: 15px;
+      padding-right: 15px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+    .header_wrapper {
+      padding: 20px 0;
+      transition: 0.3s;
+
+      .mainMenuNavBar {
+        .mainMenu {
+          > li {
+            > a {
+              position: relative;
+              &::after {
+                position: absolute;
+                content: "";
+                left: 0;
+                width: 0;
+                height: 3px;
+                background: var(--primary-body-color);
+                transition: 0.3s;
+                bottom: 0;
+              }
+            }
+          }
+          &.is_Active {
+            color: var(--primary-body-color);
+            &::after {
+              width: 100%;
+            }
+          }
+          &.header-not-transparent {
+            &.header--fixed {
+              position: static;
+              padding-left: 0;
+              padding-right: 0;
+              padding: 0;
+              &.sticky {
+                position: fixed;
+                background: #ffffff;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                padding: 12px 0;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,61 @@
+/**********************------------- *****************
+
+Template Name :  ***************** Template
+
+*********************----------------*****************/
+
+/******************** ---------------******************
+STYLESHEET INDEX START
+
+----****---- Default Styles -----****-----
+
+1. _variables
+2. _mixins
+3. _typography
+4. _reset
+5. _animation
+6. _spacing
+7. _shortCode
+8. _extends
+9. _padding
+10. _margin
+
+
+----****---- Header Styles -----****-----
+
+1. _header
+
+
+----****---- Footer Styles -----****-----
+
+1. _header
+
+
+
+
+STYLE SHEET INDEX END
+
+*********************----------------*****************/
+
+/****************************************************
+                 Default Styles
+*****************************************************/
+
+@import "default/variables";
+@import "default/mixins";
+@import "default/typography";
+@import "default/reset";
+@import "default/animation";
+@import "default/spacing";
+@import "default/quickCode";
+@import "default/extends";
+
+/****************************************************
+                 Header Styles
+*****************************************************/
+
+@import "header/header";
+
+/****************************************************
+                 Footer Styles
+*****************************************************/
