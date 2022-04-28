@@ -2,8 +2,8 @@
     Header Area 
 ===========================*/
 
-.header_main {
-  .header_wrapper {
+.header-area {
+  .header-wrapper {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -20,25 +20,28 @@
       padding: 15px 0;
     }
 
-    .header_left {
-      .logo {
+    .logo {
+      a {
         img {
           @media #{$sm-layout-device} {
-            width: 100px;
+            width: 120px;
           }
         }
       }
     }
+    .header-right {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+    }
   }
-  &.header_fixed {
-    position: absolute;
-    top: 0;
+
+  &.header-static {
     z-index: 999;
     padding-left: 50px;
     padding-right: 50px;
-    background: transparent;
+    width: 100%;
     transition: 0.3s;
-
     @media #{$lg-layout-device} {
       padding-left: 15px;
       padding-right: 15px;
@@ -49,49 +52,74 @@
       padding-top: 10px;
       padding-bottom: 10px;
     }
-    .header_wrapper {
+    @media #{$sm-layout-device} {
+      padding-left: 15px;
+      padding-right: 15px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+    .header-wrapper {
       padding: 20px 0;
       transition: 0.3s;
 
-      .mainMenuNavBar {
-        .mainMenu {
-          > li {
-            > a {
-              position: relative;
-              &::after {
-                position: absolute;
-                content: "";
-                left: 0;
-                width: 0;
-                height: 3px;
-                background: var(--primary-body-color);
-                transition: 0.3s;
-                bottom: 0;
-              }
-            }
-          }
-          &.is_Active {
-            color: var(--primary-body-color);
-            &::after {
-              width: 100%;
-            }
-          }
-          &.header-not-transparent {
-            &.header--fixed {
-              position: static;
-              padding-left: 0;
-              padding-right: 0;
-              padding: 0;
-              &.sticky {
-                position: fixed;
-                background: #ffffff;
-                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-                padding: 12px 0;
-              }
-            }
-          }
-        }
-      }
+      // .mainMenuNav {
+      //   ul {
+      //     &.mainMenu {
+      //       > li {
+      //         > a {
+      //           position: relative;
+      //           &::after {
+      //             position: absolute;
+      //             content: "";
+      //             left: 0;
+      //             width: 0;
+      //             height: 3px;
+      //             background: var(--primary-theme-color);
+      //             transition: 0.3s;
+      //             bottom: 0;
+      //           }
+      //         }
+      //         &.is-current {
+      //           a {
+      //             color: var(--primary-theme-color);
+
+      //             &::after {
+      //               width: 100%;
+      //             }
+      //           }
+      //         }
+      //       }
+      //     }
+      //   }
+      // }
     }
   }
+  &.header-fixed {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  &.header-not-fixed {
+    position: relative;
+    width: 100%;
+    background: #ffffff;
+  }
+  &.header-fixed-transparent {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    background: transparent;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  &.header-not-fixed-transparent {
+    position: relative;
+    width: 100%;
+    background: transparent;
+  }
 }
+
+
+
+

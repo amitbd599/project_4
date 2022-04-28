@@ -46,6 +46,7 @@ const SlideList = [
 ];
 
 const DigitalCleaningService = () => {
+  const img = <img src="/assets/images/logo/LogoBlack.png" alt="" />
   return (
     <Fragment>
       <Helmet pageTitle="Digital Agency" />
@@ -53,6 +54,9 @@ const DigitalCleaningService = () => {
       {/* Header Section */}
 
       <Header logo="dark" />
+     
+
+      
     </Fragment>
   );
 };
