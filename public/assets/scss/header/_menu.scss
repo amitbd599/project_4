@@ -4,7 +4,11 @@
 
 .header-wrapper {
   .header-right {
+    display: flex;
+    justify-content: space-between;
+
     .mainMenuNav {
+      margin-right: 100px;
       ul {
         &.mainMenu {
           display: flex;
@@ -17,8 +21,9 @@
             > a {
               @extend %transition;
               @extend %textDecoration;
+              color: var(--paragraph-color);
               font-size: 16px;
-              font-weight: 500;
+              font-weight: 600;
               padding: 20px 0;
               display: inline-block;
             }
@@ -47,15 +52,15 @@
                     padding: 5px 20px;
                     font-size: 14px;
                     display: block;
-                    color: var(--heading-color);
+                    color: var(--paragraph-color);
                     margin: 0 10px;
                     border-radius: 3px;
                     @extend %transition;
                   }
                   &:hover {
                     a {
-                      color: var(--primary-theme-color);
-                      background: rgba(249, 0, 77, 0.07);
+                      color: var(--color-white);
+                      background: var(--primary-theme-color);
                     }
                   }
                 }
@@ -83,6 +88,27 @@
           }
         }
       }
+    }
+    .dataField {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 230px;
+      .lang {
+        cursor: pointer;
+        font-weight: 500;
+        @extend %transition;
+        &:hover {
+          color: var(--primary-theme-color);
+        }
+      }
+      @media #{$md-layout-device}{
+        display: none;
+      }
+      @media #{$sm-layout-device}{
+        display: none;
+      }
+     
     }
   }
 }
@@ -333,7 +359,7 @@
 
 .humberger-menu {
   span {
-      color: var(--heading-color) !important;
+    color: var(--heading-color) !important;
     cursor: pointer;
     @media #{$sm-layout-device} {
       font-size: 28px;

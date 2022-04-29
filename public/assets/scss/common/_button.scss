@@ -1,0 +1,25 @@
+
+
+/*=========================
+    Button Option 
+===========================*/
+
+
+.btn-transparent{
+        @extend %transition;
+        text-decoration: none;
+        font-size: 16px;
+        border: 1px solid var(--primary-theme-color);
+        background: var(--primary-theme-color);
+        color: var(--color-white);
+        border-radius: 10px;
+        font-weight: 600;
+        position: relative;
+        padding: 10px 20px;
+        display: inline-block;
+
+        &:hover{
+            color: var(--primary-theme-color);
+            background: transparent;
+        }
+}

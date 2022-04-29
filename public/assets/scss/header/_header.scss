@@ -3,13 +3,14 @@
 ===========================*/
 
 .header-area {
+  max-height: 100px;
   .header-wrapper {
+    background: var(--primary-body-color);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 50px 0;
     flex-wrap: wrap;
-
+ 
     @media #{$lg-layout-device} {
       padding: 30px 0;
     }
@@ -38,28 +39,18 @@
 
   &.header-static {
     z-index: 999;
-    padding-left: 50px;
-    padding-right: 50px;
     width: 100%;
     transition: 0.3s;
-    @media #{$lg-layout-device} {
-      padding-left: 15px;
-      padding-right: 15px;
-    }
     @media #{$md-layout-device} {
-      padding-left: 15px;
-      padding-right: 15px;
       padding-top: 10px;
       padding-bottom: 10px;
     }
     @media #{$sm-layout-device} {
-      padding-left: 15px;
-      padding-right: 15px;
       padding-top: 10px;
       padding-bottom: 10px;
     }
     .header-wrapper {
-      padding: 20px 0;
+      padding: 10px 0;
       transition: 0.3s;
 
       // .mainMenuNav {
@@ -93,9 +84,9 @@
       //   }
       // }
     }
-  }
+  } 
   &.header-fixed {
-    position: absolute;
+    position: fixed;
     top: 0;
     width: 100%;
     background: #fff;

@@ -75,11 +75,11 @@
   @extend %bgImgPosition;
 }
 
-// @for $i from 1 through 40{
-//     .bgImg-#{$i}{
-//         background-image: url(/public/assets/images/bg/bg-image-#{$i}) !important;
-//     }
-// }
+@for $i from 1 through 4{
+    .bgImg-#{$i}{
+        background-image: url(../../images/bgImg/bgImg-#{$i}.jpg) !important;
+    }
+}
 
 /*===========================
     Input Placeholder
