@@ -105,8 +105,8 @@ $color-gradient-mix: $color-gradient-1, $color-gradient-2, $color-gradient-3,
 ==================================*/
 $extra-device: "only screen and (min-width: 1600px) and (max-width: 1919px)";
 $laptop-device: "only screen and (min-width: 1200px) and (max-width: 1599px)";
-$lg-layout-device: "only screen and (min-width: 992px) and (max-width: 1199px)";
-$md-layout-device: "only screen and (min-width: 768px) and (max-width: 991px)";
+$lg-layout-device: "only screen and (min-width: 992px)";
+$md-layout-device: "only screen and (max-width: 991px)";
 $sm-layout-device: "only screen and (max-width: 767px)";
 $mobile-lg-layout: "only screen and (max-width: 575px)";
 $mobile-sm-layout: "only screen and (max-width: 479px)";

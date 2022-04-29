@@ -7,7 +7,7 @@ export default function App() {
     <BrowserRouter>
       <Routes>
         <Route
-          path="/digitalCleaningService"
+          path="/"
           element={<DigitalCleaningService />}
         />
       </Routes>

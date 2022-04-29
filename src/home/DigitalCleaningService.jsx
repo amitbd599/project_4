@@ -7,7 +7,7 @@ import Header from "../components/header/Header";
 import sliderList from "../Data/SlideList";
 import { SliderSettings } from "../Script/Slider_Script_Data";
 
-const DigitalCleaningService = () => { 
+const DigitalCleaningService = () => {
   console.log(sliderList);
   const img = <img src="/assets/images/logo/LogoBlack.png" alt="" />;
   return (
@@ -20,13 +20,12 @@ const DigitalCleaningService = () => {
 
       {/* Slider section start here */}
 
-      <div className="sliderBody ">
+      <div className="sliderBody">
         <div className="sliderWrapper ">
           <Slider {...SliderSettings}>
-           {
-             sliderList.map((value,index)=>{
-                return(
-                  <div
+            {sliderList.map((value, index) => {
+              return (
+                <div
                   className={` slide relative slide-style-2 fullscreen d-flex align-items-center justify-content-center bgImg ${value.bgImage}`}
                   key={index}
                   data-black-overlay="2"
@@ -34,20 +33,24 @@ const DigitalCleaningService = () => {
                   <div className="container">
                     <div className="row">
                       <div className="col-lg-12">
-                        <div className={`animate__animated animate__backInDown inner ${value.textPosition}`}>
+                        <div className={` inner ${value.textPosition}`}>
                           {value.category ? <span>{value.category}</span> : ""}
                           {value.title ? (
-                            <h1 className="title text-light">{value.title}</h1>
+                            <h1 className="title text-light mt-lg-30 mt-sm-100">
+                              {value.title}
+                            </h1>
                           ) : (
                             ""
                           )}
                           {value.description ? (
-                            <p className="description text-light">{value.description}</p>
+                            <p className="description text-light ">
+                              {value.description}
+                            </p>
                           ) : (
                             ""
                           )}
                           {value.buttonText ? (
-                            <div className="slide-btn">
+                            <div className="btn-transparent mt-lg-30 mt-sm-15">
                               <a
                                 className="btn-default text-light"
                                 href={`${value.buttonLink}`}
@@ -63,24 +66,41 @@ const DigitalCleaningService = () => {
                     </div>
                   </div>
                 </div>
-                )
-             })
-           }
+              );
+            })}
           </Slider>
         </div>
       </div>
 
       {/* --- */}
 
-      <div><h2>Hello</h2></div>
-      <div><h2>Hello</h2></div>
-      <div><h2>Hello</h2></div>
-      <div><h2>Hello</h2></div>
-      <div><h2>Hello</h2></div>
-      <div><h2>Hello</h2></div>
-      <div><h2>Hello</h2></div>
-      <div><h2>Hello</h2></div>
-      <div><h2>Hello</h2></div>
+      <div>
+        <h2>Hello</h2>
+      </div>
+      <div>
+        <h2>Hello</h2>
+      </div>
+      <div>
+        <h2>Hello</h2>
+      </div>
+      <div>
+        <h2>Hello</h2>
+      </div>
+      <div>
+        <h2>Hello</h2>
+      </div>
+      <div>
+        <h2>Hello</h2>
+      </div>
+      <div>
+        <h2>Hello</h2>
+      </div>
+      <div>
+        <h2>Hello</h2>
+      </div>
+      <div>
+        <h2>Hello</h2>
+      </div>
     </Fragment>
   );
 };

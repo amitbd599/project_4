@@ -33,12 +33,12 @@ button,
 select,
 input,
 textarea {
-  font-family: "Open Sans", sans-serif;
+  font-family: var(--body-font);
 }
 
 a {
   color: #333;
-  text-decoration: none;
+  text-decoration: none !important;
 }
 a:visited {
   color: #b40404;
@@ -70,7 +70,7 @@ kbd,
 code,
 samp,
 pre {
-  font-family: monospace, serif;
+  font-family: var(--body-font);
   font-size: 14px;
   -webkit-hyphens: none;
   -moz-hyphens: none;
@@ -81,7 +81,7 @@ pre {
 pre {
   background: #e2e2e2;
   color: #333;
-  font-family: monospace, serif;
+  font-family: var(--body-font);
   margin: 20px 0;
   overflow: auto;
   font-size: 15px;

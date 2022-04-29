@@ -10,7 +10,7 @@ export default class Header extends Component {
     super(props);
     // this.addActiveClass = this.addActiveClass.bind(this);
     this.state = { active: false };
-    this.toggleClass= this.toggleClass.bind(this);
+    this.toggleClass = this.toggleClass.bind(this);
     this.menuTrigger = this.menuTrigger.bind(this);
     this.closeMenuTrigger = this.closeMenuTrigger.bind(this);
     window.addEventListener("load", function () {
@@ -19,7 +19,7 @@ export default class Header extends Component {
   }
 
   toggleClass() {
-    this.setState({active: !this.state.active });
+    this.setState({ active: !this.state.active });
   }
   menuTrigger() {
     document.querySelector(".header-wrapper").classList.add("menu-open");
@@ -62,9 +62,7 @@ export default class Header extends Component {
       );
     }
     return (
-      <header
-        className={`header-area header-static header-fixed`}
-      >
+      <header className={`header-area header-static header-fixed`}>
         <Container>
           <div className="header-wrapper" id="header-wrapper">
             <div className="header-left">
@@ -78,7 +76,24 @@ export default class Header extends Component {
               <nav className="mainMenuNav d-lg-block">
                 <ul className="mainMenu">
                   <li className="">
-                    <Link to="/digitalCleaningService">Home</Link>
+                    <Link to="/">Home</Link>
+                  </li>
+
+                  <li className="dropdown">
+                    <Link to="#">Service</Link>
+                    <ul className="submenu">
+                      <li>
+                        <Link to="#">Service</Link>
+                      </li>
+                      <li>
+                        <Link to="#">Service Details</Link>
+                      </li>
+                    </ul>
+                  </li>
+                  
+
+                  <li className="">
+                    <Link to="/digitalCleaningService">About Us</Link>
                   </li>
                   <li className="dropdown">
                     <Link className="navLinks" to="#">
@@ -86,41 +101,59 @@ export default class Header extends Component {
                     </Link>
                     <ul className="submenu">
                       <li>
-                        <Link to="#">Page</Link>
+                        <Link to="#">Blog</Link>
                       </li>
                       <li>
-                        <Link to="#">Page</Link>
+                        <Link to="#">Blog Details</Link>
                       </li>
                       <li>
-                        <Link to="#">Page</Link>
+                        <Link to="#">Portfolio</Link>
                       </li>
                       <li>
-                        <Link to="#">Page</Link>
+                        <Link to="#">Portfolio Details</Link>
+                      </li>
+                      <li>
+                        <Link to="#">Team</Link>
+                      </li>
+                      <li>
+                        <Link to="#">Progressbar</Link>
+                      </li>
+                      <li>
+                        <Link to="#">404</Link>
                       </li>
                     </ul>
                   </li>
                   <li className="dropdown">
-                    <Link to="#">Group</Link>
+                    <Link to="#">Blocks</Link>
                     <ul className="submenu">
                       <li>
-                        <Link to="#">Page</Link>
+                        <Link to="#">Button</Link>
                       </li>
                       <li>
-                        <Link to="#">Page</Link>
+                        <Link to="#">Video Popup</Link>
                       </li>
                       <li>
-                        <Link to="#">Page</Link>
+                        <Link to="#">Progress Bar</Link>
                       </li>
                       <li>
-                        <Link to="#">Page</Link>
+                        <Link to="#">Gallery</Link>
+                      </li>
+                      <li>
+                        <Link to="#">Counters</Link>
+                      </li>
+                      <li>
+                        <Link to="#">Client Logo</Link>
+                      </li>
+                      <li>
+                        <Link to="#">Contact Form</Link>
+                      </li>
+                      <li>
+                        <Link to="#">Google Map</Link>
+                      </li>
+                      <li>
+                        <Link to="#">Pricing Table</Link>
                       </li>
                     </ul>
-                  </li>
-                  <li className="">
-                    <Link to="/digitalCleaningService">Service</Link>
-                  </li>
-                  <li className="">
-                    <Link to="/digitalCleaningService">About Us</Link>
                   </li>
                   <li className="">
                     <Link to="/digitalCleaningService">Contact</Link>
@@ -131,7 +164,8 @@ export default class Header extends Component {
               <div className="dataField">
                 <span className="lang" onClick={this.toggleClass}>
                   {" "}
-                  <MdOutlineLanguage /> {this.state.active ? "English" : "Spanish "}
+                  <MdOutlineLanguage />{" "}
+                  {this.state.active ? "English" : "Spanish "}
                 </span>
                 <span>
                   <a className="btn-transparent" href="#">
