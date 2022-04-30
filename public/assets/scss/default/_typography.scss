@@ -122,8 +122,8 @@ p {
   line-height: var(--line-height-lg);
   margin-bottom: 30px;
   @media #{$sm-layout-device} {
-    line-height: 30px !important;
-    font-size: 16px !important;
+    line-height: 30px;
+    font-size: 16px;
   }
   br {
     @media #{$sm-layout-device} {
@@ -174,7 +174,7 @@ input {
 @media #{$lg-layout-device} {
   @for $i from 1 through 100 {
     .font-lg-#{$i} {
-      font-size: #{$i}px !important;
+      font-size: #{$i}px;
     }
   }
 }
@@ -182,7 +182,7 @@ input {
 @media #{$md-layout-device} {
   @for $i from 1 through 100 {
     .font-md-#{$i} {
-      font-size: #{$i}px !important;
+      font-size: #{$i}px;
     }
   }
 }
@@ -190,7 +190,7 @@ input {
 @media #{$sm-layout-device} {
   @for $i from 1 through 100 {
     .font-sm-#{$i} {
-      font-size: #{$i}px !important;
+      font-size: #{$i}px;
     }
   }
 }

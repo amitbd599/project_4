@@ -10,7 +10,11 @@ import { SliderSettings } from "../Script/Slider_Script_Data";
 class DigitalCleaningService extends Component {
   render() {
     const featureImg = (
-      <img src="/assets/images/featureHouse/serviceWomen-1.png" alt="" />
+      <img
+        className="img-fluid"
+        src="/assets/images/featureHouse/serviceWomen-1.png"
+        alt=""
+      />
     );
     return (
       <Fragment>
@@ -85,7 +89,7 @@ class DigitalCleaningService extends Component {
           <div className="wrapper">
             <Container>
               <Row>
-                <Col md={7}>
+                <Col lg={7} className="leftWrapper">
                   <div className="textBody">
                     <h2 className="title">FUTURE HOUSE</h2>
                     <p className="description">
@@ -98,11 +102,18 @@ class DigitalCleaningService extends Component {
                     <div className="itemsBox">
                       <FeatureHouseService />
                     </div>
-                 
                   </div>
                 </Col>
-                <Col md={5}>
-                  <div className="imgSection">{featureImg}</div>
+                <Col lg={5}>
+                  <div className="imgSection">
+                    {featureImg}
+                    <div className="overlay"></div>
+                    <div className="overlayBtn">
+                      <a href="#" className="btnShape menu3">
+                        Read More
+                      </a>
+                    </div>
+                  </div>
                 </Col>
               </Row>
             </Container>
