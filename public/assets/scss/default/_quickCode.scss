@@ -79,6 +79,11 @@
         background-image: url(../../images/bgImg/bgImg-#{$i}.jpg) !important;
     }
 }
+@for $i from 1 through 4{
+    .featureImg-#{$i}{
+        background-image: url(../../images/featureHouse/featureImg-#{$i}.png) !important;
+    }
+}
 
 /*===========================
     Input Placeholder
