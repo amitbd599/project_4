@@ -3,6 +3,7 @@ import { Col, Container, Row } from "react-bootstrap";
 import Slider from "react-slick/lib/slider";
 import Helmet from "../components/common/Helmet";
 import FeatureHouseService from "../components/FeatureHouse/FeatureHouseService";
+import PricingTableData from "../components/FeatureHouse/PricingTableData";
 import Header from "../components/header/Header";
 
 import sliderList from "../Data/SlideList";
@@ -120,6 +121,27 @@ class DigitalCleaningService extends Component {
           </div>
         </div>
         {/* Feature House End */}
+
+        {/* Pricing table start */}
+        <div className="pricingTable">
+          <div className="wrapper">
+            <Container>
+              <Row className="headerOption">
+                <Col>
+                  <div className="body">
+                    <h1>Cleaning Plans For Your Needs</h1>
+                    <h2>
+                      Specialist Disinfection Services That Fits Your Premises
+                    </h2>
+                  </div>
+                </Col>
+              </Row>
+              <div className="pricingTableData">
+                <PricingTableData />
+              </div>
+            </Container>
+          </div>
+        </div>
       </Fragment>
     );
   }

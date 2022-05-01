@@ -1,20 +1,20 @@
 .sliderBody {
-    @media #{$lg-layout-device}{
-        margin-top: 60px;
-    }
-    @media #{$md-layout-device}{
-        margin-top: 0px;
-    }
-    @media #{$sm-layout-device}{
-        margin-top: 0px;
-    }
+  @media #{$lg-layout-device} {
+    margin-top: 60px;
+  }
+  @media #{$md-layout-device} {
+    margin-top: 0px;
+  }
+  @media #{$sm-layout-device} {
+    margin-top: 0px;
+  }
   .sliderWrapper {
     .inner {
       h1 {
         font-size: 70px;
         font-weight: 700;
-        @media #{$sm-layout-device}{
-            font-size: 35px;
+        @media #{$sm-layout-device} {
+          font-size: 35px;
         }
       }
       p {
@@ -55,9 +55,9 @@
           color: var(--primary-theme-color) !important;
         }
       }
-      @media #{$sm-layout-device}{
+      @media #{$sm-layout-device} {
         display: none !important;
-    }
+      }
     }
     .slick-next {
       right: 50px !important;
@@ -77,8 +77,8 @@
           color: var(--primary-theme-color) !important;
         }
       }
-      @media #{$sm-layout-device}{
-          display: none !important;
+      @media #{$sm-layout-device} {
+        display: none !important;
       }
     }
     .slick-dots {
@@ -111,7 +111,7 @@
     }
     @media #{$md-layout-device} {
       .fullscreen {
-        min-height: 470px;
+        min-height: 648px;
       }
     }
     @media #{$sm-layout-device} {
@@ -123,9 +123,9 @@
 }
 
 .slick-slide {
-//   @media #{$md-layout-device} {
-//     margin-top: 90px;
-//   }
+  //   @media #{$md-layout-device} {
+  //     margin-top: 90px;
+  //   }
   &.slick-current {
     .slide {
       &.slide-style-2 {

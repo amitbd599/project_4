@@ -37,6 +37,9 @@
         }
       }
     }
+    @media #{$sm-layout-device}{
+      padding-right: 10px;
+    }
   }
 
   .itemsWrapper {
@@ -80,11 +83,17 @@
   }
   .imgSection {
     margin-top: 124px;
+    @media #{$sm-layout-device}{
+      margin-top: 24px;
+    }
     position: relative;
 
     img {
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.185);
       border-radius: 10px;
+      @media #{$md-layout-device}{
+        width: 100%;
+      }
     }
 
     .overlay {
