@@ -13,6 +13,7 @@ export default class ProjectSection extends Component {
     return (
       <Row>
         {projectDataList.map((value, index) => (
+          
           <Col md={4}>
             <div className="projectItems">
               <div className="projectTextBody">

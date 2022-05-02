@@ -2,12 +2,11 @@
 
 <br>
 <br>
-
-![alt](https://i.ibb.co/sjks8MP/image.png)
+<img src="https://i.ibb.co/sjks8MP/image.png" alt="" srcset="" />
 <br>
 <br>
 
-Using Plugin 
+Using Plugin
 
 - first
 - second
@@ -16,5 +15,3 @@ Using Plugin
 1. first
 2. second
 3. third
-
-
