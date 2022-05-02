@@ -26,21 +26,20 @@ class FeatureHouseService extends Component {
   render() {
     return (
       <div className="items">
-        {data.map((value, index) => {
-          return (
-            <div className="itemBody">
-              <div className="leftSide">
-                <img src={value.img} alt="" />
-              </div>
-              <div className="rightSide">
-                <h3 className="title">{value.title}</h3>
-                <p className="description">{value.des}</p>
-              </div>
+        
+        {data.map((value, index) => (
+          
+          <div className="itemBody" key={index}>
+            <div className="leftSide">
+              <img src={value.img} alt="" />
             </div>
-          );
-        })}
-
-       
+            <div className="rightSide">
+              <h3 className="title">{value.title}</h3>
+              <p className="description">{value.des}</p>
+           
+            </div>
+          </div>
+        ))}
       </div>
     );
   }

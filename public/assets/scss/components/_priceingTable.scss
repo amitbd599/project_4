@@ -1,9 +1,127 @@
-.pricingTableData{
-    .pricing_table_body{
-        .wrapper{
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            padding: 20px 30px;
-            border-radius: 10px;
-        }
+.pricingTable {
+  margin-top: 100px;
+  .headerOption {
+    text-align: center;
+    h1 {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--primary-theme-color);
     }
+    h2 {
+      font-size: 40px;
+      font-weight: 600;
+      margin-top: 14px;
+    }
+    p {
+      padding: 0 24%;
+      margin-top: 14px;
+      font-size: 15px;
+    }
+    // h1 {
+    //   font-size: 15px;
+    //   font-weight: 600;
+    //   margin-bottom: 15px;
+    //   color: var(--primary-theme-color);
+    //   display: inline;
+    //   @media #{$md-layout-device} {
+    //     font-size: 15px;
+    //   }
+    //   @media #{$sm-layout-device} {
+    //     font-size: 15px;
+    //   }
+    // }
+    // h2 {font-size: 40px;
+    //   font-weight: 600;
+    //   margin-top: 30px;
+    //   padding: 0 14%;
+    //   @media #{$md-layout-device} {
+    //     padding: 0;
+    //     font-size: 25px;
+    //   }
+    //   @media #{$sm-layout-device} {
+    //     padding: 0;
+    //     font-size: 20px;
+    //   }
+    // }
+  }
+
+  .pricingTableData {
+    margin-top: 65px;
+    margin-bottom: 50px;
+    .pricing_table_body {
+      .wrapper {
+        position: relative;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.19);
+        padding: 30px 20px;
+        border-radius: 10px;
+        // margin: 0 8px;
+        background: #ffffffbd;
+        h3 {
+          font-size: 18px;
+          font-weight: 600;
+          margin-top: 24px;
+          line-height: 24px;
+        }
+        p {
+          font-size: 15px;
+          line-height: 25px;
+          margin-top: 17px;
+        }
+        .btn-transparent {
+          margin-top: 7px;
+        }
+        .overlay {
+          position: absolute;
+          top: 22px;
+          right: 35px;
+          color: #fff;
+          z-index: 999;
+          transform: rotate(41deg);
+          font-size: 20px;
+        }
+        &::after {
+          position: absolute;
+          clip-path: polygon(46% 0%, 100% 33%, 100% 0);
+          background: var(--primary-theme-color);
+          width: 100%;
+          height: 100%;
+          z-index: 99;
+          content: "Hello";
+          color: #fff;
+          top: 0;
+          border-radius: 10px;
+          right: 0;
+          visibility: hidden;
+          opacity: 0;
+          transition: all 0.3s linear;
+        
+          @media #{$sm-layout-device} {
+            visibility: visible;
+            opacity: 1;
+          }
+        }
+        &:hover {
+          &::after {
+            visibility: visible;
+            opacity: 1;
+          }
+        }
+      }
+      @media #{$md-layout-device}{
+        margin-bottom: 50px;
+      }
+      @media #{$sm-layout-device}{
+        margin-bottom: 50px;
+      }
+    }
+    @media #{$sm-layout-device} {
+      margin-top: 50px;
+    }
+  }
+  @media #{$md-layout-device} {
+    margin-top: 70px;
+  }
+  @media #{$sm-layout-device} {
+    margin-top: 25px;
+  }
 }

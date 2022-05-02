@@ -4,6 +4,7 @@ import Slider from "react-slick/lib/slider";
 import Helmet from "../components/common/Helmet";
 import FeatureHouseService from "../components/FeatureHouse/FeatureHouseService";
 import PricingTableData from "../components/FeatureHouse/PricingTableData";
+import ProjectSection from "../components/FeatureHouse/ProjectSection";
 import Header from "../components/header/Header";
 
 import sliderList from "../Data/SlideList";
@@ -130,9 +131,11 @@ class DigitalCleaningService extends Component {
                 <Col>
                   <div className="body">
                     <h1>Cleaning Plans For Your Needs</h1>
-                    <h2>
-                      Specialist Disinfection Services That Fits Your Premises
-                    </h2>
+                    <h2>Specialist Disinfection</h2>
+                    <p>
+                      There are many variations of passages of Lorem Ipsum
+                      available, but the majority have suffered alteration.
+                    </p>
                   </div>
                 </Col>
               </Row>
@@ -142,6 +145,36 @@ class DigitalCleaningService extends Component {
             </Container>
           </div>
         </div>
+        {/* Pricing table End */}
+
+        {/* Project section start */}
+        <div className="project_section">
+          <div className="wrapper">
+            <Container>
+              <Row className="part_1">
+                <Col>
+                  <div className="wrapperBody">
+                    <h1>Our complete project</h1>
+                    <h2>Our Project</h2>
+                    <p>
+                      There are many variations of passages of Lorem Ipsum
+                      available, but the majority have suffered alteration.
+                    </p>
+                  </div>
+                </Col>
+              </Row>
+              <div className="part_2">
+                <div className="wrapperBody">
+                  <ProjectSection />
+                </div>
+              </div>
+              <Row>
+                <Col></Col>
+              </Row>
+            </Container>
+          </div>
+        </div>
+        {/* Project section End */}
       </Fragment>
     );
   }
