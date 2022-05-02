@@ -1,5 +1,5 @@
 .project_section {
-  background: #f8f8fa;
+  background: #f8f9fb;
   padding: 120px 0;
   .wrapper {
     .part_1 {
@@ -14,11 +14,23 @@
           font-size: 40px;
           font-weight: 600;
           margin-top: 14px;
+          @media #{$md-layout-device} {
+            font-size: 30px;
+          }
+          @media #{$sm-layout-device} {
+            font-size: 28px;
+          }
         }
         p {
           padding: 0 24%;
           margin-top: 14px;
           font-size: 15px;
+          @media #{$md-layout-device} {
+            padding: 0;
+          }
+          @media #{$sm-layout-device} {
+            padding: 0;
+          }
         }
       }
     }
@@ -47,7 +59,10 @@
                   rgba(255, 87, 0, 1) 19%,
                   rgba(0, 212, 255, 0) 100%
                 );
-                transition: all .4s linear;
+                box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+                backdrop-filter: blur(1px);
+                -webkit-backdrop-filter: blur(1px);
+                transition: all 0.4s linear;
                 opacity: 0;
                 visibility: hidden;
                 border-radius: 10px;
@@ -61,9 +76,9 @@
               bottom: 0;
               width: 100%;
               overflow: hidden;
-              padding: 50px 10px;
+              padding: 50px 15px;
               .textItem {
-                transform: translateY(140px);
+                transform: translateY(105px);
                 transition: all 0.5s linear;
 
                 h1 {
@@ -91,8 +106,17 @@
               }
             }
           }
+          @media #{$sm-layout-device}{
+            margin: 20px 0;
+          }
         }
       }
+      @media #{$sm-layout-device}{
+        margin-top: 30px;
+      }
     }
+  }
+  @media #{$sm-layout-device} {
+    padding: 40px 0;
   }
 }

@@ -6,6 +6,8 @@ import FeatureHouseService from "../components/FeatureHouse/FeatureHouseService"
 import PricingTableData from "../components/FeatureHouse/PricingTableData";
 import ProjectSection from "../components/FeatureHouse/ProjectSection";
 import Header from "../components/header/Header";
+import { IoCheckmarkCircle } from "react-icons/io5";
+import serviceData from "../Data/ServiceData";
 
 import sliderList from "../Data/SlideList";
 import { SliderSettings } from "../Script/Slider_Script_Data";
@@ -175,6 +177,61 @@ class DigitalCleaningService extends Component {
           </div>
         </div>
         {/* Project section End */}
+
+        {/* Service Option Start*/}
+
+        <div className="serviceOption">
+          <div className="wrapper">
+            <Container>
+              <Row>
+                <Col className="part_1">
+                  <div className="wrapperBody">
+                    <h1>Our All Service</h1>
+                    <h2>Service Details</h2>
+                    <p>
+                      There are many variations of passages of Lorem Ipsum
+                      available, but the majority have suffered alteration.
+                    </p>
+                  </div>
+                </Col>
+              </Row>
+              <Row className="part_2">
+                {serviceData.map((value, index) => (
+                  <Col md={4} key={index}>
+                    <div className="wrapper">
+                      <img className="img-fluid" src={value.icon} alt="" />
+                      <h2>{value.title}</h2>
+                      <div className="listItems">
+                        <div className="listItem">
+                          <span className="text">
+                            <IoCheckmarkCircle className="mr-10"/>
+                            Product Management
+                          </span>
+                        </div>
+                        <div className="listItem">
+                          <span className="text">
+                            <IoCheckmarkCircle className="mr-10"/>
+                            Product Management
+                          </span>
+                        </div>
+                        <div className="listItem">
+                          <span className="text">
+                            <IoCheckmarkCircle className="mr-10"/>
+                            Product Management
+                          </span>
+                        </div>
+                        <a href="#" className="btn-transparent">
+                          Read More
+                        </a>
+                      </div>
+                    </div>
+                  </Col>
+                ))}
+              </Row>
+            </Container>
+          </div>
+        </div>
+        {/* Service Option End*/}
       </Fragment>
     );
   }

@@ -11,11 +11,23 @@
       font-size: 40px;
       font-weight: 600;
       margin-top: 14px;
+      @media #{$md-layout-device} {
+        font-size: 30px;
+      }
+      @media #{$sm-layout-device} {
+        font-size: 28px;
+      }
     }
     p {
       padding: 0 24%;
       margin-top: 14px;
       font-size: 15px;
+      @media #{$md-layout-device} {
+        padding: 0;
+      }
+      @media #{$sm-layout-device} {
+        padding: 0;
+      }
     }
     // h1 {
     //   font-size: 15px;
@@ -94,7 +106,7 @@
           visibility: hidden;
           opacity: 0;
           transition: all 0.3s linear;
-        
+
           @media #{$sm-layout-device} {
             visibility: visible;
             opacity: 1;
@@ -107,10 +119,10 @@
           }
         }
       }
-      @media #{$md-layout-device}{
+      @media #{$md-layout-device} {
         margin-bottom: 50px;
       }
-      @media #{$sm-layout-device}{
+      @media #{$sm-layout-device} {
         margin-bottom: 50px;
       }
     }
