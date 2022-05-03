@@ -8,9 +8,10 @@ import ProjectSection from "../components/FeatureHouse/ProjectSection";
 import Header from "../components/header/Header";
 import { IoCheckmarkCircle } from "react-icons/io5";
 import serviceData from "../Data/ServiceData";
+import Testimonial from "../Data/Testimonial";
 
 import sliderList from "../Data/SlideList";
-import { SliderSettings } from "../Script/Slider_Script_Data";
+import { SliderSettings, TestimonialSliderSetting } from "../Script/Slider_Script_Data";
 class DigitalCleaningService extends Component {
   render() {
     const featureImg = (
@@ -204,19 +205,19 @@ class DigitalCleaningService extends Component {
                       <div className="listItems">
                         <div className="listItem">
                           <span className="text">
-                            <IoCheckmarkCircle className="mr-10"/>
+                            <IoCheckmarkCircle className="mr-10" />
                             Product Management
                           </span>
                         </div>
                         <div className="listItem">
                           <span className="text">
-                            <IoCheckmarkCircle className="mr-10"/>
+                            <IoCheckmarkCircle className="mr-10" />
                             Product Management
                           </span>
                         </div>
                         <div className="listItem">
                           <span className="text">
-                            <IoCheckmarkCircle className="mr-10"/>
+                            <IoCheckmarkCircle className="mr-10" />
                             Product Management
                           </span>
                         </div>
@@ -232,6 +233,59 @@ class DigitalCleaningService extends Component {
           </div>
         </div>
         {/* Service Option End*/}
+
+        <div className="testimonial">
+          <div className="wrapper">
+            <Container>
+              <Row>
+                <Col md={6} className="leftSide">
+                  <div className="textBody">
+                    <h2>Best Web Development History</h2>
+                    <p>
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Tenetur obcaecati quisquam facere corrupti laudantium odit
+                      dolore cumque libero hic fugit?
+                    </p>
+                    <div className="listItem">
+                      <ul>
+                        <li> <IoCheckmarkCircle className="icon"/> Web Development</li>
+                        <li> <IoCheckmarkCircle className="icon"/> Web Design With ReactJs</li>
+                        <li> <IoCheckmarkCircle className="icon"/> MongoDB DataBase Service</li>
+                        <li> <IoCheckmarkCircle className="icon"/> NodeJs Projects</li>
+                      </ul>
+                    </div>
+                  </div>
+                </Col>
+                <Col md={6} className="rightSide">
+                  <div className="textBody">
+                    <div className="overlay">
+                      <Slider {...TestimonialSliderSetting}>
+                        {Testimonial.map((value, index) => (
+                          <div className="item">
+                            <div className="d-flex">
+                              <img
+                                className="img-fluid mr-20"
+                                src={value.img}
+                                alt=""
+                              />
+                              <div>
+                                <h3 className="name">{value.name}</h3>
+                                <p className="position">{value.position}</p>
+                              </div>
+                            </div>
+                            <div>
+                              <p className="des">{value.des}</p>
+                            </div>
+                          </div>
+                        ))}
+                      </Slider>
+                    </div>
+                  </div>
+                </Col>
+              </Row>
+            </Container>
+          </div>
+        </div>
       </Fragment>
     );
   }

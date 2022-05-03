@@ -1,0 +1,85 @@
+.testimonial {
+  min-height: 400px;
+  background: rgb(27, 27, 27);
+  .wrapper {
+    .leftSide {
+      .textBody {
+        padding: 70px 0;
+        h2 {
+          font-size: 35px;
+          font-weight: 600;
+          color: var(--primary-theme-color);
+        }
+        p {
+          font-size: 15px;
+          color: var(--color-white);
+          padding-right: 50px;
+        }
+        .listItem{
+          ul{
+            padding-left: 0 !important;
+             li{
+               color: var(--color-white);
+               margin-bottom: 6px;
+             }
+             .icon{ 
+               color: var(--primary-theme-color);
+               margin-right: 10px;
+             }
+          }
+        }
+      }
+    }
+    .rightSide {
+      padding: 70px 0;
+      .textBody {
+        .overlay {
+          .item {
+            // display: flex !important;
+          }
+          border-radius: 15px;
+          width: auto;
+          margin-left: 100px;
+          min-height: 300px;
+          border: 2px solid var(--primary-theme-color);
+          padding: 30px 40px;
+          img {
+            width: 25%;
+            border-radius: 50%;
+            border: 1px solid var(--paragraph-color);
+            margin-left: 23px;
+          }
+          .name {
+            font-size: 25px;
+            margin-top: 15px;
+            color: var(--primary-theme-color);
+          }
+          .position {
+            margin-top: -10px;
+            font-size: 15px;
+            color: var(--color-white);
+          }
+          .des {
+            font-size: 14px;
+            color: var(--color-white);
+            margin-top: 18px;
+            padding: 0 33px;
+          }
+          .slick-prev:before,
+          .slick-next:before {
+            color: var(--primary-theme-color);
+          }
+          .slick-dots{
+            bottom: -36px;
+          }
+          .slick-dots li button:before {
+            height: 5px;
+            content: '';
+            width: 12px;
+            background: var(--primary-theme-color);
+        }
+        }
+      }
+    }
+  }
+}
