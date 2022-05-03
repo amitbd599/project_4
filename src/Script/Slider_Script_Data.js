@@ -13,7 +13,7 @@ export const SliderSettings = {
 export const TestimonialSliderSetting = {
   infinite: true,
   slidesToShow: 3,
-  slidesToScroll: 1,
+  slidesToScroll: 1, 
   dots: true,
   arrows: true,
   fade: true,

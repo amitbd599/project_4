@@ -9,34 +9,42 @@
           font-size: 35px;
           font-weight: 600;
           color: var(--primary-theme-color);
+          @media #{$sm-layout-device} {
+            font-size: 30px;
+          }
         }
         p {
           font-size: 15px;
           color: var(--color-white);
           padding-right: 50px;
+          @media #{$sm-layout-device} {
+            margin-top: 20px;
+          }
         }
-        .listItem{
-          ul{
+        .listItem {
+          ul {
             padding-left: 0 !important;
-             li{
-               color: var(--color-white);
-               margin-bottom: 6px;
-             }
-             .icon{ 
-               color: var(--primary-theme-color);
-               margin-right: 10px;
-             }
+            li {
+              color: var(--color-white);
+              margin-bottom: 6px;
+            }
+            .icon {
+              color: var(--primary-theme-color);
+              margin-right: 10px;
+            }
           }
         }
       }
     }
     .rightSide {
-      padding: 70px 0;
+      padding-top: 60px;
+      padding-bottom: 60px;
+      @media #{$sm-layout-device} {
+        padding-top: 0px;
+        padding-bottom: 0px;
+      }
       .textBody {
         .overlay {
-          .item {
-            // display: flex !important;
-          }
           border-radius: 15px;
           width: auto;
           margin-left: 100px;
@@ -69,15 +77,26 @@
           .slick-next:before {
             color: var(--primary-theme-color);
           }
-          .slick-dots{
+          .slick-dots {
             bottom: -36px;
           }
           .slick-dots li button:before {
             height: 5px;
-            content: '';
+            content: "";
             width: 12px;
             background: var(--primary-theme-color);
-        }
+          }
+          @media #{$sm-layout-device} {
+            margin-left: 0;
+            padding: 30px 0px;
+            .slick-prev,
+            .slick-next {
+              display: none !important;
+            }
+            .des {
+              padding: 0 18px;
+            }
+          }
         }
       }
     }

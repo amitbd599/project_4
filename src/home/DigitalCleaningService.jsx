@@ -1,4 +1,4 @@
-import React, { Fragment, Component } from "react";
+import React, { Fragment, Component, useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import Slider from "react-slick/lib/slider";
 import Helmet from "../components/common/Helmet";
@@ -9,18 +9,17 @@ import Header from "../components/header/Header";
 import { IoCheckmarkCircle } from "react-icons/io5";
 import serviceData from "../Data/ServiceData";
 import Testimonial from "../Data/Testimonial";
-
+import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
+import "react-tabs/style/react-tabs.css";
 import sliderList from "../Data/SlideList";
-import { SliderSettings, TestimonialSliderSetting } from "../Script/Slider_Script_Data";
+import {
+  SliderSettings,
+  TestimonialSliderSetting,
+} from "../Script/Slider_Script_Data";
+import imgScript from "../Script/ImportImgFile";
 class DigitalCleaningService extends Component {
   render() {
-    const featureImg = (
-      <img
-        className="img-fluid"
-        src="/assets/images/featureHouse/serviceWomen-1.png"
-        alt=""
-      />
-    );
+    const { aboutUsImg, featureImg } = imgScript();
     return (
       <Fragment>
         <Helmet pageTitle="Digital Agency" />
@@ -233,7 +232,7 @@ class DigitalCleaningService extends Component {
           </div>
         </div>
         {/* Service Option End*/}
-
+        {/* Testimonial Start */}
         <div className="testimonial">
           <div className="wrapper">
             <Container>
@@ -248,10 +247,24 @@ class DigitalCleaningService extends Component {
                     </p>
                     <div className="listItem">
                       <ul>
-                        <li> <IoCheckmarkCircle className="icon"/> Web Development</li>
-                        <li> <IoCheckmarkCircle className="icon"/> Web Design With ReactJs</li>
-                        <li> <IoCheckmarkCircle className="icon"/> MongoDB DataBase Service</li>
-                        <li> <IoCheckmarkCircle className="icon"/> NodeJs Projects</li>
+                        <li>
+                          {" "}
+                          <IoCheckmarkCircle className="icon" /> Web Development
+                        </li>
+                        <li>
+                          {" "}
+                          <IoCheckmarkCircle className="icon" /> Web Design With
+                          ReactJs
+                        </li>
+                        <li>
+                          {" "}
+                          <IoCheckmarkCircle className="icon" /> MongoDB
+                          DataBase Service
+                        </li>
+                        <li>
+                          {" "}
+                          <IoCheckmarkCircle className="icon" /> NodeJs Projects
+                        </li>
                       </ul>
                     </div>
                   </div>
@@ -286,6 +299,74 @@ class DigitalCleaningService extends Component {
             </Container>
           </div>
         </div>
+        {/* Testimonial End */}
+
+        {/* AboutUs section start */}
+        <div className="aboutUs">
+          <div className="wrapper">
+            <Container>
+              <Row>
+                <Col md={5} className="leftSide">
+                  <div className="mainBody">{aboutUsImg}</div>
+                </Col>
+                <Col ms={7} className="rightSide">
+                  <div className="mainBody">
+                    <div className="textFile">
+                      <h1>Our Company Details</h1>
+                      <h2>About</h2>
+                      <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing
+                        elit. Iste temporibus voluptate quo saepe nesciunt
+                        aperiam impedit rerum! Veritatis commodi est, earum
+                        distinctio eum cum sint at aspernatur culpa aliquam
+                        dolorum?
+                      </p>
+                    </div>
+                    <div className="historyData">
+                      <Tabs>
+                        <TabList>
+                          <Tab>Our History</Tab>
+                          <Tab>Our Mission</Tab>
+                          <Tab>Our Vision</Tab>
+                          <Tab>Our Support</Tab>
+                        </TabList>
+
+                        <TabPanel>
+                          <h3>Saepe nesciunt aperiam impedit</h3>
+                          <ul>
+                            <li>The Philosophy Of business analytics</li>
+                            <li>Fast-Track Your business</li>
+                            <li>Lies And Damn Lies About business</li>
+                            <li>The Ultimate Deal On business</li>
+                          </ul>
+                        </TabPanel>
+                        <TabPanel>
+                          <h2>Any content 2</h2>
+                          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Delectus at qui eum quos est amet omnis ea quisquam repellendus corporis numquam mollitia natus sunt consequuntur provident tenetur, id optio iure?</p>
+                          <br />
+                          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Delectus at qui eum quos est amet omnis ea quisquam repellendus corporis numquam mollitia natus sunt consequuntur provident tenetur, id optio iure?</p>
+                        </TabPanel>
+                        <TabPanel>
+                          <h2>Any content 2</h2>
+                          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Delectus at qui eum quos est amet omnis ea quisquam repellendus corporis numquam mollitia natus sunt consequuntur provident tenetur, id optio iure?</p>
+                          <br />
+                          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Delectus at qui eum quos est amet omnis ea quisquam repellendus corporis numquam mollitia natus sunt consequuntur provident tenetur, id optio iure?</p>
+                        </TabPanel>
+                        <TabPanel>
+                          <h2>Any content 2</h2>
+                          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Delectus at qui eum quos est amet omnis ea quisquam repellendus corporis numquam mollitia natus sunt consequuntur provident tenetur, id optio iure?</p>
+                          <br />
+                          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Delectus at qui eum quos est amet omnis ea quisquam repellendus corporis numquam mollitia natus sunt consequuntur provident tenetur, id optio iure?</p>
+                        </TabPanel>
+                      </Tabs>
+                    </div>
+                  </div>
+                </Col>
+              </Row>
+            </Container>
+          </div>
+        </div>
+        {/* AboutUs section End */}
       </Fragment>
     );
   }
