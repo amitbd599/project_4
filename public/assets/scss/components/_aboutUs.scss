@@ -1,96 +1,172 @@
 .aboutUs {
+  @media #{$sm-layout-device} {
+    padding: 80px 0;
+  }
   padding: 150px 0;
   .wrapper {
     .leftSide {
-      img {
-        width: 75%;
+      .mainBody {
+        position: relative;
+        .imgFile {
+          overflow: hidden;
+          position: relative;
+          width: 86%;
+          border-radius: 10px;
+          img {
+            transition: all 0.5s linear;
+          }
+          &::after {
+            position: absolute;
+            content: "";
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgb(255, 87, 0);
+            background: linear-gradient(
+              0deg,
+              rgba(255, 87, 0, 1) 19%,
+              rgba(0, 212, 255, 0) 100%
+            );
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            backdrop-filter: blur(1px);
+            -webkit-backdrop-filter: blur(1px);
+            transition: all 0.4s linear;
+            opacity: 0;
+            visibility: hidden;
+            border-radius: 10px;
+          }
+          @media #{$sm-layout-device} {
+            width: 100%;
+          }
+        }
+        .overlay {
+          width: 86%;
+          margin-bottom: 45px;
+          overflow: hidden;
+          position: absolute;
+          height: 200px;
+          bottom: 0;
+          left: 0;
+          .textFile {
+            text-align: center;
+            align-items: center;
+            transform: translateY(163px);
+            transition: all 0.5s linear;
+            h3 {
+              font-size: 28px;
+              font-weight: 600;
+              color: var(--color-white);
+            }
+            p {
+              font-size: 15px;
+              color: var(--color-white);
+              visibility: hidden;
+              transition: all 0.5s linear;
+              opacity: 0;
+            }
+          }
+          @media #{$sm-layout-device} {
+            width: 100%;
+          }
+        }
+        &:hover {
+          .imgFile {
+            &::after {
+              visibility: visible;
+              opacity: 1;
+            }
+          }
+          img {
+            transform: scale(1.1);
+          }
+          .textFile {
+            transform: translateY(73px);
+          }
+          .overlay p {
+            visibility: visible;
+            opacity: 1;
+          }
+        }
       }
     }
     .rightSide {
+      margin-left: -22px;
       .textFile {
         h1 {
           font-size: 15px;
           color: var(--primary-theme-color);
-          font-weight: 600;
+          font-weight: 700;
         }
         h2 {
           font-size: 40px;
+          @media #{$sm-layout-device} {
+            font-size: 24px;
+            font-weight: 600;
+          }
         }
         p {
-          font-size: 16px; 
-          
+          font-size: 15px;
+        }
+        @media #{$sm-layout-device} {
+          // text-align: center;
         }
       }
-      .historyData{
-        .wrapper {
-            max-width: 50rem;
-            width: 100%;
-            margin: 0 auto;
+      .historyData {
+        margin-top: 20px;
+        .tabList {
+          margin-bottom: 26px;
+          display: inline-block;
+          border: 1px solid #ddd;
+          border-radius: 50px;
+          padding-left: 0;
+          .react-tabs__tab {
+            padding: 10px 22px;
+            border-radius: 50px;
+            border: none;
+            bottom: -1px;
+            position: initial;
+            transition: all 0.45s cubic-bezier(0, 0, 0.2, 1);
+            &.react-tabs__tab--selected {
+              background: var(--primary-theme-color);
+              color: var(--color-white);
+            }
           }
-          .tabs {
-            position: relative;
-            margin: 3rem 0;
-            background: #1abc9c;
-            height: 14.75rem;
+          @media #{$sm-layout-device} {
+            padding-bottom: 10px;
+            border: none;
+            border-radius: 0;
+            border-bottom: 1px solid #ddd;
           }
-          .tabs::before,
-          .tabs::after {
-            content: "";
-            display: table;
+        }
+        .tabPanel_1 {
+          ul {
+            padding-left: 0;
           }
-          .tabs::after {
-            clear: both;
+          li {
+            margin-bottom: 8px;
           }
-          .tab {
-            float: left;
+          .icon {
+            margin-right: 10px;
+            color: var(--primary-theme-color);
           }
-          .tab-switch {
-            display: none;
+          h3 {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 13px;
           }
-          .tab-label {
-            position: relative;
-            display: block;
-            line-height: 2.75em;
-            height: 3em;
-            padding: 0 1.618em;
-            background: #1abc9c;
-            border-right: 0.125rem solid #16a085;
-            color: #fff;
-            cursor: pointer;
-            top: 0;
-            transition: all 0.25s;
+        }
+        .tabPanel_2,
+        .tabPanel_3,
+        .tabPanel_4 {
+          p {
+            font-size: 15px;
           }
-          .tab-label:hover {
-            top: -0.25rem;
-            transition: top 0.25s;
-          }
-          .tab-content {
-            height: 12rem;
-            position: absolute;
-            z-index: 1;
-            top: 2.75em;
-            left: 0;
-            padding: 1.618rem;
-            background: #fff;
-            color: #2c3e50;
-            border-bottom: 0.25rem solid #bdc3c7;
-            opacity: 0;
-            transition: all 0.35s;
-          }
-          .tab-switch:checked + .tab-label {
-            background: #fff;
-            color: #2c3e50;
-            border-bottom: 0;
-            border-right: 0.125rem solid #fff;
-            transition: all 0.35s;
-            z-index: 1;
-            top: -0.0625rem;
-          }
-          .tab-switch:checked + label + .tab-content {
-            z-index: 2;
-            opacity: 1;
-            transition: all 0.35s;
-          }
+        }
+      }
+      @media #{$sm-layout-device} {
+        margin-left: 0;
+        margin-top: 50px;
       }
     }
   }

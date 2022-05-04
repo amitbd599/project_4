@@ -307,7 +307,18 @@ class DigitalCleaningService extends Component {
             <Container>
               <Row>
                 <Col md={5} className="leftSide">
-                  <div className="mainBody">{aboutUsImg}</div>
+                  <div className="mainBody">
+                    <div className="imgFile">{aboutUsImg}</div>
+                    <div className="overlay">
+                      <div className="textFile">
+                        <h3>Awesome Experience </h3>
+                        <p>
+                          voluptate quo saepe nesciunt aperiam impedit rerum!
+                          Veritatis saepe nesciunt commodi est jufd ikoil blemp.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
                 </Col>
                 <Col ms={7} className="rightSide">
                   <div className="mainBody">
@@ -324,39 +335,86 @@ class DigitalCleaningService extends Component {
                     </div>
                     <div className="historyData">
                       <Tabs>
-                        <TabList>
+                        <TabList className="tabList">
                           <Tab>Our History</Tab>
                           <Tab>Our Mission</Tab>
                           <Tab>Our Vision</Tab>
                           <Tab>Our Support</Tab>
                         </TabList>
 
-                        <TabPanel>
+                        <TabPanel className="tabPanel_1">
                           <h3>Saepe nesciunt aperiam impedit</h3>
                           <ul>
-                            <li>The Philosophy Of business analytics</li>
-                            <li>Fast-Track Your business</li>
-                            <li>Lies And Damn Lies About business</li>
-                            <li>The Ultimate Deal On business</li>
+                            <li>
+                              {" "}
+                              <IoCheckmarkCircle className="icon" />
+                              The Philosophy Of business analytics.
+                            </li>
+                            <li>
+                              {" "}
+                              <IoCheckmarkCircle className="icon" />
+                              Fast-Track Your business.
+                            </li>
+                            <li>
+                              {" "}
+                              <IoCheckmarkCircle className="icon" />
+                              Lies And Damn Lies About business.
+                            </li>
+                            <li>
+                              {" "}
+                              <IoCheckmarkCircle className="icon" />
+                              The Ultimate Deal On business.
+                            </li>
+                            <li>
+                              {" "}
+                              <IoCheckmarkCircle className="icon" />
+                              Great instant value life.
+                            </li>
                           </ul>
                         </TabPanel>
-                        <TabPanel>
-                          <h2>Any content 2</h2>
-                          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Delectus at qui eum quos est amet omnis ea quisquam repellendus corporis numquam mollitia natus sunt consequuntur provident tenetur, id optio iure?</p>
-                          <br />
-                          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Delectus at qui eum quos est amet omnis ea quisquam repellendus corporis numquam mollitia natus sunt consequuntur provident tenetur, id optio iure?</p>
+                        <TabPanel className="tabPanel_2">
+                          <p>
+                            Lorem ipsum dolor sit, amet consectetur adipisicing
+                            elit. Delectus at qui eum quos est amet omnis ea
+                            quisquam repellendus corporis numquam mollitia natus
+                            sunt consequuntur provident tenetur, id optio iure?
+                          </p>
+                          <p>
+                            Lorem ipsum dolor sit, amet consectetur adipisicing
+                            elit. Delectus at qui eum quos est amet omnis ea
+                            quisquam repellendus corporis numquam mollitia natus
+                            sunt consequuntur provident tenetur, id optio iure?
+                          </p>
                         </TabPanel>
-                        <TabPanel>
-                          <h2>Any content 2</h2>
-                          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Delectus at qui eum quos est amet omnis ea quisquam repellendus corporis numquam mollitia natus sunt consequuntur provident tenetur, id optio iure?</p>
-                          <br />
-                          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Delectus at qui eum quos est amet omnis ea quisquam repellendus corporis numquam mollitia natus sunt consequuntur provident tenetur, id optio iure?</p>
+                        <TabPanel className="tabPanel_3">
+                          <p>
+                            Consequuntur provident Lorem ipsum dolor sit, amet
+                            consectetur adipisicing elit. Delectus at qui eum
+                            quos est amet omnis ea quisquam repellendus corporis
+                            numquam mollitia natus sunt tenetur, id optio iure?
+                          </p>
+                          <p>
+                            Lorem ipsum dolor sit, amet consectetur adipisicing
+                            elit. Delectus at qui eum quos est amet omnis ea
+                            quisquam repellendus corporis numquam mollitia natus
+                            sunt consequuntur provident tenetur, id optio iure?
+                          </p>
                         </TabPanel>
-                        <TabPanel>
-                          <h2>Any content 2</h2>
-                          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Delectus at qui eum quos est amet omnis ea quisquam repellendus corporis numquam mollitia natus sunt consequuntur provident tenetur, id optio iure?</p>
-                          <br />
-                          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Delectus at qui eum quos est amet omnis ea quisquam repellendus corporis numquam mollitia natus sunt consequuntur provident tenetur, id optio iure?</p>
+                        <TabPanel className="tabPanel_4">
+                          <p>
+                            Aum quos est amet omnis ea quisquam repellendus
+                            corporis numquam Lorem ipsum dolor sit, amet
+                            consectetur adipisicing elit. Delectus at qui
+                            mollitia natus sunt consequuntur provident tenetur,
+                            id optio iure?
+                          </p>
+                          <p>
+                            Gepellendus corporis numquam mollitia Lorem ipsum
+                            dolor sit, amet consectetur adipisicing elit.
+                            Delectus at qui eum quos est amet omnis ea quisquam
+                            natus sunt consequuntur provident tenetur, id optio
+                            iure?
+                          </p>
                         </TabPanel>
                       </Tabs>
                     </div>
