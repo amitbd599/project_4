@@ -9,6 +9,7 @@ import Header from "../components/header/Header";
 import { IoCheckmarkCircle } from "react-icons/io5";
 import serviceData from "../Data/ServiceData";
 import Testimonial from "../Data/Testimonial";
+
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 import sliderList from "../Data/SlideList";
@@ -17,6 +18,7 @@ import {
   TestimonialSliderSetting,
 } from "../Script/Slider_Script_Data";
 import imgScript from "../Script/ImportImgFile";
+import LatestNewsItems from "../components/FeatureHouse/LatestNewsItems";
 class DigitalCleaningService extends Component {
   render() {
     const { aboutUsImg, featureImg } = imgScript();
@@ -425,6 +427,34 @@ class DigitalCleaningService extends Component {
           </div>
         </div>
         {/* AboutUs section End */}
+
+        {/* Latest News Start */}
+        <div className="latestNews">
+          <div className="wrapper">
+            <Container>
+              <Row className="part_1">
+                <Col>
+                  <div className="wrapperBody">
+                    <h1>Latest post</h1>
+                    <h2>Latest News</h2>
+                    <p>
+                      There are many variations of passages of Lorem Ipsum
+                      available, but the majority have suffered alteration.
+                    </p>
+                  </div>
+                </Col>
+              </Row>
+              <div className="part_2">
+               <LatestNewsItems/>
+
+               <div className="text-center mt-30">
+                 <a href="#" className="btn-transparent">View More</a>
+               </div>
+              </div>
+            </Container>
+          </div>
+        </div>
+        {/* Latest News End */}
       </Fragment>
     );
   }

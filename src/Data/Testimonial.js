@@ -15,7 +15,7 @@ const Testimonial = [
     name: "Amit Siha",
     position:"Web Designer",
     img: "https://res.cloudinary.com/amitjs/image/upload/v1651588236/Client%20Img/Man%20600%2A600/193321431_775587776678149_1291036863068516247_n-removebg-preview_11_are1mo.png",
-    des: "Majority ere are many variations of passages of Lorem Ipsum available but the majority have suffered alteration. Ipsum available but the majority have suffered alteration.",
+    des: "Majority ere are many variations of passages of Lorem Ipsum available but the majority have suffered alteration. Ipsum but the majority have suffered alteration.",
   },
   {
     name: "LIli Ritue",
