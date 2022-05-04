@@ -17,8 +17,9 @@ import {
   SliderSettings,
   TestimonialSliderSetting,
 } from "../Script/Slider_Script_Data";
-import imgScript from "../Script/ImportImgFile";
+import imgScript from "../Script/ImgScript";
 import LatestNewsItems from "../components/FeatureHouse/LatestNewsItems";
+import Footer from "../components/Footer/Footer";
 class DigitalCleaningService extends Component {
   render() {
     const { aboutUsImg, featureImg } = imgScript();
@@ -445,16 +446,22 @@ class DigitalCleaningService extends Component {
                 </Col>
               </Row>
               <div className="part_2">
-               <LatestNewsItems/>
+                <LatestNewsItems />
 
-               <div className="text-center mt-30">
-                 <a href="#" className="btn-transparent">View More</a>
-               </div>
+                <div className="text-center mt-30">
+                  <a href="#" className="btn-transparent">
+                    View More
+                  </a>
+                </div>
               </div>
             </Container>
           </div>
         </div>
         {/* Latest News End */}
+
+        {/* Footer Start */}
+        <Footer />
+        {/* Footer End */}
       </Fragment>
     );
   }

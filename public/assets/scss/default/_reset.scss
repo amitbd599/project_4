@@ -131,7 +131,9 @@ li > ul,
 li > ol {
   margin: 0;
 }
-
+li{
+  font-family: var(--body-font);
+}
 img {
   border: 0;
   vertical-align: middle;

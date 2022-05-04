@@ -4,6 +4,7 @@ import { FiMenu } from "react-icons/fi";
 import { FiX } from "react-icons/fi";
 import { Container } from "react-bootstrap";
 import { MdOutlineLanguage } from "react-icons/md";
+import imgScript from "../../Script/ImgScript";
 
 export default class Header extends Component {
   constructor(props) {
@@ -49,17 +50,14 @@ export default class Header extends Component {
   }
 
   render() {
+    const { logoLight, logoBlack } = imgScript();
     const { logo } = this.props;
     var logoURL;
 
     if (logo === "dark") {
-      logoURL = (
-        <img src="/assets/images/logo/LogoBlack.png" alt="" srcset="" />
-      );
+      logoURL = logoBlack;
     } else if (logo === "light") {
-      logoURL = (
-        <img src="/assets/images/logo/LogoLight.png" alt="" srcset="" />
-      );
+      logoURL = logoLight;
     }
     return (
       <header className={`header-area header-static header-fixed`}>
@@ -90,10 +88,9 @@ export default class Header extends Component {
                       </li>
                     </ul>
                   </li>
-                  
 
                   <li className="">
-                    <Link to="/digitalCleaningService">About Us</Link>
+                    <Link to="/about-us">About Us</Link>
                   </li>
                   <li className="dropdown">
                     <Link className="navLinks" to="#">

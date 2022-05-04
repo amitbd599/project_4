@@ -1,4 +1,10 @@
 const imgScript = () => {
+  const logoBlack = (
+    <img src="/assets/images/logo/LogoBlack.png" alt="" />
+  );
+  const logoLight = (
+    <img src="/assets/images/logo/LogoLight.png" alt="" />
+  );
   const aboutUsImg = (
     <img
       className="img-fluid"
@@ -15,8 +21,7 @@ const imgScript = () => {
     />
   );
 
-
-  return {aboutUsImg, featureImg};
+  return {logoBlack,logoLight, aboutUsImg, featureImg };
 };
 
 export default imgScript;

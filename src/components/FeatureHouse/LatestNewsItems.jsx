@@ -11,7 +11,7 @@ export default class LatestNewsItems extends Component {
     return (
       <Row>
         {LatestNewsDataList.map((value, index) => (
-          <Col md={4} className="wrapperBody">
+          <Col md={4} className="wrapperBody" key={index}>
             <div className="mainBody">
               <div className="imgFile">
                 <img src={value.img} alt="" />
