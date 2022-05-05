@@ -26,11 +26,17 @@
         font-size: 30px;
         font-weight: 700;
         color: var(--color-white);
-        transition: all .2s;
+        transition: all 0.2s;
       }
-      a:hover{
-          color: var(--primary-theme-color);
+      a:hover {
+        color: var(--primary-theme-color);
       }
     }
+  }
+  @media #{$md-layout-device} {
+    height: 250px;
+  }
+  @media #{$sm-layout-device} {
+    height: 200px;
   }
 }
