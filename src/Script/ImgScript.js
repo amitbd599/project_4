@@ -12,6 +12,13 @@ const imgScript = () => {
       alt=""
     />
   );
+  const aboutUsImg_2 = (
+    <img
+      className="img-fluid"
+      src="/assets/images/aboutUS/aboutUs_2.png"
+      alt=""
+    />
+  );
 
   const featureImg = (
     <img
@@ -21,7 +28,7 @@ const imgScript = () => {
     />
   );
 
-  return {logoBlack,logoLight, aboutUsImg, featureImg };
+  return {logoBlack,logoLight, aboutUsImg, featureImg,aboutUsImg_2 };
 };
 
 export default imgScript;

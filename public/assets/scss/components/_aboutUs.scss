@@ -171,3 +171,61 @@
     }
   }
 }
+
+.companyInfoSection {
+  margin: 120px 0;
+  .wrapper {
+    .leftSide {
+      .wrapperData {
+        overflow: hidden;
+        border-radius: 10px;
+
+        img {
+          border-radius: 10px;
+          width: 100%;
+          transition: all 0.3s linear;
+          &:hover {
+            transform: scale(1.1);
+          }
+        }
+      }
+    }
+    .rightSide {
+      padding-left: 55px;
+      .wrapperData {
+        h2 {
+          font-size: 40px;
+          font-weight: 600;
+        }
+        .text_1 {
+          margin-top: 30px;
+          p {
+            font-size: 15px;
+          }
+        }
+        .listData {
+          margin-top: 20px;
+          h3 {
+            font-size: 18px;
+            font-weight: 700;
+
+            margin-bottom: 15px;
+          }
+          ul {
+            padding-left: 0;
+            margin-bottom: 15px;
+            li {
+              padding: 4px 0;
+              font-size: 15px;
+            }
+            .icon{
+              color: var(--primary-theme-color);
+              margin-right: 10px;
+              font-weight: 500;
+            }
+          }
+        }
+      }
+    }
+  }
+}

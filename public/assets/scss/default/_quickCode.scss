@@ -74,7 +74,7 @@
   @extend %bgImgPosition;
 }
 
-@for $i from 1 through 4{
+@for $i from 1 through 5{
     .bgImg-#{$i}{
         background-image: url(../../images/bgImg/bgImg-#{$i}.jpg) !important;
     }
