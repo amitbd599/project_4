@@ -14,7 +14,7 @@ export default class ProjectSection extends Component {
       <Row>
         {projectDataList.map((value, index) => (
           
-          <Col md={6} lg={4}>
+          <Col  lg={4} md={6} sm={6}>
             <div className="projectItems">
               <div className="projectTextBody">
                 <div className="imgFile">

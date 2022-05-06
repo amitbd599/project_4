@@ -4,9 +4,10 @@ import PageIntro from "../components/common/PageIntro";
 import Header from "../components/header/Header";
 import imgScript from "../Script/ImgScript";
 import { BsArrowRight } from "react-icons/bs";
+import Counter_One from "../Elements/Counter/Counter_One";
 export default class AboutUs extends Component {
   render() {
-    const { aboutUsImg_2 ,aboutUsImg_3 } = imgScript();
+    const { aboutUsImg_2, aboutUsImg_3 } = imgScript();
     return (
       <Fragment>
         {/* Header section start */}
@@ -89,10 +90,22 @@ export default class AboutUs extends Component {
                 <Col md={7} className="leftSide">
                   <div className="textBody">
                     <h1>Who we are</h1>
-                      <h2>Building software for world changers</h2>
-                      <p>Donec metus lorem, vulputate at sapien sit amet, auctor iaculis lorem. In vel hendrerit nisi. Vestibulum eget risus velit. Aliquam tristique libero at dui sodales, et placerat orci lobortis.</p>
-                      <p>Maecenas ipsum neque, elementum id dignissim et, imperdiet vitae mauris. Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur et tempore ipsam totam vero ullam vel exercitationem error sit voluptas?</p>
-                      <a href="#" className="btn-transparent">Read More</a>
+                    <h2>Building software for world changers</h2>
+                    <p>
+                      Donec metus lorem, vulputate at sapien sit amet, auctor
+                      iaculis lorem. In vel hendrerit nisi. Vestibulum eget
+                      risus velit. Aliquam tristique libero at dui sodales, et
+                      placerat orci lobortis.
+                    </p>
+                    <p>
+                      Maecenas ipsum neque, elementum id dignissim et, imperdiet
+                      vitae mauris. Lorem ipsum dolor sit amet consectetur
+                      adipisicing elit. Consequatur et tempore ipsam totam vero
+                      ullam vel exercitationem error sit voluptas?
+                    </p>
+                    <a href="#" className="btn-transparent">
+                      Read More
+                    </a>
                   </div>
                 </Col>
                 <Col md={5} className="rightSide">
@@ -103,6 +116,24 @@ export default class AboutUs extends Component {
           </div>
         </div>
         {/* Company Info section End */}
+        {/* Counter Start */}
+        <div className="counter">
+          <Container>
+            <Row>
+              <div className="wrapper">
+                <div className="textBody">
+                  <h1>Experts The UCFT</h1>
+                  <h2>Our Company Growth</h2>
+                  <p>We have grown strength over the past 20 years.</p>
+                </div>
+                <div className="counterData">
+                  <Counter_One />
+                </div>
+              </div>
+            </Row>
+          </Container>
+        </div>
+        {/* Counter End */}
       </Fragment>
     );
   }

@@ -37,6 +37,14 @@
     .part_2 {
       margin-top: 70px;
       .wrapperBody {
+        @media #{$md-layout-device}{
+          margin-bottom: 30px;
+          text-align: center;
+        }
+        @media #{$sm-layout-device}{
+          margin-bottom: 30px;
+          text-align: center;
+        }
         .mainBody {
           position: relative;
           .imgFile {
@@ -47,6 +55,12 @@
             img {
               transition: all 0.5s linear;
               height: 496px;
+              @media #{$md-layout-device}{
+                height: auto;
+              }
+              @media #{$sm-layout-device}{
+                height: auto;
+              }
             }
             &::after {
               position: absolute;

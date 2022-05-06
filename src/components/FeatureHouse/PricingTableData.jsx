@@ -27,7 +27,7 @@ export default class PricingTableData extends Component {
     return (
       <Row>
         {data.map((value, index) => (
-          <Col lg={4} className="pricing_table_body">
+          <Col lg={4} md={6} sm={6} className="pricing_table_body">
             <div className="wrapper">
               <img className="img-fluid" src={value.img} alt="" />
               <h3>{value.title}</h3>
