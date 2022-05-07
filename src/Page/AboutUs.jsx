@@ -5,6 +5,8 @@ import Header from "../components/header/Header";
 import imgScript from "../Script/ImgScript";
 import { BsArrowRight } from "react-icons/bs";
 import Counter_One from "../Elements/Counter/Counter_One";
+import TeamSection from "../components/FeatureHouse/TeamSection";
+import Footer from "../components/Footer/Footer";
 export default class AboutUs extends Component {
   render() {
     const { aboutUsImg_2, aboutUsImg_3 } = imgScript();
@@ -117,7 +119,7 @@ export default class AboutUs extends Component {
         </div>
         {/* Company Info section End */}
         {/* Counter Start */}
-        <div className="counter">
+        <div className="counterSection">
           <Container>
             <Row>
               <div className="wrapper">
@@ -134,6 +136,65 @@ export default class AboutUs extends Component {
           </Container>
         </div>
         {/* Counter End */}
+
+        {/* Work station Start */}
+        <div className="workStation bgImg-6">
+          <div className="wrapper">
+            <Container>
+              <Row>
+                <Col>
+                  <div className="data">
+                    <h2>Find Your Work Now</h2>
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                      Laudantium molestiae ab, obcaecati tenetur velit
+                      blanditiis saepe libero eum perferendis ratione minus!
+                      Odit temporibus molestiae vitae, facilis cum delectus
+                      maxime obcaecati?
+                    </p>
+                    <a href="#" className="btn-transparent">
+                      GET STARTED
+                    </a>
+                  </div>
+                </Col>
+              </Row>
+            </Container>
+          </div>
+        </div>
+        {/* Work station End */}
+
+        {/* Our team section start*/}
+        <div className="teamSection">
+          <div className="wrapper">
+            <Container>
+              <Row className="part_1">
+                <Col>
+                  <div className="textBody">
+                    <h1>Skilled Team</h1>
+                    <h2>Our Skilled Team</h2>
+                    <p>
+                      Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                      Praesentium officiis ipsa aliquam asperiores a error
+                      perspiciatis pariatur, voluptatibus possimus?
+                    </p>
+                  </div>
+                </Col>
+              </Row>
+              <Row className="part_2">
+                <Col>
+                  <div className="wrapperBody">
+                    <TeamSection />
+                  </div>
+                </Col>
+              </Row>
+            </Container>{" "}
+          </div>
+        </div>
+        {/* Our team section End*/}
+
+        {/* Footer Start */}
+        <Footer />
+        {/* Footer End */}
       </Fragment>
     );
   }

@@ -1,4 +1,5 @@
-.counter {
+.counterSection {
+  background: #F8F9FB;
     padding: 120px 0;
   .wrapper {
     .textBody {
@@ -28,6 +29,29 @@
         }
         @media #{$sm-layout-device} {
           padding: 0;
+        }
+      }
+    }
+  }
+}
+
+.counter_One{
+  .counterValue{
+    .wrapperCounter{
+    background: var(--color-white);
+      border-radius: 10px;
+      padding: 20px;
+      margin: 20px;
+      .inner{
+        text-align: center;
+        .icon{
+          color: var(--primary-theme-color);
+          margin-bottom: 15px;
+          font-size: 40px;
+        }
+        .counter{
+          font-weight: 600;
+          font-size: 50px;
         }
       }
     }

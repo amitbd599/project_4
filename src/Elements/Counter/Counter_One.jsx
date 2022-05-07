@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import CountUp from "react-countup";
 import VisibilitySensor from "react-visibility-sensor";
-
+import { FiHeart, FiClock, FiCheckCircle, FiAward } from "react-icons/fi";
+import { Col, Row } from "react-bootstrap";
 export default class Counter_One extends Component {
   state = { viewCountUp: false };
 
@@ -37,10 +38,29 @@ export default class Counter_One extends Component {
       },
     ];
     return (
-      <div>
-        <div className="counterValue">
+      <div className="counter_One">
+        <Row className="counterValue">
           <VisibilitySensor onChange={this.onChange}></VisibilitySensor>
-        </div>
+
+          {Data.map((value, index) => (
+            <Col className="wrapperCounter" key={index}>
+              <div className="inner">
+                <div className="icon">{value.icon}</div>
+                <h2 className="counter">
+                  <VisibilitySensor
+                    onChange={this.onChange}
+                    delayedCall
+                  >
+                    <CountUp
+                      end={this.state.viewCountUp ? value.countNum : 0}
+                    />
+                  </VisibilitySensor>
+                </h2>
+                <p className="description">{value.countTitle}</p>
+              </div>
+            </Col>
+          ))}
+        </Row>
       </div>
     );
   }
