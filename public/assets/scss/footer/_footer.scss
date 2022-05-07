@@ -1,5 +1,6 @@
 .footer {
-  padding: 60px 0;
+  padding-top: 60px;
+  padding-bottom: 30px;
   background: #1b1b1b;
   .part_1 {
     .wrapperBody {
@@ -23,6 +24,12 @@
           }
         }
       }
+    }
+    @media #{$md-layout-device} {
+      margin-bottom: 40px;
+    }
+    @media #{$sm-layout-device} {
+      margin-bottom: 40px;
     }
   }
   .part_2,
@@ -60,6 +67,12 @@
         }
       }
     }
+    @media #{$md-layout-device} {
+      margin-bottom: 30px;
+    }
+    @media #{$sm-layout-device} {
+      margin-bottom: 20px;
+    }
   }
   .part_4 {
     .wrapperBody {
@@ -86,13 +99,21 @@
           font-size: 14px;
           margin-bottom: 7px;
           color: var(--color-white);
-          .icon{
-              margin-right: 10px;  
-              font-size: 16px;
-              color: var(--primary-theme-color);
+          .icon {
+            margin-right: 10px;
+            font-size: 16px;
+            color: var(--primary-theme-color);
           }
         }
       }
+    }
+  }
+  .copyWrite {
+    text-align: center;
+    margin-top: 20px;
+    p {
+      font-size: 14px;
+      color: var(--color-white);
     }
   }
 }

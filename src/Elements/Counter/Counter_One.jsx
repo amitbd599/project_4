@@ -40,10 +40,9 @@ export default class Counter_One extends Component {
     return (
       <div className="counter_One">
         <Row className="counterValue">
-          <VisibilitySensor onChange={this.onChange}></VisibilitySensor>
 
           {Data.map((value, index) => (
-            <Col className="wrapperCounter" key={index}>
+            <Col lg={3} md={4} sm={6} className="wrapperCounter" key={index}>
               <div className="inner">
                 <div className="icon">{value.icon}</div>
                 <h2 className="counter">

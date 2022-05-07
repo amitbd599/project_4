@@ -1,6 +1,12 @@
 .counterSection {
-  background: #F8F9FB;
-    padding: 120px 0;
+  background: #f8f9fb;
+  padding: 120px 0;
+  @media #{$md-layout-device}{
+    padding: 70px 0;
+  }
+  @media #{$sm-layout-device}{
+    padding: 60px 0;
+  }
   .wrapper {
     .textBody {
       text-align: center;
@@ -35,21 +41,22 @@
   }
 }
 
-.counter_One{
-  .counterValue{
-    .wrapperCounter{
-    background: var(--color-white);
-      border-radius: 10px;
+.counter_One {
+  .counterValue {
+    margin-top: 30px;
+    .wrapperCounter {
       padding: 20px;
-      margin: 20px;
-      .inner{
+      .inner {
+        background: var(--color-white);
         text-align: center;
-        .icon{
+        padding: 15px 0;
+        border-radius: 10px;
+        .icon {
           color: var(--primary-theme-color);
           margin-bottom: 15px;
           font-size: 40px;
         }
-        .counter{
+        .counter {
           font-weight: 600;
           font-size: 50px;
         }

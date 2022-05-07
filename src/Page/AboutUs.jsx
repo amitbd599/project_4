@@ -7,6 +7,8 @@ import { BsArrowRight } from "react-icons/bs";
 import Counter_One from "../Elements/Counter/Counter_One";
 import TeamSection from "../components/FeatureHouse/TeamSection";
 import Footer from "../components/Footer/Footer";
+import TestimonialData from "../components/FeatureHouse/TestimonialData";
+import BrandLogoData from "../Elements/BrandLogo/BrandLogoData";
 export default class AboutUs extends Component {
   render() {
     const { aboutUsImg_2, aboutUsImg_3 } = imgScript();
@@ -25,10 +27,10 @@ export default class AboutUs extends Component {
           <div className="wrapper">
             <Container>
               <Row>
-                <Col md={5} className="leftSide">
+                <Col lg={5} className="leftSide">
                   <div className="wrapperData">{aboutUsImg_2}</div>
                 </Col>
-                <Col md={7} className="rightSide">
+                <Col lg={7} className="rightSide">
                   <div className="wrapperData">
                     <h2>Best Way Unique Company About.</h2>
                     <div className="text_1">
@@ -89,7 +91,7 @@ export default class AboutUs extends Component {
           <div className="wrapper">
             <Container>
               <Row>
-                <Col md={7} className="leftSide">
+                <Col lg={7} className="leftSide">
                   <div className="textBody">
                     <h1>Who we are</h1>
                     <h2>Building software for world changers</h2>
@@ -110,7 +112,7 @@ export default class AboutUs extends Component {
                     </a>
                   </div>
                 </Col>
-                <Col md={5} className="rightSide">
+                <Col lg={5} className="rightSide">
                   {aboutUsImg_3}
                 </Col>
               </Row>
@@ -191,6 +193,42 @@ export default class AboutUs extends Component {
           </div>
         </div>
         {/* Our team section End*/}
+
+        {/* Testimonial Tab section start */}
+        <div className="testimonial_tab">
+          <div className="wrapper">
+            <Container>
+              <TestimonialData />
+            </Container>
+          </div>
+        </div>
+
+        {/* Testimonial Tab section End */}
+
+        {/* Brand Logo Start */}
+        <div className="brandLogo">
+          <div className="wrapper">
+            <Container>
+              <Row className="part_1">
+                <Col>
+                  <div className="wrapperBody">
+                    <h1>Top Clinets</h1>
+                    <h2>We Worked With This Brand</h2>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nostrum commodi optio neque vel sequi hic, dolor esse ea quos ex.</p>
+                  </div>
+                </Col>
+              </Row>
+              <Row className="part_2">
+                <div className="wrapperBody">
+                <div className="iconLogo">
+                  <BrandLogoData/>
+                </div>
+                </div>
+              </Row>
+            </Container>
+          </div>
+        </div>
+        {/* Brand Logo End */}
 
         {/* Footer Start */}
         <Footer />
