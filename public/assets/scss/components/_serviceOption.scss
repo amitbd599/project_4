@@ -1,4 +1,4 @@
-.serviceOption {
+.serviceOption_One {
   padding: 120px 0;
   .wrapper {
     .part_1 {
@@ -72,5 +72,83 @@
   }
   @media #{$sm-layout-device} {
     padding: 70px 0;
+  }
+}
+
+// Service Option for Service Page
+
+.serviceSection_Two {
+  background: #F8F9FB;
+  padding: 120px 0;
+  .wrapper {
+    .part_1 {
+      text-align: center;
+      h1 {
+        font-size: 15px;
+        font-weight: 600;
+        color: var(--primary-theme-color);
+      }
+      h2 {
+        font-size: 40px;
+        font-weight: 600;
+        margin-top: 14px;
+        @media #{$md-layout-device} {
+          font-size: 30px;
+        }
+        @media #{$sm-layout-device} {
+          font-size: 28px;
+        }
+      }
+      p {
+        padding: 0 24%;
+        margin-top: 14px;
+        font-size: 15px;
+        @media #{$md-layout-device} {
+          padding: 0;
+        }
+        @media #{$sm-layout-device} {
+          padding: 0;
+        }
+      }
+    }
+    .part_2 {
+      margin-top: 50px;
+      .wrapper {
+        .wrapperBody {
+          text-align: center;
+          .innerItem {
+            background: var(--color-white);
+            z-index: 99;
+            position: relative;
+            padding: 35px 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            transition: all .3s linear;
+            img {
+              width: 60px;
+            }
+            h2 {
+              font-size: 20px;
+              font-weight: 600;
+              margin-top: 15px;
+            }
+            p {
+              font-size: 15px;
+              line-height: 24px;
+            }
+                &:hover{
+                  transform: translateY(-10px);
+                }
+          
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes shine {
+  100% {
+    left: 125%;
   }
 }

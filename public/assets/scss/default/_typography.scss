@@ -8,13 +8,14 @@
 
 html {
   max-width: 100%;
+  overflow-x: hidden !important;
 }
 img {
   overflow-y: auto;
   overflow: hidden;
 }
 body {
-  overflow-x: hidden;
+  overflow-x: hidden !important;
   font-weight: 400;
   font-size: var(--font-size-lg);
   line-height: var(--line-height-lg);

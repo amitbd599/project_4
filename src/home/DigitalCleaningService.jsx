@@ -7,7 +7,7 @@ import PricingTableData from "../components/FeatureHouse/PricingTableData";
 import ProjectSection from "../components/FeatureHouse/ProjectSection";
 import Header from "../components/header/Header";
 import { IoCheckmarkCircle } from "react-icons/io5";
-import serviceData from "../Data/ServiceData";
+
 import Testimonial from "../Data/Testimonial";
 
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
@@ -20,9 +20,11 @@ import {
 import imgScript from "../Script/ImgScript";
 import LatestNewsItems from "../components/FeatureHouse/LatestNewsItems";
 import Footer from "../components/Footer/Footer";
+import serviceData from "../Data/ServiceData";
 class DigitalCleaningService extends Component {
   render() {
     const { aboutUsImg, featureImg } = imgScript();
+    const {serviceData_One} = serviceData();
     return (
       <Fragment>
         <Helmet pageTitle="Digital Agency" />
@@ -183,7 +185,7 @@ class DigitalCleaningService extends Component {
 
         {/* Service Option Start*/}
 
-        <div className="serviceOption">
+        <div className="serviceOption_One">
           <div className="wrapper">
             <Container>
               <Row>
@@ -199,7 +201,7 @@ class DigitalCleaningService extends Component {
                 </Col>
               </Row>
               <Row className="part_2">
-                {serviceData.map((value, index) => (
+                {serviceData_One.map((value, index) => (
                   <Col md={4} key={index}>
                     <div className="wrapper">
                       <img className="img-fluid" src={value.icon} alt="" />

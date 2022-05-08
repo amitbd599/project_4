@@ -2,6 +2,7 @@ import PropTypes from "prop-types";
 import React, { Fragment } from "react";
 import { Helmet } from "react-helmet";
 const HelmetData = (props) => {
+  console.log(props);
   return (
     <React.Fragment>
       <Helmet>
@@ -14,7 +15,4 @@ const HelmetData = (props) => {
   );
 };
 
-Helmet.propTypes = {
-  title: PropTypes.string,
-};
 export default HelmetData;

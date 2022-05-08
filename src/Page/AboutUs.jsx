@@ -9,11 +9,15 @@ import TeamSection from "../components/FeatureHouse/TeamSection";
 import Footer from "../components/Footer/Footer";
 import TestimonialData from "../components/FeatureHouse/TestimonialData";
 import BrandLogoData from "../Elements/BrandLogo/BrandLogoData";
+import HelmetData from "../components/common/Helmet";
 export default class AboutUs extends Component {
   render() {
     const { aboutUsImg_2, aboutUsImg_3 } = imgScript();
     return (
-      <Fragment>
+      <Fragment> 
+        {/* Helmat Data Start*/}
+        <HelmetData pageTitle="About Us" />
+        {/* Helmat Data End*/}
         {/* Header section start */}
         <Header logo="dark" />
         {/* Header section End */}
@@ -214,15 +218,19 @@ export default class AboutUs extends Component {
                   <div className="wrapperBody">
                     <h1>Top Clinets</h1>
                     <h2>We Worked With This Brand</h2>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nostrum commodi optio neque vel sequi hic, dolor esse ea quos ex.</p>
+                    <p>
+                      Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                      Nostrum commodi optio neque vel sequi hic, dolor esse ea
+                      quos ex.
+                    </p>
                   </div>
                 </Col>
               </Row>
               <Row className="part_2">
                 <div className="wrapperBody">
-                <div className="iconLogo">
-                  <BrandLogoData/>
-                </div>
+                  <div className="iconLogo">
+                    <BrandLogoData />
+                  </div>
                 </div>
               </Row>
             </Container>
