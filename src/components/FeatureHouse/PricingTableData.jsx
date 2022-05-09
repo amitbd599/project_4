@@ -30,7 +30,7 @@ export default class PricingTableData extends Component {
     return (
       <Row>
         {data.map((value, index) => (
-          <Col lg={4} md={6} sm={6} className="pricing_table_body">
+          <Col lg={4} md={6} sm={6} className="pricing_table_body" key={index}>
             <div className="wrapper">
               <div className="text-center">
                 <h2 className="post">{value.post}</h2>
@@ -45,7 +45,6 @@ export default class PricingTableData extends Component {
               <a href="#" className="btn-transparent">
                 Join Now
               </a>
-              {/* <p className="overlay">{value.discount} % OFF</p> */}
             </div>
           </Col>
         ))}

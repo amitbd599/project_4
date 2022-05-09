@@ -4,6 +4,7 @@ import DigitalCleaningService from "./home/DigitalCleaningService";
 import "bootstrap/dist/css/bootstrap.min.css";
 import AboutUs from "./Page/AboutUs";
 import Service from "./Page/Service";
+import ServiceDetails from "./Page/ServiceDetails";
 export default function App() {
   return (
     <BrowserRouter>
@@ -19,6 +20,10 @@ export default function App() {
         <Route
           path="/service" exact 
           element={<Service />} 
+        />
+        <Route
+          path="/service-details" exact 
+          element={<ServiceDetails />} 
         />
       </Routes>
     </BrowserRouter>
