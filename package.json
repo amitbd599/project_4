@@ -10,6 +10,7 @@
     "bootstrap": "^5.1.3",
     "npm-install-global": "^1.0.0",
     "react": "^18.0.0",
+    "react-accessible-accordion": "^5.0.0",
     "react-bootstrap": "^2.3.0",
     "react-countup": "^6.2.0",
     "react-dom": "^18.0.0",

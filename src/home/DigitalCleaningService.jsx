@@ -21,6 +21,7 @@ import imgScript from "../Script/ImgScript";
 import LatestNewsItems from "../components/FeatureHouse/LatestNewsItems";
 import Footer from "../components/Footer/Footer";
 import serviceData from "../Data/ServiceData";
+import BrandLogoData from "../Elements/BrandLogo/BrandLogoData";
 class DigitalCleaningService extends Component {
   render() {
     const { aboutUsImg, featureImg } = imgScript();
@@ -460,6 +461,34 @@ class DigitalCleaningService extends Component {
           </div>
         </div>
         {/* Latest News End */}
+         {/* Brand Logo Start */}
+         <div className="brandLogo mt-100">
+          <div className="wrapper">
+            <Container>
+              <Row className="part_1">
+                <Col>
+                  <div className="wrapperBody">
+                    <h1>Top Clinets</h1>
+                    <h2>We Worked With This Brand</h2>
+                    <p>
+                      Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                      Nostrum commodi optio neque vel sequi hic, dolor esse ea
+                      quos ex.
+                    </p>
+                  </div>
+                </Col>
+              </Row>
+              <Row className="part_2">
+                <div className="wrapperBody">
+                  <div className="iconLogo">
+                    <BrandLogoData />
+                  </div>
+                </div>
+              </Row>
+            </Container>
+          </div>
+        </div>
+        {/* Brand Logo End */}
        
         {/* Footer Start */}
         <Footer />

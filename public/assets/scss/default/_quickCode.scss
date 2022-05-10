@@ -90,14 +90,16 @@
   @extend %bgImgPosition;
 }
 
-@for $i from 1 through 7{
+@for $i from 1 through 8{
     .bgImg-#{$i}{
         background-image: url(../../images/bgImg/bgImg-#{$i}.jpg) !important;
+        background-repeat: no-repeat;
     }
 }
 @for $i from 1 through 4{
     .featureImg-#{$i}{
         background-image: url(../../images/featureHouse/featureImg-#{$i}.png) !important;
+        background-repeat: no-repeat;
     }
 }
 
