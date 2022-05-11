@@ -1,0 +1,176 @@
+.singleBlog {
+  .wrapper {
+    margin: 100px 0;
+    .leftSide {
+      .wrapperBody {
+        .inner {
+          img {
+            border-radius: 10px;
+          }
+          .tagHeader {
+            margin: 20px 0;
+            .headTag a,
+            .date a,
+            .comment a {
+              font-size: 18px;
+              font-weight: 600;
+              color: var(--paragraph-color);
+              margin-right: 6px;
+              &:hover {
+                color: var(--primary-theme-color);
+              }
+              &.active {
+                color: var(--primary-theme-color);
+              }
+            }
+          }
+          h2 {
+            font-size: 30px;
+            font-weight: 600;
+          }
+          h3 {
+            font-size: 22px;
+            font-weight: 600;
+            line-height: 36px;
+          }
+          p {
+            font-size: 15px;
+          }
+          ul {
+            padding-left: 0;
+            margin-bottom: 20px;
+            li {
+              margin-bottom: 8px;
+              .icon {
+                color: var(--primary-theme-color);
+                font-size: 24px;
+                margin-right: 10px;
+              }
+            }
+          }
+          .testimonialItem {
+            background: #fafafb;
+            margin: 30px 0;
+            padding: 20px 10px 20px 25px;
+            border-left: 3px solid var(--primary-theme-color);
+            h4 {
+              font-size: 22px;
+              font-weight: 600;
+            }
+            p {
+              color: var(--paragraph-color);
+              font-size: 20px;
+              font-weight: 500;
+              position: relative;
+              padding-left: 54px;
+              &::after {
+                position: absolute;
+                content: "";
+                width: 40px;
+                height: 3px;
+                background: var(--primary-theme-color);
+                left: 0;
+                top: 50%;
+              }
+            }
+          }
+        }
+        .tagFooter {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          .tagInner {
+            align-items: center;
+            display: flex;
+            ul {
+              display: flex;
+              margin-bottom: 0;
+              padding-left: 10px;
+              li {
+                border: 1px solid #ddd;
+                border-radius: 5px;
+                margin: 0 5px;
+
+                a {
+                  color: var(--paragraph-color);
+                  font-size: 15px;
+                  display: block;
+                  padding: 5px 8px;
+                  transition: all 0.2s;
+                }
+                &:hover {
+                  background-color: var(--primary-theme-color);
+                  border: 1px solid var(--primary-theme-color);
+                  a {
+                    color: var(--color-white);
+                  }
+                }
+              }
+            }
+          }
+          .share {
+            display: flex;
+            align-items: center;
+            span {
+            }
+            ul {
+              display: flex;
+              margin-bottom: 0;
+              padding-left: 10px;
+
+              li {
+                margin: 0 5px;
+                .icon {
+                  font-size: 20px;
+                  transition: all 0.2s;
+                  color: #ababab;
+                  &:hover {
+                    color: var(--primary-theme-color);
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      .topComment {
+        margin: 60px 0;
+        .wrapperBody {
+          .inner {
+            display: flex;
+            padding: 20px 30px;
+            align-items: center;
+            border-radius: 5px;
+            min-height: 300px;
+            width: 100%;
+            background-color: var(--primary-theme-color);
+
+            .imgSection {
+              margin-right: 35px;
+              img {
+                border-radius: 50%;
+              }
+            }
+            .textSection {
+              h3 {
+                color: var(--color-white);
+              }
+              p {
+                color: var(--color-white);
+              }
+            }
+          }
+        }
+      }
+      .commentSection {
+        .wrapperBody {
+          .inner {
+            .commentZoon {
+              display: flex;
+            }
+          }
+        }
+      }
+    }
+  }
+}

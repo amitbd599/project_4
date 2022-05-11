@@ -354,7 +354,7 @@ export default class ServiceDetails extends Component {
                               and database management.
                             </p>
                             <div className="imgCard">
-                              {serviceImg_10}
+                              {serviceImg_11}
                               <div className="items">
                                 <ul>
                                   <li>

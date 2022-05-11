@@ -15,9 +15,11 @@ export default class Service extends Component {
         {/* Helmat Data Start*/}
         <HelmetData pageTitle="Service" />
         {/* Helmat Data End*/}
+        
         {/* Header section start  */}
         <Header logo="dark" />
         {/* Header section End  */}
+
         {/* Page intro start */}
         <PageIntro title="Service" />
         {/* Page intro End */}

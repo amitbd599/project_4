@@ -98,10 +98,10 @@ export default class Header extends Component {
                     </Link>
                     <ul className="submenu">
                       <li>
-                        <Link to="#">Blog</Link>
+                        <Link to="/blog">Blog</Link>
                       </li>
                       <li>
-                        <Link to="#">Blog Details</Link>
+                        <Link to="/blog-details">Blog Details</Link>
                       </li>
                       <li>
                         <Link to="#">Portfolio</Link>

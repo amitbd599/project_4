@@ -3,7 +3,7 @@ import { Col, Row } from "react-bootstrap";
 import LatestNewsData from "../../Data/LatestNewsData";
 export default class LatestNewsItems extends Component {
   render() {
-    if (window.location.pathname === "/latest-news") {
+    if (window.location.pathname === "/blog") {
       var LatestNewsDataList = LatestNewsData.slice(0, this.props.item);
     } else {
       var LatestNewsDataList = LatestNewsData.slice(0, 3);
@@ -18,10 +18,9 @@ export default class LatestNewsItems extends Component {
               </div>
               <div className="overlay">
                 <div className="textFile">
-                  <h3>Awesome Experience </h3>
+                  <h3>{value.title} </h3>
                   <p>
-                    voluptate quo saepe nesciunt aperiam impedit rerum!
-                    Veritatis saepe nesciunt commodi est jufd ikoil blemp.
+                    {value.des}
                   </p>
                   <a href="#" className="btn-transparent_opacity">
                     Read More
