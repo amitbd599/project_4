@@ -164,9 +164,86 @@
       }
       .commentSection {
         .wrapperBody {
+          margin-top: 40px;
           .inner {
+            .headingText {
+              margin-bottom: 20px;
+            }
             .commentZoon {
+              margin-top: 30px;
               display: flex;
+              justify-content: space-between;
+              align-items: flex-start;
+              .imgSection {
+                margin-right: 30px;
+                img {
+                  width: 100px;
+                  border-radius: 50%;
+                }
+              }
+              .textSection {
+                p {
+                  font-size: 15px;
+                  line-height: 25px;
+                }
+                a {
+                  color: var(--paragraph-color);
+                  font-weight: 600;
+                  &:hover {
+                    color: var(--primary-theme-color);
+                  }
+                }
+              }
+            }
+            .replyZoon {
+              margin-left: 50px;
+              margin-top: 25px;
+              display: flex;
+              justify-content: space-between;
+              align-items: flex-start;
+              .imgSection {
+                margin-right: 30px;
+                img {
+                  width: 100px;
+                  border-radius: 50%;
+                }
+              }
+              .textSection {
+                p {
+                  font-size: 15px;
+                  line-height: 25px;
+                }
+                a {
+                  color: var(--paragraph-color);
+                  font-weight: 600;
+                  &:hover {
+                    color: var(--primary-theme-color);
+                  }
+                }
+              }
+            }
+          }
+          .commentForm {
+            .wrapperBody {
+              margin-top: 50px;
+              padding: 60px 38px;
+              box-shadow: 0 10px 60px 0 rgba(89, 86, 233, 0.1);
+              border-radius: 10px;
+              .inner {
+                .form_group {
+                  .form_control {
+                    border-radius: 10px;
+                    height: 50px;
+                    padding: 0 20px;
+                    margin-bottom: 20px;
+                  }
+                  .text_control {
+                    border-radius: 10px;
+                    padding: 20px 20px;
+                    margin-bottom: 20px;
+                  }
+                }
+              }
             }
           }
         }

@@ -15,7 +15,7 @@ export default class Service extends Component {
         {/* Helmat Data Start*/}
         <HelmetData pageTitle="Service" />
         {/* Helmat Data End*/}
-        
+
         {/* Header section start  */}
         <Header logo="dark" />
         {/* Header section End  */}
@@ -102,6 +102,7 @@ export default class Service extends Component {
           </div>
         </div>
         {/* News letter End */}
+
         {/* Brand Logo Start */}
         <div className="brandLogo">
           <div className="wrapper">

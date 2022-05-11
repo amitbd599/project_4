@@ -115,6 +115,7 @@
                 opacity: 0;
               }
               .btn-transparent_opacity {
+                color: var(--color-white);
                 &:hover {
                   background: var(--color-white);
                   color: var(--primary-theme-color);

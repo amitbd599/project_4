@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Col, Row } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import LatestNewsData from "../../Data/LatestNewsData";
 export default class LatestNewsItems extends Component {
   render() {
@@ -19,12 +20,13 @@ export default class LatestNewsItems extends Component {
               <div className="overlay">
                 <div className="textFile">
                   <h3>{value.title} </h3>
-                  <p>
-                    {value.des}
-                  </p>
-                  <a href="#" className="btn-transparent_opacity">
+                  <p>{value.des}</p>
+                  <Link
+                    to={"/blog-details"}
+                    className="btn-transparent_opacity"
+                  >
                     Read More
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>

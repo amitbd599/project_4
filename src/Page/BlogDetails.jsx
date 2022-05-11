@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Col, Container, Row } from "react-bootstrap";
+import { Col, Container, Form, Row } from "react-bootstrap";
 import HelmetData from "../components/common/Helmet";
 import PageIntro from "../components/common/PageIntro";
 import Footer from "../components/Footer/Footer";
@@ -10,6 +10,7 @@ import {
   BsLinkedin,
   BsTwitter,
 } from "react-icons/bs";
+import BrandLogoData from "../Elements/BrandLogo/BrandLogoData";
 export default class BlogDetails extends Component {
   render() {
     return (
@@ -212,7 +213,8 @@ export default class BlogDetails extends Component {
                   <div className="commentSection">
                     <div className="wrapperBody">
                       <div className="inner">
-                        <h3>Popular Comments</h3>
+                        <h3 className="headingText">Popular Comments</h3>
+                        {/* Comment Zoon */}
                         <div className="commentZoon">
                           <div className="imgSection">
                             <img
@@ -237,7 +239,102 @@ export default class BlogDetails extends Component {
                             <a href="#">Reply</a>
                           </div>
                         </div>
+                        {/* Reply Zoon */}
+                        <div className="replyZoon">
+                          <div className="imgSection">
+                            <img
+                              src="/assets/images/Testimonail/Testimonial-1.png"
+                              alt=""
+                            />
+                          </div>
+                          <div className="textSection">
+                            <div className="d-flex jSpace aCenter">
+                              {" "}
+                              <h4 className="name">Admin</h4>
+                              <p className="date">22 Jan 2022</p>
+                            </div>
+                            <p>
+                              Lorem ipsum dolor sit amet consectetur adipisicing
+                              elit. Laborum ex ipsum autem quaerat a natus id
+                              asperiores atque, rem nobis excepturi dolores aut
+                              eos, officiis impedit quibusdam neque iste
+                              ratione.
+                            </p>
+                          </div>
+                        </div>
+                        {/* Comment Zoon */}
+                        <div className="commentZoon">
+                          <div className="imgSection">
+                            <img
+                              src="/assets/images/Testimonail/Testimonial-2.png"
+                              alt=""
+                            />
+                          </div>
+                          <div className="textSection">
+                            <div className="d-flex jSpace aCenter">
+                              {" "}
+                              <h4 className="name">Lili Route</h4>
+                              <p className="date">29 Jan 2022</p>
+                            </div>
+                            <p>
+                              Lorem ipsum dolor sit amet consectetur adipisicing
+                              elit. Laborum ex ipsum autem quaerat a natus id
+                              asperiores atque, rem nobis excepturi dolores aut
+                              eos, officiis impedit quibusdam neque iste
+                              ratione.
+                            </p>
+
+                            <a href="#">Reply</a>
+                          </div>
+                        </div>
                       </div>
+
+                      {/* Comment Form Start */}
+                      <div className="commentForm">
+                        <div className="wrapperBody">
+                          <div className="inner">
+                            <h3>Leave A Comment</h3>
+                            <Form>
+                              <Row>
+                                <Col lg={6}>
+                                  <div className="form_group">
+                                    <input
+                                      type="text"
+                                      class="form_control"
+                                      placeholder="Your Full Name"
+                                      name="name"
+                                      required=""
+                                    />
+                                  </div>
+                                </Col>
+                                <Col lg={6}>
+                                  <div className="form_group">
+                                    <input
+                                      type="text"
+                                      class="form_control"
+                                      placeholder="Your Email Id"
+                                      name="name"
+                                      required=""
+                                    />
+                                  </div>
+                                </Col>
+
+                                <Col lg={12}>
+                                  <div className="form_group">
+                                    <textarea
+                                      id="w3review"
+                                      class="text_control"
+                                      rows="8"
+                                      cols="50"
+                                    ></textarea>
+                                  </div>
+                                </Col>
+                              </Row>
+                            </Form>
+                          </div>
+                        </div>
+                      </div>
+                      {/* Comment Form End */}
                     </div>
                   </div>
                   {/* Commnet Section End */}
@@ -252,6 +349,66 @@ export default class BlogDetails extends Component {
           </div>
         </div>
         {/* Single Blog details End */}
+
+        {/* News letter Start */}
+        <div className="newsLetter">
+          <div className="wrapper">
+            <Container>
+              <Row>
+                <Col className="wrapperBody">
+                  <div className="inner">
+                    {" "}
+                    <h2>Subscribe Newsletter & Stay Update</h2>
+                    <form action="">
+                      <div className="inputGroup pt-30">
+                        <input
+                          className="email"
+                          type="email"
+                          name="email"
+                          placeholder="Enter your email"
+                          required=""
+                        />
+                        <button type="submit" className="myBtn">
+                          Subscribe
+                        </button>
+                      </div>
+                    </form>
+                  </div>
+                </Col>
+              </Row>
+            </Container>
+          </div>
+        </div>
+        {/* News letter End */}
+
+        {/* Brand Logo Start */}
+        <div className="brandLogo">
+          <div className="wrapper">
+            <Container>
+              <Row className="part_1">
+                <Col>
+                  <div className="wrapperBody">
+                    <h1>Top Clinets</h1>
+                    <h2>We Worked With This Brand</h2>
+                    <p>
+                      Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                      Nostrum commodi optio neque vel sequi hic, dolor esse ea
+                      quos ex.
+                    </p>
+                  </div>
+                </Col>
+              </Row>
+              <Row className="part_2">
+                <div className="wrapperBody">
+                  <div className="iconLogo">
+                    <BrandLogoData />
+                  </div>
+                </div>
+              </Row>
+            </Container>
+          </div>
+        </div>
+        {/* Brand Logo End */}
 
         {/* Footer Start */}
         <Footer />
