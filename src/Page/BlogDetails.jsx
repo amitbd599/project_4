@@ -11,6 +11,9 @@ import {
   BsTwitter,
 } from "react-icons/bs";
 import BrandLogoData from "../Elements/BrandLogo/BrandLogoData";
+import { Link } from "react-router-dom";
+import SideBar_One from "../Elements/Sidebar/SideBar_One";
+import RecentNews from "../Elements/Sidebar/RecentNews";
 export default class BlogDetails extends Component {
   render() {
     return (
@@ -329,6 +332,11 @@ export default class BlogDetails extends Component {
                                     ></textarea>
                                   </div>
                                 </Col>
+                                <Col lg={12}>
+                                  <a href="#" className="btn-transparent">
+                                    Submit
+                                  </a>
+                                </Col>
                               </Row>
                             </Form>
                           </div>
@@ -341,7 +349,44 @@ export default class BlogDetails extends Component {
                 </Col>
                 <Col lg={4} className="rightSide">
                   <div className="wrapperBody">
-                    <div className="inner"></div>
+                    <div className="inner">
+                      <div className="form_group">
+                        <input
+                          type="text"
+                          class="form_control"
+                          placeholder="Search here"
+                          name="name"
+                          required=""
+                        />
+                      </div>
+                      <div className="category">
+                        <h3>Category</h3>
+                        <ul>
+                          <li>
+                            <Link to={"#"}>Web Development</Link>
+                          </li>
+                          <li>
+                            <Link to={"#"}>Web Design</Link>
+                          </li>
+                          <li>
+                            <Link to={"#"}>Android Apps</Link>
+                          </li>
+                          <li>
+                            <Link to={"#"}>SEO & SMM</Link>
+                          </li>
+                        </ul>
+                      </div>
+
+                      {/* Side Bar start  */}
+                      <SideBar_One></SideBar_One>
+                      {/* Side Bar End */}
+
+                      {/* Recent News Start */}
+
+                      <RecentNews></RecentNews>
+
+                      {/* Recent News End */}
+                    </div>
                   </div>
                 </Col>
               </Row>

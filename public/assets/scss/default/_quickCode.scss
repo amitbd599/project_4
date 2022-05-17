@@ -10,7 +10,7 @@
   }
 }
 .wrapper {
-  position: relative;
+  // position: relative;
 }
 
 // Scrollbar Design
@@ -97,7 +97,7 @@
   @extend %bgImgPosition;
 }
 
-@for $i from 1 through 8 {
+@for $i from 1 through 9 {
   .bgImg-#{$i} {
     background-image: url(../../images/bgImg/bgImg-#{$i}.jpg) !important;
     background-repeat: no-repeat;

@@ -20,7 +20,7 @@ export default class Blog extends Component {
         {/* Header section End  */}
 
         {/* Page intro start */}
-        <PageIntro title="Service" />
+        <PageIntro title="Blog" />
         {/* Page intro End */}
 
         {/* Blog items start */}
