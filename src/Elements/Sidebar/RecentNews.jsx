@@ -5,7 +5,7 @@ export default class RecentNews extends Component {
     return (
       <div className="recentNews">
         <div className="newsData">
-          <div className="inner">
+          <div className="newsData_inner">
             <h2>Recent News</h2>
 
             <div className="item">

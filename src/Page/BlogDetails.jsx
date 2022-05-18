@@ -14,6 +14,7 @@ import BrandLogoData from "../Elements/BrandLogo/BrandLogoData";
 import { Link } from "react-router-dom";
 import SideBar_One from "../Elements/Sidebar/SideBar_One";
 import RecentNews from "../Elements/Sidebar/RecentNews";
+import TagBox from "../Elements/Sidebar/TagBox";
 export default class BlogDetails extends Component {
   render() {
     return (
@@ -32,7 +33,7 @@ export default class BlogDetails extends Component {
 
         {/* Single Blog details start */}
         <div className="singleBlog">
-          <div className="wrapper">
+          <div className="singleBlog_wrapper">
             <Container>
               <Row>
                 <Col lg={8} className="leftSide">
@@ -386,6 +387,12 @@ export default class BlogDetails extends Component {
                       <RecentNews></RecentNews>
 
                       {/* Recent News End */}
+
+                      {/* TagBox Start */}
+
+                      <TagBox></TagBox>
+
+                      {/* TagBox End */}
                     </div>
                   </div>
                 </Col>

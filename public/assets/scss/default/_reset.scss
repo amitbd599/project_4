@@ -41,7 +41,7 @@ a {
   text-decoration: none !important;
 }
 a:visited {
-  color: #b40404;
+  // color: #b40404;
 }
 a:focus {
   outline: thin dotted;
@@ -119,6 +119,7 @@ ul {
 }
 ul {
   list-style: none;
+  padding: 0 !important;
 }
 
 nav ul,
@@ -131,7 +132,7 @@ li > ul,
 li > ol {
   margin: 0;
 }
-li{
+li {
   font-family: var(--body-font);
 }
 img {

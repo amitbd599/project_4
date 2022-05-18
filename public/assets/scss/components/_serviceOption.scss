@@ -144,6 +144,11 @@
       }
     }
   }
+  @media #{$md-layout-device} {
+  }
+  @media #{$sm-layout-device} {
+    padding: 70px 0;
+  }
 }
 
 @keyframes shine {
@@ -208,12 +213,12 @@
                 color: var(--primary-theme-color);
                 margin-right: 10px;
               }
-              @media #{$md-layout-device}{
+              @media #{$md-layout-device} {
                 display: block;
-                img{
+                img {
                   margin-bottom: 15px;
                 }
-                ul{
+                ul {
                   padding-left: 0;
                 }
               }
@@ -265,6 +270,9 @@
             &:hover {
               color: var(--primary-theme-color);
               background-color: #f0f1f4;
+            }
+            &:focus::after {
+              background: transparent !important;
             }
           }
           .react-tabs__tab--selected {
