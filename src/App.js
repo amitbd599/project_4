@@ -8,6 +8,7 @@ import ServiceDetails from "./Page/ServiceDetails";
 import Blog from "./Page/Blog";
 import BlogDetails from "./Page/BlogDetails";
 import Project from "./Page/Project";
+import ProjectDetails from "./Page/ProjectDetails";
 export default function App() {
   return (
     <BrowserRouter>
@@ -19,6 +20,7 @@ export default function App() {
         <Route path="/blog" exact element={<Blog />} />
         <Route path="/blog-details" exact element={<BlogDetails />} />
         <Route path="/project" exact element={<Project />} />
+        <Route path="/project-details" exact element={<ProjectDetails />} />
       </Routes>
     </BrowserRouter>
   );

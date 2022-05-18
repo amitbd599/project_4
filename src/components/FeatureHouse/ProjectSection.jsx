@@ -8,6 +8,8 @@ export default class ProjectSection extends Component {
   render() {
     if (window.location.pathname === "/project") {
       var projectDataList = projectData.slice(0, this.props.item);
+    } else if (window.location.pathname === "/project-details") {
+      var projectDataList = projectData.slice(0, 3);
     } else {
       var projectDataList = projectData.slice(0, 6);
     }

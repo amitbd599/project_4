@@ -107,7 +107,7 @@ export default class Header extends Component {
                         <Link to="/project">Project</Link>
                       </li>
                       <li>
-                        <Link to="#">Project Details</Link>
+                        <Link to="/project-details">Project Details</Link>
                       </li>
                       <li>
                         <Link to="#">Team</Link>

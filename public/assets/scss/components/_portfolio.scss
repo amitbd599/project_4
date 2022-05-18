@@ -37,3 +37,103 @@
     }
   }
 }
+
+// single portfolio details start
+
+.portfolioDetails {
+  .wrapper {
+    .wrapperBody {
+      .part_1 {
+        margin-top: 80px;
+        .imgSection {
+          img {
+            border-radius: 10px;
+          }
+        }
+      }
+      .part_2 {
+        margin-top: 70px;
+        .cardItem {
+          background-color: #ffece3a8;
+          border-radius: 10px;
+          padding: 40px 35px;
+          .items {
+            margin-bottom: 15px;
+            p {
+              &:nth-child(1) {
+                font-size: 20px;
+                font-weight: 600;
+                color: #333;
+                margin-bottom: 2px;
+              }
+              &:nth-child(2) {
+                font-size: 15px;
+              }
+            }
+          }
+        }
+        .descriptionSection {
+          .textBig {
+            font-size: 18px;
+          }
+          .text {
+            font-size: 16px;
+          }
+          .points {
+            display: flex;
+            ul {
+              margin-right: 60px;
+            }
+            li {
+              margin-bottom: 12px;
+              font-size: 18px;
+              font-weight: 500;
+              color: #333;
+            }
+            .icon {
+              margin-right: 5px;
+              color: var(--primary-theme-color);
+            }
+          }
+          .boxItem {
+            display: flex;
+            justify-content: space-between;
+            .items {
+              padding: 35px 20px;
+              width: 235px;
+              border: 1px solid #ddd;
+              border-radius: 10px;
+              .count {
+                width: 80px;
+                height: 80px;
+                color: #fff;
+                font-weight: 600;
+                font-size: 22px;
+                background-color: var(--primary-theme-color);
+                border-radius: 50%;
+                align-items: center;
+                position: relative;
+                display: flex;
+                justify-content: center;
+                margin-bottom: 22px;
+              }
+              h4 {
+                font-size: 18px;
+                margin-bottom: 15px !important;
+              }
+              p {
+                font-size: 14px !important;
+              }
+            }
+          }
+        }
+      }
+      .part_3 {
+        margin-top: 80px;
+        h2 {
+          font-size: 40px;
+        }
+      }
+    }
+  }
+}

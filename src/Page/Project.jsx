@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Col, Container, Row } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import HelmetData from "../components/common/Helmet";
 import PageIntro from "../components/common/PageIntro";
 import ProjectSection from "../components/FeatureHouse/ProjectSection";
@@ -40,13 +41,16 @@ export default class Project extends Component {
                 </Col>
               </Row>
               <div className="part_2">
-                <div className="wrapperBody">
+                <div className="wrapperBody text-center">
                   <ProjectSection />
-                  {/* <Slider_Project></Slider_Project> */}
+                  <Link className="btn-transparent mt-30 " to={"#"}>
+                    Load More
+                  </Link>
                 </div>
               </div>
               <div></div>
             </Container>
+            {/* Project Slider Start */}
             <div className="sliderProject">
               <Container>
                 <Row>
@@ -59,13 +63,10 @@ export default class Project extends Component {
                 </Row>
               </Container>
             </div>
+            {/* Project Slider End */}
           </div>
         </div>
         {/* Project section End */}
-
-        {/* Project Slider Start */}
-
-        {/* Project Slider End */}
 
         {/* Footer Start */}
         <Footer />
