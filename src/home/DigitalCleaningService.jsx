@@ -13,19 +13,17 @@ import Testimonial from "../Data/Testimonial";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 import sliderList from "../Data/SlideList";
-import {
-  SliderSettings,
-  TestimonialSliderSetting,
-} from "../Script/Slider_Script_Data";
 import imgScript from "../Script/ImgScript";
 import LatestNewsItems from "../components/FeatureHouse/LatestNewsItems";
 import Footer from "../components/Footer/Footer";
 import serviceData from "../Data/ServiceData";
 import BrandLogoData from "../Elements/BrandLogo/BrandLogoData";
+import sliderSetting from "../Script/Slider_Script_Data";
 class DigitalCleaningService extends Component {
   render() {
     const { aboutUsImg, featureImg } = imgScript();
-    const {serviceData_One} = serviceData();
+    const { serviceData_One } = serviceData();
+    const { SliderSettings, TestimonialSliderSetting } = sliderSetting();
     return (
       <Fragment>
         <Helmet pageTitle="Digital Agency" />
@@ -461,8 +459,8 @@ class DigitalCleaningService extends Component {
           </div>
         </div>
         {/* Latest News End */}
-         {/* Brand Logo Start */}
-         <div className="brandLogo mt-100">
+        {/* Brand Logo Start */}
+        <div className="brandLogo mt-100">
           <div className="wrapper">
             <Container>
               <Row className="part_1">
@@ -489,7 +487,7 @@ class DigitalCleaningService extends Component {
           </div>
         </div>
         {/* Brand Logo End */}
-       
+
         {/* Footer Start */}
         <Footer />
         {/* Footer End */}

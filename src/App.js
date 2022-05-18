@@ -7,6 +7,7 @@ import Service from "./Page/Service";
 import ServiceDetails from "./Page/ServiceDetails";
 import Blog from "./Page/Blog";
 import BlogDetails from "./Page/BlogDetails";
+import Project from "./Page/Project";
 export default function App() {
   return (
     <BrowserRouter>
@@ -17,6 +18,7 @@ export default function App() {
         <Route path="/service-details" exact element={<ServiceDetails />} />
         <Route path="/blog" exact element={<Blog />} />
         <Route path="/blog-details" exact element={<BlogDetails />} />
+        <Route path="/project" exact element={<Project />} />
       </Routes>
     </BrowserRouter>
   );
