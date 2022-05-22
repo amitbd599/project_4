@@ -14,7 +14,7 @@ export default class AboutUs extends Component {
   render() {
     const { aboutUsImg_2, aboutUsImg_3 } = imgScript();
     return (
-      <Fragment> 
+      <Fragment>
         {/* Helmat Data Start*/}
         <HelmetData pageTitle="About Us" />
         {/* Helmat Data End*/}
@@ -42,15 +42,6 @@ export default class AboutUs extends Component {
                         Lorem ipsum dolor sit, amet consectetur adipisicing
                         elit. Culpa incidunt placeat doloribus, hic pariatur
                         obcaecati ipsa. Nulla cupiditate soluta laudantium?
-                        Lorem ipsum dolor sit, amet consectetur adipisicing
-                        elit. Culpa incidunt placeat doloribus, hic pariatur
-                        obcaecati ipsa. Nulla cupiditate soluta laudantium?
-                      </p>
-                      <p>
-                        Lorem ipsum dolor sit, amet consectetur adipisicing
-                        elit. Culpa incidunt placeat doloribus, hic pariatur
-                        obcaecati ipsa. Nulla cupiditate soluta laudantium?
-                        <br />
                         Lorem ipsum dolor sit, amet consectetur adipisicing
                         elit. Culpa incidunt placeat doloribus, hic pariatur
                         obcaecati ipsa. Nulla cupiditate soluta laudantium?

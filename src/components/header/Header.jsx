@@ -110,13 +110,11 @@ export default class Header extends Component {
                         <Link to="/project-details">Project Details</Link>
                       </li>
                       <li>
-                        <Link to="#">Team</Link>
+                        <Link to="/team">Team</Link>
                       </li>
+
                       <li>
-                        <Link to="#">Progressbar</Link>
-                      </li>
-                      <li>
-                        <Link to="#">404</Link>
+                        <Link to="/404">404</Link>
                       </li>
                     </ul>
                   </li>

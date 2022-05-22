@@ -1,9 +1,9 @@
 .teamSection {
   padding: 120px 0;
-  @media #{$md-layout-device}{
+  @media #{$md-layout-device} {
     padding: 70px 0;
   }
-  @media #{$sm-layout-device}{
+  @media #{$sm-layout-device} {
     padding: 60px 0;
   }
   .wrapper {
@@ -45,7 +45,7 @@
           cursor: pointer;
           border-radius: 10px;
           margin-bottom: 40px;
-          transition: all .3s linear;
+          transition: all 0.3s linear;
           .iconSection {
             position: absolute;
             top: 0;
@@ -83,7 +83,7 @@
             overflow: hidden;
             .text {
               z-index: 99;
-              transition: all 0.3s linear .2s;
+              transition: all 0.3s linear 0.2s;
               transform: translateY(55px);
               h2 {
                 font-size: 20px;
@@ -103,7 +103,7 @@
             margin-left: 25px;
             .iconSectionWrap {
               .icon {
-                  z-index: 99;
+                z-index: 99;
                 margin-right: 8px;
                 visibility: hidden;
                 opacity: 0;
@@ -149,3 +149,5 @@
     }
   }
 }
+
+// Team Page
