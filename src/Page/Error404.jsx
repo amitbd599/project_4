@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import HelmetData from "../components/common/Helmet";
-import PageIntro from "../components/common/PageIntro";
 import Footer from "../components/Footer/Footer";
 import Header from "../components/header/Header";
 
@@ -35,10 +34,14 @@ export default class Error404 extends Component {
                       </div>
 
                       <div className="errorBtn">
-                        <Link className="btn-transparent" to={"/"}>
+                        <Link className="small_solid_color" to={"/"}>
                           BACK TO HOMEPAGE
                         </Link>
                       </div>
+
+                      {/* ********** */}
+
+                      <div></div>
                     </div>
                   </Col>
                 </Row>

@@ -11,11 +11,15 @@ import Project from "./Page/Project";
 import ProjectDetails from "./Page/ProjectDetails";
 import Team from "./Page/Team";
 import Error404 from "./Page/Error404";
-import ScrollToTop from "./Script/PageScrollTop";
+import PageScrollTop from "./Script/PageScrollTop";
+import ScrollToTop from "react-scroll-to-top";
+import Gallery from "./Elements/Blocks/Gallery";
+import Button from "./Elements/Blocks/Button";
 export default function App() {
   return (
     <BrowserRouter>
-      <ScrollToTop />
+      <PageScrollTop />
+      <ScrollToTop smooth />
       <Routes>
         <Route path="/" exact element={<DigitalCleaningService />} />
         <Route path="/about-us" exact element={<AboutUs />} />
@@ -26,6 +30,8 @@ export default function App() {
         <Route path="/project" exact element={<Project />} />
         <Route path="/project-details" exact element={<ProjectDetails />} />
         <Route path="/team" exact element={<Team />} />
+        <Route path="/gallery" exact element={<Gallery />} />
+        <Route path="/button" exact element={<Button />} />
 
         <Route path="*" exact element={<Error404 />} />
       </Routes>

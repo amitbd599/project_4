@@ -2,9 +2,160 @@
     Button Option 
 ===========================*/
 
-.btn-transparent {
+// Big Button
+
+.buttonSection {
+  .items {
+    @media #{$md-layout-device} {
+      margin-bottom: 15px;
+    }
+  }
+}
+
+.big_solid_color {
   @extend %transition;
-  text-decoration: none;
+  font-size: 19px;
+  border: 2px solid var(--primary-theme-color);
+  background: var(--primary-theme-color);
+  color: var(--color-white);
+  border-radius: 10px;
+  font-weight: 600;
+  position: relative;
+  padding: 20px 50px;
+  display: inline-block;
+
+  &:hover {
+    color: var(--primary-theme-color);
+    background: transparent;
+  }
+}
+.big_border_color {
+  @extend %transition;
+  font-size: 19px;
+  border: 2px solid var(--primary-theme-color);
+  background: var(--color-white);
+  color: var(--primary-theme-color);
+  border-radius: 10px;
+  font-weight: 600;
+  position: relative;
+  padding: 20px 50px;
+  display: inline-block;
+
+  &:hover {
+    color: var(--color-white);
+    background: var(--primary-theme-color);
+  }
+}
+.big_dark_solid_color {
+  @extend %transition;
+  font-size: 19px;
+  border: 2px solid #333;
+  background: #333;
+  color: var(--color-white);
+  border-radius: 10px;
+  font-weight: 600;
+  position: relative;
+  padding: 20px 50px;
+  display: inline-block;
+
+  &:hover {
+    color: #333;
+    background: var(--color-white);
+  }
+}
+.big_dark_border_color {
+  @extend %transition;
+  font-size: 19px;
+  border: 2px solid #333;
+  background: #fff;
+  color: #333;
+  border-radius: 10px;
+  font-weight: 600;
+  position: relative;
+  padding: 20px 50px;
+  display: inline-block;
+
+  &:hover {
+    color: #fff;
+    background: #333;
+  }
+}
+
+// Medium Button
+
+.medium_solid_color {
+  @extend %transition;
+  font-size: 16px;
+  border: 2px solid var(--primary-theme-color);
+  background: var(--primary-theme-color);
+  color: var(--color-white);
+  border-radius: 10px;
+  font-weight: 600;
+  position: relative;
+  padding: 16px 35px;
+  display: inline-block;
+
+  &:hover {
+    color: var(--primary-theme-color);
+    background: transparent;
+  }
+}
+.medium_border_color {
+  @extend %transition;
+  font-size: 19px;
+  border: 2px solid var(--primary-theme-color);
+  background: var(--color-white);
+  color: var(--primary-theme-color);
+  border-radius: 10px;
+  font-weight: 600;
+  position: relative;
+  padding: 16px 35px;
+  display: inline-block;
+
+  &:hover {
+    color: var(--color-white);
+    background: var(--primary-theme-color);
+  }
+}
+.medium_dark_solid_color {
+  @extend %transition;
+  font-size: 19px;
+  border: 2px solid #333;
+  background: #333;
+  color: var(--color-white);
+  border-radius: 10px;
+  font-weight: 600;
+  position: relative;
+  padding: 16px 35px;
+  display: inline-block;
+
+  &:hover {
+    color: #333;
+    background: var(--color-white);
+  }
+}
+.medium_dark_border_color {
+  @extend %transition;
+  font-size: 19px;
+  border: 2px solid #333;
+  background: #fff;
+  color: #333;
+  border-radius: 10px;
+  font-weight: 600;
+  position: relative;
+  padding: 16px 35px;
+  display: inline-block;
+
+  &:hover {
+    color: #fff;
+    background: #333;
+  }
+}
+
+// Small Button
+
+.small_solid_color {
+  @extend %transition;
   font-size: 16px;
   border: 2px solid var(--primary-theme-color);
   background: var(--primary-theme-color);
@@ -20,12 +171,28 @@
     background: transparent;
   }
 }
-.btn-transparent_opacity {
+.small_border_color {
   @extend %transition;
-  text-decoration: none;
   font-size: 16px;
-  border: 2px solid var(--color-white);
-  background: transparent;
+  border: 2px solid var(--primary-theme-color);
+  background: var(--color-white);
+  color: var(--primary-theme-color);
+  border-radius: 10px;
+  font-weight: 600;
+  position: relative;
+  padding: 10px 20px;
+  display: inline-block;
+
+  &:hover {
+    color: var(--color-white);
+    background: var(--primary-theme-color);
+  }
+}
+.small_dark_solid_color {
+  @extend %transition;
+  font-size: 16px;
+  border: 2px solid #333;
+  background: #333;
   color: var(--color-white);
   border-radius: 10px;
   font-weight: 600;
@@ -34,8 +201,25 @@
   display: inline-block;
 
   &:hover {
-    color: var(--primary-theme-color);
-    background: transparent;
+    color: #333;
+    background: var(--color-white);
+  }
+}
+.small_dark_border_color {
+  @extend %transition;
+  font-size: 16px;
+  border: 2px solid #333;
+  background: #fff;
+  color: #333;
+  border-radius: 10px;
+  font-weight: 600;
+  position: relative;
+  padding: 10px 20px;
+  display: inline-block;
+
+  &:hover {
+    color: #fff;
+    background: #333;
   }
 }
 
@@ -54,9 +238,9 @@
   border-radius: 10px;
   font-weight: 600;
   padding: 10px 20px;
-  &:hover{
-      background: transparent;
-      color: #fff;
+  &:hover {
+    background: transparent;
+    color: #fff;
   }
 }
 

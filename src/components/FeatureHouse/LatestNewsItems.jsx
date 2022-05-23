@@ -23,7 +23,7 @@ export default class LatestNewsItems extends Component {
                   <p>{value.des}</p>
                   <Link
                     to={"/blog-details"}
-                    className="btn-transparent_opacity"
+                    className="small_solid_color_opacity"
                   >
                     Read More
                   </Link>

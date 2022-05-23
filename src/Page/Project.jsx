@@ -43,7 +43,7 @@ export default class Project extends Component {
               <div className="part_2">
                 <div className="wrapperBody text-center">
                   <ProjectSection />
-                  <Link className="btn-transparent mt-30 " to={"#"}>
+                  <Link className="small_solid_color mt-30 " to={"#"}>
                     Load More
                   </Link>
                 </div>

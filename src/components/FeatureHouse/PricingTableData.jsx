@@ -37,12 +37,13 @@ export default class PricingTableData extends Component {
                 <img className="img-fluid" src={value.img} alt="" />
                 <p className="mt-15">
                   {" "}
-                  <span className="price">${value.price}</span> <span>/ Month</span>
+                  <span className="price">${value.price}</span>{" "}
+                  <span>/ Month</span>
                 </p>
               </div>
               <h3 className="title">{value.title}</h3>
               <p className="des">{value.des}</p>
-              <a href="#" className="btn-transparent">
+              <a href="#" className="small_solid_color">
                 Join Now
               </a>
             </div>

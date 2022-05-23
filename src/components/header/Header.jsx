@@ -65,9 +65,9 @@ export default class Header extends Component {
           <div className="header-wrapper" id="header-wrapper">
             <div className="header-left">
               <div className="logo">
-                <a href="/">
+                <Link to={"/"}>
                   <h2>{logoURL}</h2>
-                </a>
+                </Link>
               </div>
             </div>
             <div className="header-right">
@@ -122,7 +122,7 @@ export default class Header extends Component {
                     <Link to="#">Blocks</Link>
                     <ul className="submenu">
                       <li>
-                        <Link to="#">Button</Link>
+                        <Link to="/button">Button</Link>
                       </li>
                       <li>
                         <Link to="#">Video Popup</Link>
@@ -131,7 +131,7 @@ export default class Header extends Component {
                         <Link to="#">Progress Bar</Link>
                       </li>
                       <li>
-                        <Link to="#">Gallery</Link>
+                        <Link to="/gallery">Gallery</Link>
                       </li>
                       <li>
                         <Link to="#">Counters</Link>
@@ -163,7 +163,7 @@ export default class Header extends Component {
                   {this.state.active ? "English" : "Spanish "}
                 </span>
                 <span>
-                  <a className="btn-transparent" href="#">
+                  <a className="small_solid_color" href="#">
                     BUY NOW!
                   </a>
                 </span>

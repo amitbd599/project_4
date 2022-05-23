@@ -102,7 +102,7 @@ export default class AboutUs extends Component {
                       adipisicing elit. Consequatur et tempore ipsam totam vero
                       ullam vel exercitationem error sit voluptas?
                     </p>
-                    <a href="#" className="btn-transparent">
+                    <a href="#" className="small_solid_color">
                       Read More
                     </a>
                   </div>
@@ -149,7 +149,7 @@ export default class AboutUs extends Component {
                       Odit temporibus molestiae vitae, facilis cum delectus
                       maxime obcaecati?
                     </p>
-                    <a href="#" className="btn-transparent">
+                    <a href="#" className="small_solid_color">
                       GET STARTED
                     </a>
                   </div>

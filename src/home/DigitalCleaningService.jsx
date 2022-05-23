@@ -69,7 +69,7 @@ class DigitalCleaningService extends Component {
                               ""
                             )}
                             {value.buttonText ? (
-                              <div className="btn-transparent mt-lg-30 mt-sm-15">
+                              <div className="small_solid_color mt-lg-30 mt-sm-15">
                                 <a
                                   className="btn-default text-light"
                                   href={`${value.buttonLink}`}
@@ -224,7 +224,7 @@ class DigitalCleaningService extends Component {
                             Product Management
                           </span>
                         </div>
-                        <a href="#" className="btn-transparent">
+                        <a href="#" className="small_solid_color">
                           Read More
                         </a>
                       </div>
@@ -450,7 +450,7 @@ class DigitalCleaningService extends Component {
                 <LatestNewsItems />
 
                 <div className="text-center mt-30">
-                  <a href="#" className="btn-transparent">
+                  <a href="#" className="small_solid_color">
                     View More
                   </a>
                 </div>

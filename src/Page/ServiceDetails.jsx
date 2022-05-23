@@ -510,7 +510,8 @@ export default class ServiceDetails extends Component {
                                   <li>
                                     {" "}
                                     <BsFillArrowRightCircleFill className="icon" />
-                                    UX design is focused on anything that affects
+                                    UX design is focused on anything that
+                                    affects
                                   </li>
                                   <li>
                                     {" "}
@@ -536,47 +537,64 @@ export default class ServiceDetails extends Component {
                                 <AccordionItem>
                                   <AccordionItemHeading>
                                     <AccordionItemButton>
-                                    What should I learn first UI or UX?
+                                      What should I learn first UI or UX?
                                     </AccordionItemButton>
                                   </AccordionItemHeading>
                                   <AccordionItemPanel>
                                     <p>
-                                    UX design usually comes first in the product development process, followed by UI. The UX designer maps out the bare bones of the user journey; the UI designer then fills it in with visual and interactive elements.
+                                      UX design usually comes first in the
+                                      product development process, followed by
+                                      UI. The UX designer maps out the bare
+                                      bones of the user journey; the UI designer
+                                      then fills it in with visual and
+                                      interactive elements.
                                     </p>
                                   </AccordionItemPanel>
                                 </AccordionItem>
                                 <AccordionItem>
                                   <AccordionItemHeading>
                                     <AccordionItemButton>
-                                    Do UX designers make apps?                                    </AccordionItemButton>
+                                      Do UX designers make apps?{" "}
+                                    </AccordionItemButton>
                                   </AccordionItemHeading>
                                   <AccordionItemPanel>
                                     <p>
-                                    The UX designer role is to make a product or service usable, enjoyable, and accessible. While many companies design user experiences, the term is most often associated with digital design for websites and apps.
+                                      The UX designer role is to make a product
+                                      or service usable, enjoyable, and
+                                      accessible. While many companies design
+                                      user experiences, the term is most often
+                                      associated with digital design for
+                                      websites and apps.
                                     </p>
                                   </AccordionItemPanel>
                                 </AccordionItem>
                                 <AccordionItem>
                                   <AccordionItemHeading>
                                     <AccordionItemButton>
-                                    Which font family is best for UI?
+                                      Which font family is best for UI?
                                     </AccordionItemButton>
                                   </AccordionItemHeading>
                                   <AccordionItemPanel>
                                     <p>
-                                    Roboto. Roboto was interestingly chosen by Google as the main font for its mobile operating system on Android phones, making it a popular choice as a font for app UI design.
+                                      Roboto. Roboto was interestingly chosen by
+                                      Google as the main font for its mobile
+                                      operating system on Android phones, making
+                                      it a popular choice as a font for app UI
+                                      design.
                                     </p>
                                   </AccordionItemPanel>
                                 </AccordionItem>
                                 <AccordionItem>
                                   <AccordionItemHeading>
                                     <AccordionItemButton>
-                                    Which tool is used for UX design?
+                                      Which tool is used for UX design?
                                     </AccordionItemButton>
                                   </AccordionItemHeading>
                                   <AccordionItemPanel>
                                     <p>
-                                    InVision. InVision is a prototyping tool that allows UX/UI designers to design mockups and create interactive prototypes.
+                                      InVision. InVision is a prototyping tool
+                                      that allows UX/UI designers to design
+                                      mockups and create interactive prototypes.
                                     </p>
                                   </AccordionItemPanel>
                                 </AccordionItem>
@@ -604,7 +622,7 @@ export default class ServiceDetails extends Component {
                           <h3 className="mb-50">+ 99 456 898</h3>
                           <hr />
                           <h3 className="mb-20">DOWNLOAD BROCHURE</h3>
-                          <a href="#" className="btn-transparent">
+                          <a href="#" className="small_solid_color">
                             Download PDF Now
                           </a>
                         </div>

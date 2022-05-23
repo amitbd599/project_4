@@ -8,7 +8,9 @@ import sliderList from "../Data/SlideList";
 import { SliderSettings } from "../Script/Slider_Script_Data";
 
 const DigitalCleaningService = () => {
-  const featureImg = <img src="/public/assets/images/featureHouse/services-women 1.png" alt="" />;
+  const featureImg = (
+    <img src="/public/assets/images/featureHouse/services-women 1.png" alt="" />
+  );
   return (
     <Fragment>
       <Helmet pageTitle="Digital Agency" />
@@ -50,7 +52,7 @@ const DigitalCleaningService = () => {
                             ""
                           )}
                           {value.buttonText ? (
-                            <div className="btn-transparent mt-lg-30 mt-sm-15">
+                            <div className="small_solid_color mt-lg-30 mt-sm-15">
                               <a
                                 className="btn-default text-light"
                                 href={`${value.buttonLink}`}
@@ -71,7 +73,7 @@ const DigitalCleaningService = () => {
           </Slider>
         </div>
       </div>
-       {/* Slider section End */}
+      {/* Slider section End */}
 
       {/* Feature House start */}
       <div className="featureHouse">
@@ -79,25 +81,26 @@ const DigitalCleaningService = () => {
           <Container>
             <Row>
               <Col md={7}>
-                  <div className="textBody">
-                      <h2 className="title">FUTURE HOUSE</h2>
-                      <p className="description">What you look your hopefull house we can be made it for yours. We can be design yours house so dont woory you can hire us. Beautiful and hand made design we can be create.</p>
-                  </div>
-                  <div className="itemsBox">
-
-                  </div>
+                <div className="textBody">
+                  <h2 className="title">FUTURE HOUSE</h2>
+                  <p className="description">
+                    What you look your hopefull house we can be made it for
+                    yours. We can be design yours house so dont woory you can
+                    hire us. Beautiful and hand made design we can be create.
+                  </p>
+                </div>
+                <div className="itemsBox"></div>
               </Col>
               <Col md={5}>
-                  <div className="imgSection">
+                <div className="imgSection">
                   <img src={featureImg} alt="" />
-                  </div>
+                </div>
               </Col>
             </Row>
           </Container>
         </div>
       </div>
       {/* Feature House End */}
-
     </Fragment>
   );
 };

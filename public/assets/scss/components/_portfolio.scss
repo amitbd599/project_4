@@ -191,3 +191,36 @@
     }
   }
 }
+
+// Portfolio gallery
+
+.galleryOption {
+  margin-top: 80px;
+  margin-bottom: 100px;
+  .wrapper {
+    .wrapperBody {
+      .inner {
+        .item {
+          margin: 40px 0;
+          img {
+            cursor: pointer;
+            transition: all 0.3s linear;
+            border-radius: 10px;
+            &:hover {
+              transform: translateY(-10px);
+            }
+          }
+          h5 {
+            font-size: 18px;
+            color: var(--primary-theme-color);
+            margin-top: 20px;
+          }
+          h2 {
+            font-size: 30px;
+            margin-top: 10px;
+          }
+        }
+      }
+    }
+  }
+}

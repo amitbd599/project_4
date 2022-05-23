@@ -334,7 +334,7 @@ export default class BlogDetails extends Component {
                                   </div>
                                 </Col>
                                 <Col lg={12}>
-                                  <a href="#" className="btn-transparent">
+                                  <a href="#" className="small_solid_color">
                                     Submit
                                   </a>
                                 </Col>
