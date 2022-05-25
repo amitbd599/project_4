@@ -94,5 +94,13 @@ STYLE SHEET INDEX END
 @import "Elements/sideBar";
 
 /****************************************************
-                 Footer Styles
+                 Block Element Styles
 *****************************************************/
+@import "Block/video_popup";
+@import "Block/progressbar";
+
+/****************************************************
+                 Plugin Styles
+*****************************************************/
+
+@import "node_modules/react-modal-video/scss/modal-video.scss";

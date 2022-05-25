@@ -35,7 +35,7 @@ export default class Button extends Component {
             <Col lg={3}>
               <div className="items">
                 <a className="big_border_color" href="#">
-                  Big Solid Color
+                  Big Border Color
                 </a>
               </div>
             </Col>
@@ -49,7 +49,7 @@ export default class Button extends Component {
             <Col lg={3}>
               <div className="items">
                 <a className="big_dark_border_color" href="#">
-                  Big Solid Color
+                  Big Border Color
                 </a>
               </div>
             </Col>
@@ -69,7 +69,7 @@ export default class Button extends Component {
             <Col lg={3}>
               <div className="items">
                 <a className="medium_border_color" href="#">
-                  Medium Solid Color
+                  Medium Border Color
                 </a>
               </div>
             </Col>
@@ -83,7 +83,7 @@ export default class Button extends Component {
             <Col lg={3}>
               <div className="items">
                 <a className="medium_dark_border_color" href="#">
-                  Medium Solid Color
+                  Medium Border Color
                 </a>
               </div>
             </Col>
@@ -103,7 +103,7 @@ export default class Button extends Component {
             <Col lg={3}>
               <div className="items">
                 <a className="small_border_color" href="#">
-                  Small Solid Color
+                  Small Border Color
                 </a>
               </div>
             </Col>
@@ -117,7 +117,7 @@ export default class Button extends Component {
             <Col lg={3}>
               <div className="items">
                 <a className="small_dark_border_color" href="#">
-                  Small Solid Color
+                  Small Border Color
                 </a>
               </div>
             </Col>

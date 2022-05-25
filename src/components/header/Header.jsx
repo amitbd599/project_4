@@ -125,10 +125,10 @@ export default class Header extends Component {
                         <Link to="/button">Button</Link>
                       </li>
                       <li>
-                        <Link to="#">Video Popup</Link>
+                        <Link to="/video-popup">Video Popup</Link>
                       </li>
                       <li>
-                        <Link to="#">Progress Bar</Link>
+                        <Link to="/progressbar">Progress Bar</Link>
                       </li>
                       <li>
                         <Link to="/gallery">Gallery</Link>

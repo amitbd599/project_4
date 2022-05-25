@@ -1,0 +1,47 @@
+.video_popUp {
+  .wrapper {
+    .wrapperBody {
+      .part_1 {
+        margin: 100px 0;
+        .imgFile {
+          display: grid;
+          align-items: center;
+          justify-content: center;
+          text-align: center;
+          position: relative;
+          border-radius: 10px;
+          img {
+            border-radius: 10px;
+          }
+          .icon {
+            width: 120px;
+            height: 120px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-left: -60px;
+            margin-top: -60px;
+            cursor: pointer;
+            transition: all 1s cubic-bezier(0, 0, 0.2, 1);
+            filter: grayscale(0);
+            &:hover {
+              transform: scale3d(1.15, 1.15, 1.15);
+            }
+          }
+          @media #{$md-layout-device} {
+            margin-bottom: 30px;
+          }
+          @media #{$sm-layout-device} {
+            margin-bottom: 30px;
+          }
+        }
+        @media #{$md-layout-device} {
+          margin: 50px 0;
+        }
+        @media #{$sm-layout-device} {
+          margin: 50px 0;
+        }
+      }
+    }
+  }
+}

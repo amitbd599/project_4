@@ -1,0 +1,53 @@
+.progressbar {
+  .wrapper {
+    .wrapperBody {
+      .items {
+        margin: 100px 0;
+        .CircularProgressbar {
+          width: 150px;
+          height: 150px;
+          margin: auto;
+          display: block;
+          @media #{$md-layout-device} {
+            margin: 30px auto;
+          }
+          @media #{$sm-layout-device} {
+            margin: 30px auto;
+          }
+        }
+
+        @media #{$md-layout-device} {
+          margin: 60px 0;
+        }
+        @media #{$sm-layout-device} {
+          margin: 60px 0;
+        }
+
+        .lineProgressbar__1 {
+          .lineBar {
+            margin: 30px 0;
+            height: 30px;
+            .progress-bar {
+              background-color: var(--primary-theme-color);
+            }
+          }
+          @media #{$md-layout-device} {
+            margin-bottom: 20px;
+          }
+          @media #{$sm-layout-device} {
+            margin-bottom: 20px;
+          }
+        }
+        .lineProgressbar__2 {
+          .lineBar {
+            margin: 30px 0;
+            height: 20px;
+            .progress-bar {
+              background-color: var(--primary-theme-color);
+            }
+          }
+        }
+      }
+    }
+  }
+}
