@@ -134,7 +134,7 @@ export default class Header extends Component {
                         <Link to="/gallery">Gallery</Link>
                       </li>
                       <li>
-                        <Link to="#">Counters</Link>
+                        <Link to="/counter">Counters</Link>
                       </li>
                       <li>
                         <Link to="#">Client Logo</Link>

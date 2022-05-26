@@ -1,10 +1,10 @@
 .counterSection {
   background: #f8f9fb;
   padding: 120px 0;
-  @media #{$md-layout-device}{
+  @media #{$md-layout-device} {
     padding: 70px 0;
   }
-  @media #{$sm-layout-device}{
+  @media #{$sm-layout-device} {
     padding: 60px 0;
   }
   .wrapper {
@@ -41,7 +41,50 @@
   }
 }
 
+.counter__Root {
+  .wrapper {
+    .wrapperBody {
+      .part__1 {
+        margin: 60px 0;
+      }
+      .part__2 {
+        margin: 60px 0;
+        background-color: var(--primary-theme-color);
+        padding: 100px 0;
+      }
+    }
+  }
+}
+
+// Counter One
+
 .counter_One {
+  .counterValue {
+    margin-top: 30px;
+    .wrapperCounter {
+      padding: 20px;
+      .inner {
+        background: var(--color-white);
+        text-align: center;
+        padding: 15px 0;
+        border-radius: 10px;
+        .icon {
+          color: var(--primary-theme-color);
+          margin-bottom: 15px;
+          font-size: 40px;
+        }
+        .counter {
+          font-weight: 600;
+          font-size: 50px;
+        }
+      }
+    }
+  }
+}
+
+// Counter Two
+
+.counter_two {
   .counterValue {
     margin-top: 30px;
     .wrapperCounter {

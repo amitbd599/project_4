@@ -17,6 +17,7 @@ import Gallery from "./Elements/Blocks/Gallery";
 import Button from "./Elements/Blocks/Button";
 import Video_PopUp from "./Elements/Blocks/Video_PopUp";
 import Progressbar from "./Elements/Blocks/Progressbar";
+import Counter from "./Elements/Blocks/Counter";
 export default function App() {
   return (
     <BrowserRouter>
@@ -36,6 +37,7 @@ export default function App() {
         <Route path="/button" exact element={<Button />} />
         <Route path="/video-popup" exact element={<Video_PopUp />} />
         <Route path="/progressbar" exact element={<Progressbar />} />
+        <Route path="/counter" exact element={<Counter />} />
 
         <Route path="*" exact element={<Error404 />} />
       </Routes>

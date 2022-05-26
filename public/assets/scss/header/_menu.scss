@@ -42,7 +42,7 @@
                 box-shadow: 0 0 35px rgba(0, 0, 0, 0.1);
                 text-align: left;
                 @extend %transition;
-                padding: 12px 0;
+                padding: 16px 0 !important;
                 border-radius: 4px;
                 li {
                   a {
@@ -102,13 +102,12 @@
           color: var(--primary-theme-color);
         }
       }
-      @media #{$md-layout-device}{
+      @media #{$md-layout-device} {
         display: none;
       }
-      @media #{$sm-layout-device}{
+      @media #{$sm-layout-device} {
         display: none;
       }
-     
     }
   }
 }
