@@ -11,7 +11,7 @@ export default class Progressbar extends Component {
     return (
       <React.Fragment>
         {/* Helmat Data Start*/}
-        <HelmetData pageTitle="Gallery" />
+        <HelmetData pageTitle="Progressbar" />
         {/* Helmat Data End*/}
 
         {/* Header section start */}
@@ -19,7 +19,7 @@ export default class Progressbar extends Component {
         {/* Header section End */}
 
         {/* Page intro start */}
-        <PageIntro title="Gallery" />
+        <PageIntro title="Progressbar" />
         {/* Page intro End */}
         {/* progressbar Start */}
         <div className="progressbar">

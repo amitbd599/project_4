@@ -151,7 +151,7 @@ export default class Header extends Component {
                     </ul>
                   </li>
                   <li className="">
-                    <Link to="/digitalCleaningService">Contact</Link>
+                    <Link to="/contact">Contact</Link>
                   </li>
                 </ul>
               </nav>

@@ -18,6 +18,7 @@ import Button from "./Elements/Blocks/Button";
 import Video_PopUp from "./Elements/Blocks/Video_PopUp";
 import Progressbar from "./Elements/Blocks/Progressbar";
 import Counter from "./Elements/Blocks/Counter";
+import Contact from "./Page/Contact";
 export default function App() {
   return (
     <BrowserRouter>
@@ -30,6 +31,7 @@ export default function App() {
         <Route path="/service-details" exact element={<ServiceDetails />} />
         <Route path="/blog" exact element={<Blog />} />
         <Route path="/blog-details" exact element={<BlogDetails />} />
+        <Route path="/contact" exact element={<Contact />} />
         <Route path="/project" exact element={<Project />} />
         <Route path="/project-details" exact element={<ProjectDetails />} />
         <Route path="/team" exact element={<Team />} />

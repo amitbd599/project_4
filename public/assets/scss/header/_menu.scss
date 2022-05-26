@@ -256,7 +256,7 @@
                   position: relative;
                   height: 0;
                   transition: 0.3s;
-                  padding: 0;
+                  padding: 0 !important;
                   opacity: 0 !important;
                   visibility: hidden !important;
                   background: transparent;
@@ -347,7 +347,7 @@
             }
             @media #{$mobile-lg-layout} {
               width: 86vw;
-              padding: 54px 20px;
+              padding: 54px 20px !important;
             }
           }
         }
