@@ -55,7 +55,9 @@ export default class Service extends Component {
               <Row className="headerOption">
                 <Col>
                   <div className="body">
-                    <h1>Cleaning Plans For Your Needs</h1>
+                    <h1>
+                      Go from no-code to an in-demand junior web developer
+                    </h1>
                     <h2>Specialist Disinfection</h2>
                     <p>
                       There are many variations of passages of Lorem Ipsum

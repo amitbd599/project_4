@@ -4,9 +4,19 @@ import HelmetData from "../components/common/Helmet";
 import PageIntro from "../components/common/PageIntro";
 import Footer from "../components/Footer/Footer";
 import Header from "../components/header/Header";
-
+import { GoogleMap, LoadScript } from "@react-google-maps/api";
+import { MdEmail } from "react-icons/md";
 export default class Contact extends Component {
   render() {
+    const containerStyle = {
+      width: "auto",
+      height: "400px",
+    };
+
+    const center = {
+      lat: -3.745,
+      lng: -38.523,
+    };
     return (
       <React.Fragment>
         {/* Helmat Data Start*/}
@@ -112,6 +122,9 @@ export default class Contact extends Component {
                           placeholder="Enter Your Massage :"
                         ></textarea>
                       </div>
+                      <button className="medium_solid_color" type="submit">
+                        Submit
+                      </button>
                     </form>
                   </div>
                 </Container>
@@ -120,6 +133,59 @@ export default class Contact extends Component {
           </div>
         </div>
         {/* Contact Info End */}
+
+        {/* Google Map Start */}
+        <div className="google__map">
+          <div className="wrapper">
+            <div className="wrapperBody">
+              <Container>
+                <Row>
+                  <Col lg={6}>
+                    <div>
+                      <LoadScript googleMapsApiKey="AIzaSyBDT7r2QNoiPFHtEGzIH7TNjfgKwpqgiTE">
+                        <GoogleMap
+                          mapContainerStyle={containerStyle}
+                          center={center}
+                          zoom={10}
+                        >
+                          {/* Child components, such as markers, info windows, etc. */}
+                          <></>
+                        </GoogleMap>
+                      </LoadScript>
+                    </div>
+                  </Col>
+                  <Col lg={6}>
+                    <div className="mapData">
+                      <h3>Contact Us</h3>
+                      <p>
+                        Claritas est etiam processus dynamicus, qui sequitur
+                        mutationem consuetudium lectorum. Mirum est notare quam
+                        littera gothica, quam nunc putamus parum claram
+                        anteposuerit litterarum formas human.
+                      </p>
+                      <span>
+                        Address : No 40 Baria Sreet 133/2 NewYork City
+                      </span>
+                      <hr />
+                      <p>
+                        {" "}
+                        <span>
+                          <MdEmail className="mr-10" />
+                        </span>{" "}
+                        info@yourdomain.com
+                      </p>{" "}
+                      <hr />
+                      <p>+99 251 36256</p> <hr />
+                      <h4>Working Hours</h4>
+                      <p>Monday – Saturday:08AM – 22PM</p>
+                    </div>
+                  </Col>
+                </Row>
+              </Container>
+            </div>
+          </div>
+        </div>
+        {/* Google Map End */}
 
         {/* Footer Start */}
         <Footer />

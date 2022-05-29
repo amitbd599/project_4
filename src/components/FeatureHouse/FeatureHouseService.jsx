@@ -2,23 +2,23 @@ import React, { Component } from "react";
 
 const data = [
   {
-    title: "Upholstery Cleaning",
-    img: "https://res.cloudinary.com/amitjs/image/upload/v1651313505/featureImg-2_tqfcra.png",
+    title: "Web Development",
+    img: "/assets/images/intro/intro_1.png",
     des: "Duis autem vel eum  velit esse molestie consequat dolor in hendrerit in vulputate iriure.",
   },
   {
-    title: "Carpet Cleaning",
-    img: "https://res.cloudinary.com/amitjs/image/upload/v1651313499/featureImg-1_gcdoxg.png",
+    title: "Web Design",
+    img: "/assets/images/intro/intro_2.png",
     des: "Duis autem vel eum  dolor in hendrerit in vulputate velit iriure esse molestie consequat.",
   },
   {
-    title: "House Cleaning",
-    img: "https://res.cloudinary.com/amitjs/image/upload/v1651313499/featureImg-3_ea0dcd.png",
+    title: "UI/UX Design",
+    img: "/assets/images/intro/intro_3.png",
     des: "Duis autem vel eum  dolor in hendrerit in vulputate velit esse molestie iriure consequat.",
   },
   {
-    title: "Apartment Cleaning",
-    img: "https://res.cloudinary.com/amitjs/image/upload/v1651313499/featureImg-4_aje1wy.png",
+    title: "Mobile Application",
+    img: "/assets/images/intro/intro_4.png",
     des: "Duis autem consequat vel eum iriure dolor in hendrerit in vulputate velit esse molestie .",
   },
 ];
@@ -26,9 +26,7 @@ class FeatureHouseService extends Component {
   render() {
     return (
       <div className="items">
-        
         {data.map((value, index) => (
-          
           <div className="itemBody" key={index}>
             <div className="leftSide">
               <img src={value.img} alt="" />
@@ -36,7 +34,6 @@ class FeatureHouseService extends Component {
             <div className="rightSide">
               <h3 className="title">{value.title}</h3>
               <p className="description">{value.des}</p>
-           
             </div>
           </div>
         ))}

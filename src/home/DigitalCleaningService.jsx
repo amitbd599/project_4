@@ -99,7 +99,7 @@ class DigitalCleaningService extends Component {
               <Row>
                 <Col lg={7} className="leftWrapper">
                   <div className="textBody">
-                    <h2 className="title">FUTURE HOUSE</h2>
+                    <h2 className="title">FUTURE INTRO</h2>
                     <p className="description">
                       What you look your hopefull house we can be made it for
                       yours. We can be design yours house so dont woory you can
@@ -113,15 +113,7 @@ class DigitalCleaningService extends Component {
                   </div>
                 </Col>
                 <Col lg={5}>
-                  <div className="imgSection">
-                    {featureImg}
-                    <div className="overlay"></div>
-                    <div className="overlayBtn">
-                      <a href="#" className="btnShape menu3">
-                        Read More
-                      </a>
-                    </div>
-                  </div>
+                  <div className="imgSection">{featureImg}</div>
                 </Col>
               </Row>
             </Container>
@@ -136,7 +128,7 @@ class DigitalCleaningService extends Component {
               <Row className="headerOption">
                 <Col>
                   <div className="body">
-                    <h1>Cleaning Plans For Your Needs</h1>
+                    <h1>Information technology</h1>
                     <h2>Specialist Disinfection</h2>
                     <p>
                       There are many variations of passages of Lorem Ipsum
@@ -390,19 +382,35 @@ class DigitalCleaningService extends Component {
                             sunt consequuntur provident tenetur, id optio iure?
                           </p>
                         </TabPanel>
-                        <TabPanel className="tabPanel_3">
-                          <p>
-                            Consequuntur provident Lorem ipsum dolor sit, amet
-                            consectetur adipisicing elit. Delectus at qui eum
-                            quos est amet omnis ea quisquam repellendus corporis
-                            numquam mollitia natus sunt tenetur, id optio iure?
-                          </p>
-                          <p>
-                            Lorem ipsum dolor sit, amet consectetur adipisicing
-                            elit. Delectus at qui eum quos est amet omnis ea
-                            quisquam repellendus corporis numquam mollitia natus
-                            sunt consequuntur provident tenetur, id optio iure?
-                          </p>
+                        <TabPanel className="tabPanel_1">
+                          <h3>Information technology</h3>
+                          <ul>
+                            <li>
+                              {" "}
+                              <IoCheckmarkCircle className="icon" />
+                              The Philosophy Of business analytics.
+                            </li>
+                            <li>
+                              {" "}
+                              <IoCheckmarkCircle className="icon" />
+                              Fast-Track Your business.
+                            </li>
+                            <li>
+                              {" "}
+                              <IoCheckmarkCircle className="icon" />
+                              Lies And Damn Lies About business.
+                            </li>
+                            <li>
+                              {" "}
+                              <IoCheckmarkCircle className="icon" />
+                              The Ultimate Deal On business.
+                            </li>
+                            <li>
+                              {" "}
+                              <IoCheckmarkCircle className="icon" />
+                              Great instant value life.
+                            </li>
+                          </ul>
                         </TabPanel>
                         <TabPanel className="tabPanel_4">
                           <p>

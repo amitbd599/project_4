@@ -50,6 +50,15 @@ export default class Header extends Component {
   }
 
   render() {
+    window.addEventListener("scroll", () => {
+      var value = window.scrollY;
+      if (value > 50) {
+        document.querySelector(".header-fixed").classList.add("sticky");
+      } else {
+        document.querySelector(".header-fixed").classList.remove("sticky");
+      }
+    });
+
     const { logoLight, logoBlack } = imgScript();
     const { logo } = this.props;
     var logoURL;
@@ -135,18 +144,6 @@ export default class Header extends Component {
                       </li>
                       <li>
                         <Link to="/counter">Counters</Link>
-                      </li>
-                      <li>
-                        <Link to="#">Client Logo</Link>
-                      </li>
-                      <li>
-                        <Link to="#">Contact Form</Link>
-                      </li>
-                      <li>
-                        <Link to="#">Google Map</Link>
-                      </li>
-                      <li>
-                        <Link to="#">Pricing Table</Link>
                       </li>
                     </ul>
                   </li>

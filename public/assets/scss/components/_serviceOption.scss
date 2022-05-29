@@ -214,6 +214,9 @@
                 color: var(--primary-theme-color);
                 margin-right: 10px;
               }
+              .items {
+                margin-left: 10px;
+              }
               @media #{$md-layout-device} {
                 display: block;
                 img {

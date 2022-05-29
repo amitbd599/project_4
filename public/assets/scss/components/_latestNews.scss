@@ -149,6 +149,11 @@
               opacity: 1;
             }
           }
+          .small_border_color {
+            &:hover {
+              border: 2px solid #fff !important;
+            }
+          }
         }
       }
       .pagination {

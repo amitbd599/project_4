@@ -1,0 +1,39 @@
+.google__map {
+  margin: 100px 0;
+  .wrapper {
+    .wrapperBody {
+      .mapData {
+        padding-left: 35px;
+
+        @media #{$md-layout-device} {
+          padding-left: 12px;
+          margin-top: 60px;
+        }
+        @media #{$sm-layout-device} {
+          padding-left: 12px;
+          margin-top: 60px;
+        }
+      }
+      h3 {
+        font-size: 24px;
+        font-weight: 600;
+        padding-bottom: 10px;
+      }
+      p {
+        font-size: 15px;
+        line-height: 28px;
+        margin-bottom: 10px;
+      }
+      span {
+        font-size: 15px;
+        line-height: 28px;
+        font-weight: 500;
+      }
+      h4 {
+        font-size: 16px;
+        font-weight: 600;
+        padding-bottom: 0;
+      }
+    }
+  }
+}

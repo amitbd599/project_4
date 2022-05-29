@@ -21,10 +21,7 @@ export default class LatestNewsItems extends Component {
                 <div className="textFile">
                   <h3>{value.title} </h3>
                   <p>{value.des}</p>
-                  <Link
-                    to={"/blog-details"}
-                    className="small_solid_color_opacity"
-                  >
+                  <Link to={"/blog-details"} className="small_border_color">
                     Read More
                   </Link>
                 </div>
