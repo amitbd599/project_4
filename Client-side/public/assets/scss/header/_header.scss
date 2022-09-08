@@ -1,0 +1,118 @@
+/*=========================
+    Header Area 
+===========================*/
+
+.header-area {
+  .header-wrapper {
+    background: var(--primary-body-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+
+    @media #{$lg-layout-device} {
+      padding: 30px 0;
+    }
+    @media #{$md-layout-device} {
+      padding: 30px 0;
+    }
+    @media #{$sm-layout-device} {
+      padding: 15px 0;
+    }
+
+    .logo {
+      a {
+        img {
+          @media #{$sm-layout-device} {
+            width: 120px;
+          }
+        }
+      }
+    }
+    .header-right {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+  }
+
+  &.header-static {
+    z-index: 999;
+    width: 100%;
+    transition: 0.3s;
+    @media #{$md-layout-device} {
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+    @media #{$sm-layout-device} {
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+    .header-wrapper {
+      padding: 10px 0;
+      transition: 0.3s;
+
+      // .mainMenuNav {
+      //   ul {
+      //     &.mainMenu {
+      //       > li {
+      //         > a {
+      //           position: relative;
+      //           &::after {
+      //             position: absolute;
+      //             content: "";
+      //             left: 0;
+      //             width: 0;
+      //             height: 3px;
+      //             background: var(--primary-theme-color);
+      //             transition: 0.3s;
+      //             bottom: 0;
+      //           }
+      //         }
+      //         &.is-current {
+      //           a {
+      //             color: var(--primary-theme-color);
+
+      //             &::after {
+      //               width: 100%;
+      //             }
+      //           }
+      //         }
+      //       }
+      //     }
+      //   }
+      // }
+    }
+  }
+  &.header-fixed {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    background: #fff;
+    transition: all 0.3s linear;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  &.sticky {
+    height: 85px;
+  }
+  &.header-not-fixed {
+    position: relative;
+    width: 100%;
+    background: #ffffff;
+  }
+  &.header-fixed-transparent {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    background: transparent;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  &.header-not-fixed-transparent {
+    position: relative;
+    width: 100%;
+    background: transparent;
+  }
+}

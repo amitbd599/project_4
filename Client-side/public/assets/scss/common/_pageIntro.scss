@@ -1,0 +1,43 @@
+.pageInfo {
+  height: 400px;
+  margin-top: 85px;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+  &::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.664);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 9;
+  }
+  .wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    z-index: 100;
+    position: relative;
+    .titleBar {
+      a,
+      span {
+        font-size: 30px;
+        font-weight: 700;
+        color: var(--color-white);
+        transition: all 0.2s;
+      }
+      a:hover {
+        color: var(--primary-theme-color);
+      }
+    }
+  }
+  @media #{$md-layout-device} {
+    height: 250px;
+  }
+  @media #{$sm-layout-device} {
+    height: 200px;
+  }
+}

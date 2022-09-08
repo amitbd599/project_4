@@ -1,0 +1,119 @@
+.footer {
+  padding-top: 60px;
+  padding-bottom: 30px;
+  background: #1b1b1b;
+  .part_1 {
+    .wrapperBody {
+      .items {
+        p {
+          font-size: 14px;
+          margin-top: 10px;
+          color: var(--color-white);
+        }
+        .icons {
+          margin-top: 20px;
+
+          .icon {
+            margin-right: 8px;
+            font-size: 20px;
+            color: var(--color-white);
+            transition: all 0.2s linear;
+            &:hover {
+              color: var(--primary-theme-color);
+            }
+          }
+        }
+      }
+    }
+    @media #{$md-layout-device} {
+      margin-bottom: 40px;
+    }
+    @media #{$sm-layout-device} {
+      margin-bottom: 40px;
+    }
+  }
+  .part_2,
+  .part_3 {
+    .wrapperBody {
+      h3 {
+        display: inline;
+        position: relative;
+        font-size: 18px;
+        margin-top: 15px;
+        color: var(--color-white);
+        &::after {
+          position: absolute;
+          content: "";
+          width: 100%;
+          height: 3px;
+          background: var(--primary-theme-color);
+          left: 0;
+          bottom: -12px;
+        }
+      }
+      ul {
+        padding-left: 0;
+        margin-top: 25px;
+        li {
+          margin-bottom: 3px;
+          a {
+            font-size: 14px;
+            transition: all 0.2s linear;
+            color: var(--color-white);
+            &:hover {
+              color: var(--primary-theme-color);
+            }
+          }
+        }
+      }
+    }
+    @media #{$md-layout-device} {
+      margin-bottom: 30px;
+    }
+    @media #{$sm-layout-device} {
+      margin-bottom: 20px;
+    }
+  }
+  .part_4 {
+    .wrapperBody {
+      h3 {
+        display: inline;
+        position: relative;
+        font-size: 18px;
+        margin-top: 15px;
+        color: var(--color-white);
+        &::after {
+          position: absolute;
+          content: "";
+          width: 100%;
+          height: 3px;
+          background: var(--primary-theme-color);
+          left: 0;
+          bottom: -12px;
+        }
+      }
+      ul {
+        margin-top: 24px;
+        padding-left: 0;
+        li {
+          font-size: 14px;
+          margin-bottom: 7px;
+          color: var(--color-white);
+          .icon {
+            margin-right: 10px;
+            font-size: 16px;
+            color: var(--primary-theme-color);
+          }
+        }
+      }
+    }
+  }
+  .copyWrite {
+    text-align: center;
+    margin-top: 20px;
+    p {
+      font-size: 14px;
+      color: var(--color-white);
+    }
+  }
+}

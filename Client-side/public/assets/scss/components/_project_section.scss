@@ -1,0 +1,326 @@
+.project_section {
+  background: #f8f9fb;
+  padding: 120px 0;
+  .wrapper {
+    .part_1 {
+      .wrapperBody {
+        text-align: center;
+        h1 {
+          font-size: 15px;
+          font-weight: 600;
+          color: var(--primary-theme-color);
+        }
+        h2 {
+          font-size: 40px;
+          font-weight: 600;
+          margin-top: 14px;
+          @media #{$md-layout-device} {
+            font-size: 30px;
+          }
+          @media #{$sm-layout-device} {
+            font-size: 28px;
+          }
+        }
+        p {
+          padding: 0 24%;
+          margin-top: 14px;
+          font-size: 15px;
+          @media #{$md-layout-device} {
+            padding: 0;
+          }
+          @media #{$sm-layout-device} {
+            padding: 0;
+          }
+        }
+        .small_solid_color {
+          text-align: center;
+        }
+      }
+    }
+    .part_2 {
+      margin-top: 50px;
+      .wrapperBody {
+        .projectItems {
+          margin: 10px 0;
+          .projectTextBody {
+            position: relative;
+            .imgFile {
+              position: relative;
+              img {
+                border-radius: 10px;
+              }
+              &::after {
+                position: absolute;
+                content: "";
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                background: rgb(255, 87, 0);
+                background: linear-gradient(
+                  0deg,
+                  rgba(255, 87, 0, 1) 19%,
+                  rgba(0, 212, 255, 0) 100%
+                );
+                box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+                backdrop-filter: blur(1px);
+                -webkit-backdrop-filter: blur(1px);
+                transition: all 0.4s linear;
+                opacity: 0;
+                visibility: hidden;
+                border-radius: 10px;
+              }
+            }
+            .textBody {
+              text-align: center;
+              position: absolute;
+              margin-bottom: 30px;
+              left: 0;
+              bottom: 0;
+              width: 100%;
+              overflow: hidden;
+              padding: 50px 15px;
+              .textItem {
+                transform: translateY(105px);
+                transition: all 0.5s linear;
+
+                h1 {
+                  font-size: 16px;
+                  color: var(--color-white);
+                }
+                h2 {
+                  font-size: 28px;
+                  font-weight: 600;
+                  color: var(--color-white);
+                }
+                p {
+                  font-size: 14px;
+                  color: var(--color-white);
+                }
+              }
+            }
+            &:hover {
+              .imgFile::after {
+                visibility: visible;
+                opacity: 1;
+              }
+              .textItem {
+                transform: translateY(40px);
+              }
+            }
+          }
+          @media #{$sm-layout-device} {
+            margin: 20px 0;
+          }
+        }
+      }
+      @media #{$sm-layout-device} {
+        margin-top: 30px;
+      }
+    }
+  }
+  @media #{$sm-layout-device} {
+    padding: 40px 0;
+  }
+
+  .sliderProject {
+    margin: 100px 0;
+    background-color: #fff;
+    .wrapperBody {
+      margin-top: 50px;
+      .sliderProjectInner {
+        .projectItems {
+          margin: 10px 0;
+          .projectTextBody {
+            position: relative;
+            .imgFile {
+              position: relative;
+              img {
+                border-radius: 10px;
+              }
+              &::after {
+                position: absolute;
+                content: "";
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                background: rgb(255, 87, 0);
+                background: linear-gradient(
+                  0deg,
+                  rgba(255, 87, 0, 1) 19%,
+                  rgba(0, 212, 255, 0) 100%
+                );
+                box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+                backdrop-filter: blur(1px);
+                -webkit-backdrop-filter: blur(1px);
+                transition: all 0.4s linear;
+                opacity: 0;
+                visibility: hidden;
+                border-radius: 10px;
+              }
+            }
+            .textBody {
+              text-align: center;
+              position: absolute;
+              margin-bottom: 30px;
+              left: 0;
+              bottom: 0;
+              width: 100%;
+              overflow: hidden;
+              padding: 50px 15px;
+              .textItem {
+                transform: translateY(105px);
+                transition: all 0.5s linear;
+
+                h1 {
+                  font-size: 16px;
+                  color: var(--color-white);
+                }
+                h2 {
+                  font-size: 28px;
+                  font-weight: 600;
+                  color: var(--color-white);
+                }
+                p {
+                  font-size: 14px;
+                  color: var(--color-white);
+                }
+              }
+            }
+            &:hover {
+              .imgFile::after {
+                visibility: visible;
+                opacity: 1;
+              }
+              .textItem {
+                transform: translateY(40px);
+              }
+            }
+          }
+          @media #{$sm-layout-device} {
+            margin: 20px 0;
+          }
+
+          &.slider {
+            padding: 50px 12px;
+            width: 360px;
+            .projectTextBody {
+              &:hover {
+                .imgFile::after {
+                  box-shadow: none;
+                }
+              }
+            }
+          }
+        }
+        .slick-list {
+          margin: -12px;
+        }
+        .slick-dots li.slick-active button:before {
+          opacity: 1;
+          color: var(--primary-theme-color);
+        }
+      }
+      @media #{$sm-layout-device} {
+        margin-top: 30px;
+      }
+    }
+  }
+  &.projectPage {
+    padding: 100px 0 0 0;
+  }
+}
+
+// project for single portfolio page
+
+.portfolioDetails {
+  margin-bottom: 100px;
+  .part_3 {
+    .projectItems {
+      margin: 10px 0;
+      .projectTextBody {
+        position: relative;
+        .imgFile {
+          position: relative;
+          img {
+            border-radius: 10px;
+          }
+          &::after {
+            position: absolute;
+            content: "";
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgb(255, 87, 0);
+            background: linear-gradient(
+              0deg,
+              rgba(255, 87, 0, 1) 19%,
+              rgba(0, 212, 255, 0) 100%
+            );
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            backdrop-filter: blur(1px);
+            -webkit-backdrop-filter: blur(1px);
+            transition: all 0.4s linear;
+            opacity: 0;
+            visibility: hidden;
+            border-radius: 10px;
+          }
+        }
+        .textBody {
+          text-align: center;
+          position: absolute;
+          margin-bottom: 30px;
+          left: 0;
+          bottom: 0;
+          width: 100%;
+          overflow: hidden;
+          padding: 50px 15px;
+          .textItem {
+            transform: translateY(105px);
+            transition: all 0.5s linear;
+
+            h1 {
+              font-size: 16px;
+              color: var(--color-white);
+            }
+            h2 {
+              font-size: 28px;
+              font-weight: 600;
+              color: var(--color-white);
+            }
+            p {
+              font-size: 14px;
+              color: var(--color-white);
+            }
+          }
+        }
+        &:hover {
+          .imgFile::after {
+            visibility: visible;
+            opacity: 1;
+          }
+          .textItem {
+            transform: translateY(40px);
+          }
+        }
+      }
+      @media #{$sm-layout-device} {
+        margin: 20px 0;
+      }
+
+      &.slider {
+        padding: 50px 12px;
+        width: 360px;
+        .projectTextBody {
+          &:hover {
+            .imgFile::after {
+              box-shadow: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}
