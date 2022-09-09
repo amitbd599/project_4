@@ -308,10 +308,10 @@ export default class ServiceDetails extends Component {
                                     <p>
                                       The short answer is no. You don't need a
                                       degree to be a web designer. However, you
-                                      do need to have an amazing portfolio of
-                                      work to show. Your portfolio is how you
-                                      get hired as a designer, not whether you
-                                      earned an online degree from a prestigious
+                                      do need to have an amazing project of work
+                                      to show. Your project is how you get hired
+                                      as a designer, not whether you earned an
+                                      online degree from a prestigious
                                       university or not.
                                     </p>
                                   </AccordionItemPanel>
@@ -440,7 +440,7 @@ export default class ServiceDetails extends Component {
                                       – 5 years this can go up to $100,000+/year
                                       as you will now be considered a mid-tier
                                       or experienced web developer and will have
-                                      a nice portfolio as well.
+                                      a nice project as well.
                                     </p>
                                   </AccordionItemPanel>
                                 </AccordionItem>
@@ -459,7 +459,7 @@ export default class ServiceDetails extends Component {
                                       site for others (you could start with
                                       family and friends; no experience is bad
                                       experience). You will have the opportunity
-                                      to add these projects to your portfolio.
+                                      to add these projects to your project.
                                     </p>
                                   </AccordionItemPanel>
                                 </AccordionItem>

@@ -27,6 +27,12 @@ audio,
 canvas {
   display: inline-block;
 }
+html {
+  :focus:not(:focus-visible) {
+    outline: 0;
+    box-shadow: none;
+  }
+}
 
 html,
 button,

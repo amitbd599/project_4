@@ -19,6 +19,8 @@ import Video_PopUp from "./Elements/Blocks/Video_PopUp";
 import Progressbar from "./Elements/Blocks/Progressbar";
 import Counter from "./Elements/Blocks/Counter";
 import Contact from "./Page/Contact";
+import LoginPage from "./Dashboard/Pages/LoginPage";
+import DashboardPage from "./Dashboard/Pages/DashboardPage";
 export default function App() {
   return (
     <BrowserRouter>
@@ -40,6 +42,9 @@ export default function App() {
         <Route path="/video-popup" exact element={<Video_PopUp />} />
         <Route path="/progressbar" exact element={<Progressbar />} />
         <Route path="/counter" exact element={<Counter />} />
+
+        <Route path="/login" exact element={<LoginPage />} />
+        <Route path="/dashboard" exact element={<DashboardPage />} />
 
         <Route path="*" exact element={<Error404 />} />
       </Routes>

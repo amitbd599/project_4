@@ -55,7 +55,7 @@ export default class Footer extends Component {
                     <a href="#">About Us</a>
                   </li>
                   <li>
-                    <a href="#">Portfolio</a>
+                    <a href="#">Project</a>
                   </li>
                   <li>
                     <a href="#">Blog</a>
@@ -84,7 +84,7 @@ export default class Footer extends Component {
                     <a href="#">About Us</a>
                   </li>
                   <li>
-                    <a href="#">Portfolio</a>
+                    <a href="#">Project</a>
                   </li>
                   <li>
                     <a href="#">Blog</a>
@@ -111,10 +111,10 @@ export default class Footer extends Component {
                   <ul>
                     <li>
                       {" "}
-                      <MdEmail  className="icon"/> admin@amitjs.com
+                      <MdEmail className="icon" /> admin@amitjs.com
                     </li>
                     <li>
-                      <MdPermPhoneMsg  className="icon"/>
+                      <MdPermPhoneMsg className="icon" />
                       +99 11 88 963-6395
                     </li>
                   </ul>
@@ -124,7 +124,7 @@ export default class Footer extends Component {
           </Row>
           <Row className="copyWrite">
             <Col>
-                  <p>Copyright ©Met Cifo 2022 . All Rights Reserved.</p>
+              <p>Copyright ©Met Cifo 2022 . All Rights Reserved.</p>
             </Col>
           </Row>
         </Container>

@@ -1,6 +1,6 @@
 // Home page slider
 
-const sliderSetting = () => {
+const sliderSetting = () => { 
   const HeroSlideSetting = {
     infinite: true,
     slidesToShow: 3,

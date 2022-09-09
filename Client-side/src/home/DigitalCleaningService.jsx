@@ -23,7 +23,7 @@ class DigitalCleaningService extends Component {
   render() {
     const { aboutUsImg, featureImg } = imgScript();
     const { serviceData_One } = serviceData();
-    const { SliderSettings, TestimonialSliderSetting } = sliderSetting();
+    const { HeroSlideSetting, TestimonialSliderSetting } = sliderSetting();
     return (
       <Fragment>
         <Helmet pageTitle="Digital Agency" />
@@ -37,7 +37,7 @@ class DigitalCleaningService extends Component {
 
         <div className="sliderBody">
           <div className="sliderWrapper ">
-            <Slider {...SliderSettings}>
+            <Slider {...HeroSlideSetting}>
               {sliderList.map((value, index) => {
                 return (
                   <div
@@ -101,9 +101,10 @@ class DigitalCleaningService extends Component {
                   <div className="textBody">
                     <h2 className="title">FUTURE INTRO</h2>
                     <p className="description">
-                      What you look your hopefull house we can be made it for
-                      yours. We can be design yours house so dont woory you can
-                      hire us. Beautiful and hand made design we can be create.
+                      Seamless integration across all digital media channels
+                      with advanced targeting full combined handful. We use the
+                      latest technology and we never stop learning and that's
+                      why model sentence structures.
                     </p>
                   </div>
                   <div className="itemsWrapper">
