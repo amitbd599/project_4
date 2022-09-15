@@ -1,9 +1,21 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { FiMinus } from "react-icons/fi";
 import { RiArrowRightSLine } from "react-icons/ri";
 import NavItem from "../scripts/NavItems";
-import dashboard_script from "../scripts/FlagItems";
+import dashboard_script from "../scripts/Dashboard_script";
+import DashboardFooter from "../Components/DashboardFooter";
+import {
+  Get_All_User_API,
+  Get_Single_User_API,
+  verifyEmail,
+} from "../../API/API";
+import {
+  getEmail,
+  getPassword,
+  removeSession,
+} from "../../Helper/SessionHelper";
+import { useSelector } from "react-redux";
 const MasterLayout = (props) => {
   const [active, setActive] = useState(true);
   const [show, setShow] = useState("");
@@ -16,9 +28,6 @@ const MasterLayout = (props) => {
   };
   const handelFlag = (item) => {
     setFlag(item);
-  };
-  const removeElement = () => {
-    setShow("");
   };
   // ====
 
@@ -35,7 +44,28 @@ const MasterLayout = (props) => {
         active.classList.toggle("active");
       });
     }
+    verifyEmail(getEmail(), getPassword()).then((res) => {
+      if (res === true) {
+        removeSession();
+      }
+    });
+    Get_Single_User_API(getEmail());
   }, []);
+
+  // useEffect(() => {
+  //   verifyEmail(getEmail(), getPassword()).then((res) => {
+  //     if (res === true) {
+  //       removeSession();
+  //     }
+  //   });
+  //   Get_Single_User_API(getEmail());
+  // }, []);
+
+  const userData = useSelector((state) => state.profile.getSingleUserValue);
+
+  const logOut = () => {
+    removeSession();
+  };
 
   return (
     <div className="MasterLayout">
@@ -54,7 +84,7 @@ const MasterLayout = (props) => {
           <ul className="navItem__body">
             {MENU.map((item, index) => (
               <li key={index} className="navItems">
-                <Link className="nav__link" to={"/dashboard"}>
+                <span className="nav__link">
                   <span className="nav__items__icon">
                     <span className={`mdi ` + item.icon}></span>
                   </span>
@@ -62,77 +92,21 @@ const MasterLayout = (props) => {
                   <span className="arrow">
                     <RiArrowRightSLine />
                   </span>
-                </Link>
+                </span>
                 {/*  */}
                 <ul className="dropdown__body">
                   {item.dropDown?.map((item, index) => (
-                    <li className="dropdown__navItems">
-                      <Link className="dropdown__navLink" to={"/dashboard"}>
+                    <li className="dropdown__navItems" key={index}>
+                      <NavLink
+                        activeClassName="active"
+                        className="dropdown__navLink"
+                        to={`${item.link}`}
+                      >
                         <span>
                           <FiMinus />
                         </span>{" "}
                         {item.dropDown__link}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </li>
-            ))}
-          </ul>
-          <div className="title">
-            <p>PAGES</p>
-          </div>
-          <ul className="navItem__body">
-            {PAGES.map((item, index) => (
-              <li key={index} className="navItems">
-                <Link className="nav__link" to={"/dashboard"}>
-                  <span className="nav__items__icon">
-                    <span className={`mdi ` + item.icon}></span>
-                  </span>
-                  {item.navItem}
-                  <span className="arrow">
-                    <RiArrowRightSLine />
-                  </span>
-                </Link>
-                <ul className="dropdown__body">
-                  {item.dropDown?.map((item, index) => (
-                    <li className="dropdown__navItems">
-                      <Link className="dropdown__navLink" to={"/dashboard"}>
-                        <span>
-                          <FiMinus />
-                        </span>{" "}
-                        {item.dropDown__link}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </li>
-            ))}
-          </ul>
-          <div className="title">
-            <p>COMPONENTS</p>
-          </div>
-          <ul className="navItem__body">
-            {COMPONENTS.map((item, index) => (
-              <li key={index} className="navItems">
-                <Link className="nav__link" to={"/dashboard"}>
-                  <span className="nav__items__icon">
-                    <span className={`mdi ` + item.icon}></span>
-                  </span>
-                  {item.navItem}
-                  <span className="arrow">
-                    <RiArrowRightSLine />
-                  </span>
-                </Link>
-                <ul className="dropdown__body">
-                  {item.dropDown?.map((item, index) => (
-                    <li className="dropdown__navItems">
-                      <Link className="dropdown__navLink" to={"/dashboard"}>
-                        <span>
-                          <FiMinus />
-                        </span>{" "}
-                        {item.dropDown__link}
-                      </Link>
+                      </NavLink>
                     </li>
                   ))}
                 </ul>
@@ -306,16 +280,13 @@ const MasterLayout = (props) => {
                           <div className="user__profile">
                             <div className="user__profile__header" tabIndex="0">
                               <div className="img__file">
-                                <img
-                                  src="https://res.cloudinary.com/amitjs/image/upload/v1651588627/Client%20Img/Woman%20600%2A600/193321431_775587776678149_1291036863068516247_n-removebg-preview_7_bkfyak.png"
-                                  alt=""
-                                />
+                                <img src={userData.photo} alt="" />
                               </div>
                               <div className="text__file">
                                 <span>
-                                  <strong>Amit Biswas</strong>
+                                  <strong>{userData.name}</strong>
                                 </span>
-                                <span>Founder</span>
+                                <span>{userData.role}</span>
                               </div>
                             </div>
                             <div className="user__profile__dropdown">
@@ -331,52 +302,26 @@ const MasterLayout = (props) => {
                                     </li>
                                     <li>
                                       {" "}
-                                      <a href="#">
+                                      <Link to="/massage">
                                         <span class="mdi mdi-email"></span>
                                         <span>Inbox</span>
-                                      </a>
+                                      </Link>
                                     </li>
                                     <li>
                                       {" "}
-                                      <a href="#">
+                                      <Link to="/create-new">
                                         <span class="mdi mdi-clipboard-text"></span>
                                         <span>Task</span>
-                                      </a>
+                                      </Link>
                                     </li>
-                                    <li>
-                                      {" "}
-                                      <a href="#">
-                                        <span class="mdi mdi-comment-processing"></span>
-                                        <span>Chat</span>
-                                      </a>
-                                    </li>
+
                                     <hr />
+
                                     <li>
                                       {" "}
-                                      <a href="#">
-                                        <span class="mdi mdi-wrench"></span>
-                                        <span>Setting</span>
-                                      </a>
-                                    </li>
-                                    <li>
-                                      {" "}
-                                      <a href="#">
-                                        <span class="mdi mdi-cart"></span>
-                                        <span>Pricing</span>
-                                      </a>
-                                    </li>
-                                    <li>
-                                      {" "}
-                                      <a href="#">
-                                        <span class="mdi mdi-help-circle"></span>
-                                        <span>FAQ</span>
-                                      </a>
-                                    </li>
-                                    <li>
-                                      {" "}
-                                      <a href="#">
+                                      <a href="JavaScript:void(0)">
                                         <span class="mdi mdi-logout-variant"></span>
-                                        <span>Logout</span>
+                                        <span onClick={logOut}>Logout</span>
                                       </a>
                                     </li>
                                   </ul>
@@ -394,7 +339,14 @@ const MasterLayout = (props) => {
           </div>
         </div>
       </div>
-      <div className="main__container__body">{props.children}</div>
+      <div
+        className={`${
+          active ? "main__container__body" : "main__container__body active"
+        }`}
+      >
+        {props.children}
+      </div>
+      <DashboardFooter />
     </div>
   );
 };

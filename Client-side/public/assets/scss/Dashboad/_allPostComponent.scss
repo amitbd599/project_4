@@ -1,0 +1,65 @@
+.allPostComponent {
+  .wrapper {
+    .wrapper__body {
+      .myTable {
+        padding: 35px 20px;
+        margin-top: 50px;
+        border-radius: 5px;
+        background: #fff;
+        overflow-x: auto;
+        box-shadow: 0 0 10px 1px rgb(68 102 242 / 5%);
+        table {
+          min-width: 660px;
+        }
+        th {
+          padding: 10px;
+        }
+        td {
+          padding: 10px;
+        }
+        img {
+          width: 60px;
+        }
+        .button {
+          .edit {
+            padding: 2px 15px;
+            border-radius: 5px;
+            background: #17b978;
+            color: #fff;
+          }
+          .delete {
+            padding: 2px 15px;
+            border-radius: 5px;
+            color: #fff;
+            margin-left: 5px;
+            background: #d82f2f;
+          }
+        }
+        .pagination {
+          margin-top: 10px;
+          button {
+            padding: 3px 14px;
+            background: #151529;
+            border-radius: 4px;
+            color: #fff;
+            margin-right: 6px;
+            border: 2px solid #151529;
+            -webkit-transition: all 0.2s linear;
+            -moz-transition: all 0.2s linear;
+            -ms-transition: all 0.2s linear;
+            -o-transition: all 0.2s linear;
+            transition: all 0.2s linear;
+            &:hover {
+              background: transparent;
+              color: #151529;
+            }
+            &.active {
+              background: transparent;
+              color: #151529;
+            }
+          }
+        }
+      }
+    }
+  }
+}

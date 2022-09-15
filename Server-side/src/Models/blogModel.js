@@ -3,6 +3,8 @@ const mongoose = require("mongoose");
 const DataSchema = mongoose.Schema(
   {
     title: { type: String },
+    type: { type: String },
+    category: [{ type: String }],
     img: { type: String },
     description: { type: String },
     author: { type: String },

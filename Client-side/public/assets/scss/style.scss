@@ -97,7 +97,14 @@ STYLE SHEET INDEX END
 /****************************************************
                  Dashboard Styles
 *****************************************************/
+@import "Dashboad/login";
 @import "Dashboad/masterLayout";
+@import "Dashboad/dashboardFooter";
+@import "Dashboad/dashboard";
+@import "Dashboad/createNewPost";
+@import "Dashboad/allPostComponent";
+@import "Dashboad/createProject";
+@import "Dashboad/userComponents";
 /****************************************************
                  Block Element Styles
 *****************************************************/

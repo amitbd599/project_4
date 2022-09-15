@@ -11,6 +11,9 @@ router.post("/login", userController.login);
 
 router.post("/login-data", userController.EmailVerifyData);
 
+router.get("/get-all-user", userController.GetAllUser);
+router.post("/get-single-user", userController.GetSingleUser);
+
 // ======================== Blog Post API ==========================
 
 router.post(
@@ -71,4 +74,5 @@ router.get("/project-list/:pageNo", portfolioController.portfolioList);
 // ======================== Send Email API ==========================
 
 router.post("/sendMail", userController.EmailSend);
+router.get("/getMail", userController.GetAllMassage);
 module.exports = router;

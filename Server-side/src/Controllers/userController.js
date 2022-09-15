@@ -1,4 +1,5 @@
 const JWT = require("jsonwebtoken");
+const massageModel = require("../Models/massageModel");
 const userModel = require("../Models/UserModel");
 const SendEmailUtility = require("../Utility/SendEmailUtility");
 
@@ -30,6 +31,7 @@ exports.login = async (req, res) => {
   }
 };
 
+// ! Send Email
 exports.EmailSend = async (req, res) => {
   let reqBody = req.body;
 
@@ -39,17 +41,43 @@ exports.EmailSend = async (req, res) => {
   let EmailText = reqBody.massage;
 
   try {
-    // Send Email
+    //Submit to Database
+    let SendToDB = await massageModel.create(reqBody);
+    // Send Email to Gmail
     let SendEmail = await SendEmailUtility(
       name,
       email,
       EmailText,
       EmailSubject
     );
-
-    res.status(200).json({ status: "Success", data: SendEmail });
+    res
+      .status(200)
+      .json({ status: "Success", data: SendEmail, dataDB: SendToDB });
   } catch (e) {
     res.status(400).json({ status: "Fail", data: "Wrong Wrong" });
+  }
+};
+
+//! Get All Massage
+
+exports.GetAllMassage = async (req, res) => {
+  try {
+    let Data = await massageModel.aggregate([
+      {
+        $project: {
+          email: 1,
+          name: 1,
+          subject: 1,
+          description: 1,
+          createdDate: {
+            $dateToString: { format: "%d-%m-%Y", date: "$createdDate" },
+          },
+        },
+      },
+    ]);
+    res.status(200).json({ status: "Success", data: Data });
+  } catch (e) {
+    res.status(400).json({ status: "Fail", error: e });
   }
 };
 
@@ -60,7 +88,7 @@ exports.EmailVerifyData = async (req, res) => {
     let password = reqBody.password;
     let data = await userModel.aggregate([
       { $match: { email: email, password: password } },
-      { $project: { email: 1, password: 1 } },
+      { $project: { email: 1, password: 1, photo: 1, name: 1, role: 1 } },
     ]);
 
     if (data.length > 0) {
@@ -70,5 +98,39 @@ exports.EmailVerifyData = async (req, res) => {
     }
   } catch (e) {
     res.status(200).json({ status: "Fail", error: e });
+  }
+};
+
+exports.GetAllUser = async (req, res) => {
+  try {
+    let data = await userModel.aggregate([
+      // { $match: { email: "amitbd5900@gmail.com" } },
+      { $project: { email: 1, photo: 1, role: 1, name: 1 } },
+    ]);
+    if (data.length > 0) {
+      res.status(200).json({ status: "Success", data: data });
+    } else {
+      res.status(200).json({ status: "Unauthorized", data: data });
+    }
+  } catch (e) {
+    res.status(200).json({ status: "Fail Data", error: e });
+  }
+};
+exports.GetSingleUser = async (req, res) => {
+  let reqBody = req.body;
+  let email = reqBody.email;
+  console.log(reqBody);
+  try {
+    let data = await userModel.aggregate([
+      { $match: { email: email } },
+      { $project: { email: 1, photo: 1, role: 1, name: 1 } },
+    ]);
+    if (data.length > 0) {
+      res.status(200).json({ status: "Success", data: data });
+    } else {
+      res.status(200).json({ status: "Unauthorized", data: data });
+    }
+  } catch (e) {
+    res.status(200).json({ status: "Fail Data", error: e });
   }
 };

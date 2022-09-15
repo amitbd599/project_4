@@ -21,33 +21,106 @@ import Counter from "./Elements/Blocks/Counter";
 import Contact from "./Page/Contact";
 import LoginPage from "./Dashboard/Pages/LoginPage";
 import DashboardPage from "./Dashboard/Pages/DashboardPage";
+import CreateNewPostPage from "./Dashboard/Pages/CreateNewPostPage";
+import AllPost from "./Dashboard/Pages/AllPost";
+import PostEditPage from "./Dashboard/Pages/PostEditPage";
+import CreateProjectPage from "./Dashboard/Pages/CreateProjectPage";
+import ProjectEditPage from "./Dashboard/Pages/ProjectEditPage";
+import AllProjectPage from "./Dashboard/Pages/AllProjectPage";
+import UserPage from "./Dashboard/Pages/UserPage";
+import CommentPage from "./Dashboard/Pages/CommentPage";
+import { getToken } from "./Helper/SessionHelper";
+import Loader from "./Dashboard/MasterLayout/Loader";
+import { Provider } from "react-redux";
+import store from "./Redux/Store/Store";
+import AllMassage from "./Dashboard/Pages/AllMassage";
 export default function App() {
-  return (
-    <BrowserRouter>
-      <PageScrollTop />
-      <ScrollToTop smooth />
-      <Routes>
-        <Route path="/" exact element={<DigitalCleaningService />} />
-        <Route path="/about-us" exact element={<AboutUs />} />
-        <Route path="/service" exact element={<Service />} />
-        <Route path="/service-details" exact element={<ServiceDetails />} />
-        <Route path="/blog" exact element={<Blog />} />
-        <Route path="/blog-details" exact element={<BlogDetails />} />
-        <Route path="/contact" exact element={<Contact />} />
-        <Route path="/project" exact element={<Project />} />
-        <Route path="/project-details" exact element={<ProjectDetails />} />
-        <Route path="/team" exact element={<Team />} />
-        <Route path="/gallery" exact element={<Gallery />} />
-        <Route path="/button" exact element={<Button />} />
-        <Route path="/video-popup" exact element={<Video_PopUp />} />
-        <Route path="/progressbar" exact element={<Progressbar />} />
-        <Route path="/counter" exact element={<Counter />} />
+  if (!getToken()) {
+    return (
+      <Provider store={store}>
+        <BrowserRouter>
+          <PageScrollTop />
+          <ScrollToTop smooth />
+          <Routes>
+            <Route path="/" exact element={<DigitalCleaningService />} />
+            <Route path="/about-us" exact element={<AboutUs />} />
+            <Route path="/service" exact element={<Service />} />
+            <Route path="/service-details" exact element={<ServiceDetails />} />
+            <Route path="/blog" exact element={<Blog />} />
+            <Route path="/blog-details/:id" exact element={<BlogDetails />} />
+            <Route path="/contact" exact element={<Contact />} />
+            <Route path="/project" exact element={<Project />} />
+            <Route
+              path="/project-details/:id"
+              exact
+              element={<ProjectDetails />}
+            />
+            <Route path="/team" exact element={<Team />} />
+            <Route path="/gallery" exact element={<Gallery />} />
+            <Route path="/button" exact element={<Button />} />
+            <Route path="/video-popup" exact element={<Video_PopUp />} />
+            <Route path="/progressbar" exact element={<Progressbar />} />
+            <Route path="/counter" exact element={<Counter />} />
 
-        <Route path="/login" exact element={<LoginPage />} />
-        <Route path="/dashboard" exact element={<DashboardPage />} />
+            <Route path="/login" exact element={<LoginPage />} />
+            <Route path="*" exact element={<Error404 />} />
+          </Routes>
+          <Loader />
+        </BrowserRouter>
+      </Provider>
+    );
+  } else {
+    return (
+      <Provider store={store}>
+        <BrowserRouter>
+          <PageScrollTop />
+          <ScrollToTop smooth />
+          <Routes>
+            <Route path="/" exact element={<DigitalCleaningService />} />
+            <Route path="/about-us" exact element={<AboutUs />} />
+            <Route path="/service" exact element={<Service />} />
+            <Route path="/service-details" exact element={<ServiceDetails />} />
+            <Route path="/blog" exact element={<Blog />} />
+            <Route path="/blog-details/:id" exact element={<BlogDetails />} />
+            <Route path="/contact" exact element={<Contact />} />
+            <Route path="/project" exact element={<Project />} />
+            <Route
+              path="/project-details/:id"
+              exact
+              element={<ProjectDetails />}
+            />
+            <Route path="/team" exact element={<Team />} />
+            <Route path="/gallery" exact element={<Gallery />} />
+            <Route path="/button" exact element={<Button />} />
+            <Route path="/video-popup" exact element={<Video_PopUp />} />
+            <Route path="/progressbar" exact element={<Progressbar />} />
+            <Route path="/counter" exact element={<Counter />} />
 
-        <Route path="*" exact element={<Error404 />} />
-      </Routes>
-    </BrowserRouter>
-  );
+            <Route path="/login" exact element={<LoginPage />} />
+            <Route path="/dashboard" exact element={<DashboardPage />} />
+            <Route path="/create-new" exact element={<CreateNewPostPage />} />
+            <Route path="/edit-post/:id" exact element={<PostEditPage />} />
+            <Route path="/all-post" exact element={<AllPost />} />
+            <Route
+              path="/create-project"
+              exact
+              element={<CreateProjectPage />}
+            />
+            <Route
+              path="/edit-project/:id"
+              exact
+              element={<ProjectEditPage />}
+            />
+            <Route path="/all-project" exact element={<AllProjectPage />} />
+            <Route path="/all-user" exact element={<UserPage />} />
+            <Route path="/comment" exact element={<CommentPage />} />
+            <Route path="/massage" exact element={<AllMassage />} />
+
+            <Route path="*" exact element={<Error404 />} />
+          </Routes>
+          <Loader />
+        </BrowserRouter>
+      </Provider>
+    );
+  }
 }

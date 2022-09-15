@@ -1,0 +1,24 @@
+.userComponents {
+  .wrapper {
+    .wrapper__body {
+      .user__body {
+        background: #fff;
+        margin-top: 30px;
+        padding: 20px 30px;
+        table {
+          min-width: 600px;
+          img {
+            width: 50px;
+            border-radius: 50%;
+          }
+          .my__btn {
+            padding: 8px 18px;
+            background: #151529;
+            color: #fff;
+            border-radius: 6px;
+          }
+        }
+      }
+    }
+  }
+}

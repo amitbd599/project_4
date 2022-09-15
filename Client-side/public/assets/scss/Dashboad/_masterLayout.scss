@@ -1,10 +1,9 @@
 .MasterLayout {
-  ::-webkit-scrollbar {
-    display: none;
-    background: transparent;
-  }
-
   .dashboard__layout {
+    &::-webkit-scrollbar {
+      display: none;
+      background: transparent;
+    }
     width: 250px;
     height: 100vh;
     background: #151529;
@@ -33,6 +32,7 @@
         .navItems {
           padding-bottom: 10px;
           .nav__link {
+            cursor: pointer;
             font-size: 14px;
             font-weight: 500;
             color: #a3a6b7;
@@ -68,11 +68,11 @@
             }
           }
           .dropdown__body {
-            -webkit-transition: max-height 0.5s linear;
-            -moz-transition: max-height 0.5s linear;
-            -ms-transition: max-height 0.5s linear;
-            -o-transition: max-height 0.5s linear;
-            transition: max-height 0.5s linear;
+            -webkit-transition: max-height 0.3s linear;
+            -moz-transition: max-height 0.3s linear;
+            -ms-transition: max-height 0.3s linear;
+            -o-transition: max-height 0.3s linear;
+            transition: max-height 0.3s linear;
             max-height: 0;
             display: block;
             overflow: hidden;
@@ -84,6 +84,9 @@
                 color: #a3a6b7;
                 padding: 4px 10px;
                 display: block;
+                &.active {
+                  color: #fff;
+                }
               }
             }
             &.show__Dropdown__Menu {
@@ -590,8 +593,17 @@
     }
   }
   .main__container__body {
+    padding-left: 250px;
     min-height: 100vh;
     width: 100%;
     background: #f7f7f7;
+    -webkit-transition: all 0.3s linear;
+    -moz-transition: all 0.3s linear;
+    -ms-transition: all 0.3s linear;
+    -o-transition: all 0.3s linear;
+    transition: all 0.3s linear;
+    &.active {
+      padding-left: 0;
+    }
   }
 }
