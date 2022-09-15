@@ -3,6 +3,7 @@ const AuthVerifyMiddleware = require("../Middleware/AuthVerifyMiddleware");
 const userController = require("../Controllers/userController");
 const blogController = require("../Controllers/blogController");
 const portfolioController = require("../Controllers/portfolioController");
+const commentController = require("../Controllers/commentController");
 const router = express.Router();
 
 // ======================== Admin login API ==========================
@@ -39,11 +40,6 @@ router.post("/totalShowSingleBlog/:id", blogController.totalShowSingleBlog);
 
 router.get("/product-list/:pageNo", blogController.productList);
 
-// ========================= Comment API =============================
-
-router.post("/comment/:id", blogController.commentPost);
-router.get("/all-comment", blogController.allCommentPost);
-
 // ======================== Project API ==========================
 
 router.post(
@@ -75,4 +71,42 @@ router.get("/project-list/:pageNo", portfolioController.portfolioList);
 
 router.post("/sendMail", userController.EmailSend);
 router.get("/getMail", userController.GetAllMassage);
+
+//  ======================== Delete & Read Single Massage ==================
+
+router.delete(
+  "/deleteSingleMassage/:id",
+  AuthVerifyMiddleware,
+  userController.DeleteSingleMassage
+);
+router.get(
+  "/readSingleMassage/:id",
+  AuthVerifyMiddleware,
+  userController.ReadSingleMassage
+);
+
+// ========================= Comment API =============================
+
+router.post("/create-comment", commentController.createCommentPost);
+router.get(
+  "/get-all-comment",
+  AuthVerifyMiddleware,
+  commentController.readCommentPost
+);
+router.get(
+  "/get-single-comment/:blogId",
+  AuthVerifyMiddleware,
+  commentController.readSingleCommentPost
+);
+router.post(
+  "/update-comment/:id",
+  AuthVerifyMiddleware,
+  commentController.updateCommentPost
+);
+router.delete(
+  "/delete-comment/:id",
+  AuthVerifyMiddleware,
+  commentController.deleteCommentPost
+);
+
 module.exports = router;

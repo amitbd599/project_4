@@ -1,6 +1,14 @@
 .allPostComponent {
   .wrapper {
     .wrapper__body {
+      padding: 0 25px;
+      .header__text {
+        margin-top: 30px;
+        h2 {
+          font-size: 18px;
+          color: #8348ff;
+        }
+      }
       .myTable {
         padding: 35px 20px;
         margin-top: 50px;
@@ -22,10 +30,16 @@
         }
         .button {
           .edit {
-            padding: 2px 15px;
+            padding: 2px 8px;
             border-radius: 5px;
             background: #17b978;
             color: #fff;
+            &.Approve {
+              background: #17b978;
+            }
+            &.Disapprove {
+              background: #fbb034;
+            }
           }
           .delete {
             padding: 2px 15px;

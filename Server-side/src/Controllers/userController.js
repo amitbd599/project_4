@@ -2,7 +2,7 @@ const JWT = require("jsonwebtoken");
 const massageModel = require("../Models/massageModel");
 const userModel = require("../Models/UserModel");
 const SendEmailUtility = require("../Utility/SendEmailUtility");
-
+const ObjectId = require("mongoose").Types.ObjectId;
 //! Admin Login API
 
 exports.login = async (req, res) => {
@@ -63,12 +63,14 @@ exports.EmailSend = async (req, res) => {
 exports.GetAllMassage = async (req, res) => {
   try {
     let Data = await massageModel.aggregate([
+      { $sort: { _id: -1 } },
       {
         $project: {
           email: 1,
           name: 1,
           subject: 1,
           description: 1,
+          isOpen: 1,
           createdDate: {
             $dateToString: { format: "%d-%m-%Y", date: "$createdDate" },
           },
@@ -81,6 +83,53 @@ exports.GetAllMassage = async (req, res) => {
   }
 };
 
+//! Read single Massage
+exports.ReadSingleMassage = async (req, res) => {
+  try {
+    let id = req.params.id;
+
+    let data = await massageModel.aggregate([
+      { $match: { _id: ObjectId(req.params.id) } },
+      {
+        $project: {
+          _id: 1,
+          email: 1,
+          name: 1,
+          subject: 1,
+          description: 1,
+          createdDate: {
+            $dateToString: { format: "%d-%m-%Y", date: "$createdDate" },
+          },
+        },
+      },
+    ]);
+
+    let dataUpdate = await massageModel.findOneAndUpdate(
+      { _id: id },
+      { isOpen: true }
+    );
+    res
+      .status(200)
+      .json({ status: "Success", data: data, dataUpdate: dataUpdate });
+  } catch (e) {
+    res.status(200).json({ status: "Fail", error: e });
+  }
+};
+
+//! Delete Single Massage
+
+exports.DeleteSingleMassage = async (req, res) => {
+  try {
+    let id = req.params.id;
+    let query = { _id: id };
+    let data = await massageModel.deleteOne(query);
+    res.status(200).json({ status: "Success", data: data });
+  } catch (e) {
+    res.status(200).json({ status: "Fail", error: e });
+  }
+};
+
+// ! Email Verify
 exports.EmailVerifyData = async (req, res) => {
   try {
     let reqBody = req.body;

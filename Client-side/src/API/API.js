@@ -7,13 +7,20 @@ import {
   setPassword,
   setToken,
 } from "../Helper/SessionHelper";
-import { loadMassageData } from "../Redux/stateSlice/AllMassageSlicer";
+import {
+  loadMassageData,
+  loadSingleMassageData,
+} from "../Redux/stateSlice/AllMassageSlicer";
 import {
   commentData,
   loadData,
   paginationData,
   totalData,
 } from "../Redux/stateSlice/BlogDataSlicer";
+import {
+  loadCommentData,
+  loadSingleCommentData,
+} from "../Redux/stateSlice/CommentSlicer";
 import { hideLoader, showLoader } from "../Redux/stateSlice/LoaderSettingSlice";
 import {
   loadPortfolioData,
@@ -368,28 +375,28 @@ export const showReader__Request__API = async (id, show) => {
   }
 };
 
-//! ==================== Comment Show Dashboard =======================
+// //! ==================== Comment Show Dashboard =======================
 
-export const commentShowDashboard = async () => {
-  store.dispatch(showLoader());
-  let URL = BaseURL + "/all-comment";
+// export const commentShowDashboard = async () => {
+//   store.dispatch(showLoader());
+//   let URL = BaseURL + "/all-comment";
 
-  try {
-    const result = await axios.get(URL);
-    store.dispatch(hideLoader());
-    if (result.status === 200) {
-      store.dispatch(commentData(result.data["data"]));
-      return true;
-    } else {
-      ErrorTost("Something Went Wrong");
-      return false;
-    }
-  } catch (e) {
-    store.dispatch(hideLoader());
-    ErrorTost("Something Went Wrong");
-    return false;
-  }
-};
+//   try {
+//     const result = await axios.get(URL);
+//     store.dispatch(hideLoader());
+//     if (result.status === 200) {
+//       store.dispatch(commentData(result.data["data"]));
+//       return true;
+//     } else {
+//       ErrorTost("Something Went Wrong");
+//       return false;
+//     }
+//   } catch (e) {
+//     store.dispatch(hideLoader());
+//     ErrorTost("Something Went Wrong");
+//     return false;
+//   }
+// };
 
 //! ==================== Portfolio create Post API ===================
 
@@ -582,7 +589,7 @@ export const sendEmail = async (name, email, EmailText, EmailSubject) => {
   }
 };
 
-// ! Get All Mail
+// !=================== Get All Mail =======================
 export const getMail = async () => {
   store.dispatch(showLoader());
   let URL = BaseURL + "/getMail";
@@ -599,6 +606,205 @@ export const getMail = async () => {
   } catch (e) {
     ErrorTost("Something Went Wrong2");
     store.dispatch(hideLoader());
+    return false;
+  }
+};
+
+//! ===================== Single Massage Post API ====================
+
+export const single_Massage__Request__API = async (id) => {
+  store.dispatch(showLoader());
+  let URL = BaseURL + "/readSingleMassage/" + id;
+  try {
+    const result = await axios.get(URL, TokenData);
+    store.dispatch(hideLoader());
+    if (result.status === 200) {
+      store.dispatch(loadSingleMassageData(result.data["data"][0]));
+      return true;
+    } else {
+      ErrorTost("Something Went Wrong");
+      return false;
+    }
+  } catch (e) {
+    ErrorTost("Something Went Wrong");
+    store.dispatch(hideLoader());
+    return false;
+  }
+};
+
+//!==================== Delete Single Massage API =====================
+
+export const deleteSingleMassage__Request__API = async (id) => {
+  store.dispatch(showLoader());
+  let URL = BaseURL + "/deleteSingleMassage/" + id;
+
+  try {
+    const result = await axios.delete(URL, TokenData);
+    store.dispatch(hideLoader());
+    if (result.status === 200) {
+      return true;
+    } else {
+      ErrorTost("Something Went Wrong");
+      return false;
+    }
+  } catch (e) {
+    ErrorTost("Something Went Wrong");
+    store.dispatch(hideLoader());
+    return false;
+  }
+};
+
+// =====
+
+//! ==================== Comment create Post API ===================
+
+export const CommentCreate__Request__API = async (
+  blogId,
+  name,
+  email,
+  img,
+  description
+) => {
+  store.dispatch(showLoader());
+  let URL = BaseURL + "/create-comment";
+  let postBody = {
+    blogId: blogId,
+    name: name,
+    email: email,
+    img: img,
+    description: description,
+    status: false,
+  };
+  try {
+    const result = await axios.post(URL, postBody);
+    store.dispatch(hideLoader());
+    if (result.status === 200) {
+      return true;
+    } else {
+      ErrorTost("Something Went Wrong");
+      return false;
+    }
+  } catch (e) {
+    store.dispatch(hideLoader());
+    ErrorTost("Something Went Wrong");
+    return false;
+  }
+};
+
+//! ==================== Get All Comment Post API ===================
+export const readCommentPost__Request__API = async () => {
+  store.dispatch(showLoader());
+  let URL = BaseURL + "/get-all-comment";
+
+  try {
+    const result = await axios.get(URL, TokenData);
+    store.dispatch(hideLoader());
+    if (result.status === 200) {
+      store.dispatch(loadCommentData(result.data["data"]));
+      return true;
+    } else {
+      ErrorTost("Something Went Wrong");
+      return false;
+    }
+  } catch (e) {
+    store.dispatch(hideLoader());
+    ErrorTost("Something Went Wrong");
+    return false;
+  }
+};
+
+//! ==================== Update Comment Post API ====================
+export const updateCommentPost__Request__API = async (id, status) => {
+  store.dispatch(showLoader());
+  let URL = BaseURL + "/update-comment/" + id;
+  let postBody = {
+    _id: id,
+    status: status,
+  };
+
+  try {
+    const result = await axios.post(URL, postBody, TokenData);
+    store.dispatch(hideLoader());
+    if (result.status === 200) {
+      SuccessTost("Update Task Success");
+      return true;
+    } else {
+      ErrorTost("Something Went Wrong");
+      return false;
+    }
+  } catch (e) {
+    ErrorTost("Something Went Wrong");
+    store.dispatch(hideLoader());
+    return false;
+  }
+};
+
+//! ===================== Read single Blog all Comment API ====================
+
+export const singleCommentPost__Request__API = async (blogId) => {
+  store.dispatch(showLoader());
+  let URL = BaseURL + "/get-single-comment/" + blogId;
+  try {
+    const result = await axios.get(URL);
+    store.dispatch(hideLoader());
+    if (result.status === 200) {
+      store.dispatch(loadSingleCommentData(result.data["data"]));
+      return true;
+    } else {
+      ErrorTost("Something Went Wrong");
+      return false;
+    }
+  } catch (e) {
+    ErrorTost("Something Went Wrong");
+    store.dispatch(hideLoader());
+    return false;
+  }
+};
+
+//!====================== Delete Comment Post API =====================
+
+export const deleteComment__Request__API = async (id) => {
+  store.dispatch(showLoader());
+  let URL = BaseURL + "/delete-comment/" + id;
+
+  try {
+    const result = await axios.delete(URL, TokenData);
+    store.dispatch(hideLoader());
+    if (result.status === 200) {
+      return true;
+    } else {
+      ErrorTost("Something Went Wrong");
+      return false;
+    }
+  } catch (e) {
+    ErrorTost("Something Went Wrong");
+    store.dispatch(hideLoader());
+    return false;
+  }
+};
+
+//! ================ Get All Comment Post by Pagination API ================ ?????
+export const CommentPagination__Request__API = async (pageNo) => {
+  store.dispatch(showLoader());
+  let URL = BaseURL + "/portfolio-list/" + pageNo;
+
+  try {
+    const result = await axios.get(URL);
+    store.dispatch(hideLoader());
+    if (result.status === 200) {
+      store.dispatch(paginationPortfolioData(result.data["data"][0]["Row"]));
+      store.dispatch(
+        totalPortfolioData(result.data["data"][0]["Total"][0]["count"])
+      );
+
+      return true;
+    } else {
+      ErrorTost("Something Went Wrong");
+      return false;
+    }
+  } catch (e) {
+    store.dispatch(hideLoader());
+    ErrorTost("Something Went Wrong");
     return false;
   }
 };

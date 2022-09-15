@@ -34,6 +34,7 @@ import Loader from "./Dashboard/MasterLayout/Loader";
 import { Provider } from "react-redux";
 import store from "./Redux/Store/Store";
 import AllMassage from "./Dashboard/Pages/AllMassage";
+import SingleMassagePage from "./Dashboard/Pages/SingleMassagePage";
 export default function App() {
   if (!getToken()) {
     return (
@@ -115,6 +116,11 @@ export default function App() {
             <Route path="/all-user" exact element={<UserPage />} />
             <Route path="/comment" exact element={<CommentPage />} />
             <Route path="/massage" exact element={<AllMassage />} />
+            <Route
+              path="/single-massage/:id"
+              exact
+              element={<SingleMassagePage />}
+            />
 
             <Route path="*" exact element={<Error404 />} />
           </Routes>
