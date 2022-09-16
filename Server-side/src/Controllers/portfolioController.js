@@ -1,5 +1,5 @@
 const portfolioModel = require("../Models/portfolioModel");
-
+const ObjectId = require("mongoose").Types.ObjectId;
 //! Create Portfolio
 
 exports.createPortfolio = async (req, res) => {
@@ -16,7 +16,24 @@ exports.createPortfolio = async (req, res) => {
 
 exports.readPortfolio = async (req, res) => {
   try {
-    let data = await portfolioModel.find();
+    let data = await portfolioModel.aggregate([
+      {
+        $project: {
+          title: 1,
+          type: 1,
+          category: 1,
+          img: 1,
+          description: 1,
+          client: 1,
+          duration: 1,
+          task: 1,
+          createdDate: {
+            $dateToString: { format: "%d-%m-%Y", date: "$createdDate" },
+          },
+          show: 1,
+        },
+      },
+    ]);
     res.status(200).json({ status: "Success", data: data });
   } catch (e) {
     res.status(200).json({ status: "Fail", error: e });
@@ -27,8 +44,25 @@ exports.readPortfolio = async (req, res) => {
 exports.readSinglePortfolio = async (req, res) => {
   try {
     let id = req.params.id;
-    console.log(id);
-    let data = await portfolioModel.findOne({ _id: id });
+    let data = await portfolioModel.aggregate([
+      { $match: { _id: ObjectId(req.params.id) } },
+      {
+        $project: {
+          title: 1,
+          type: 1,
+          category: 1,
+          img: 1,
+          description: 1,
+          client: 1,
+          duration: 1,
+          task: 1,
+          createdDate: {
+            $dateToString: { format: "%d-%m-%Y", date: "$createdDate" },
+          },
+          show: 1,
+        },
+      },
+    ]);
     res.status(200).json({ status: "Success", data: data });
   } catch (e) {
     res.status(200).json({ status: "Fail", error: e });

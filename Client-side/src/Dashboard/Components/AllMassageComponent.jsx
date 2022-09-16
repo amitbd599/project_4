@@ -80,7 +80,10 @@ const AllMassageComponent = () => {
                         <td>{value.createdDate}</td>
                         <td>{value.name}</td>
                         <td>{value.email}</td>
-                        <td>{value.description.slice(0, 35)} ...</td>
+                        <td>
+                          {value.description.split(" ").slice(0, 10).join(" ")}{" "}
+                          ...
+                        </td>
                         <td>
                           {value.isOpen === true ? (
                             <strong className="text-success">Open</strong>

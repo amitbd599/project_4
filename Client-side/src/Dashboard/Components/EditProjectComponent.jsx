@@ -35,18 +35,18 @@ const EditProjectComponent = () => {
 
   const [imgUpload, setImgUpload] = useState("");
   const [imgShowLink, setImgShowLink] = useState(SinglePortfolioData.img);
-  let { titleRef, cateRef } = useRef();
+  let { titleRef, cateRef, clientRef, durationRef, taskRef } = useRef();
 
   const [previewImg, setPreviewImg] = useState();
 
   const addCategory = () => {
     let cateRefValue = cateRef.value;
-    setCategory([...SinglePortfolioData.category, cateRefValue]);
+    setCategory([...category, cateRefValue]);
     cateRef.value = "";
   };
 
-  const removeCate = (value) => {
-    const result = category.filter((item) => item !== value);
+  const removeCate = (index) => {
+    const result = category.filter((item, i) => i !== index);
     setCategory(result);
   };
 
@@ -67,12 +67,18 @@ const EditProjectComponent = () => {
   };
   const getData = (id) => {
     let title = titleRef.value;
+    let client = clientRef.value;
+    let duration = durationRef.value;
+    let task = taskRef.value;
     updatePortfolioPost__Request__API(
       title,
       value,
       imgShowLink,
       type,
       category,
+      client,
+      duration,
+      task,
       id
     ).then((res) => {
       if (res === true) {
@@ -288,11 +294,40 @@ const EditProjectComponent = () => {
                               <button key={index}>{value}</button>
                               <span
                                 class="mdi mdi-close"
-                                onClick={() => removeCate(value)}
+                                onClick={() => removeCate(index)}
                               ></span>
                             </div>
                           ))}
                         </div>
+                      </div>
+                    </div>
+                    <div className="child__asset">
+                      <div className="sub_child">
+                        <label htmlFor="client">Client:</label>
+                        <input
+                          type="text"
+                          placeholder="Client Name"
+                          defaultValue={SinglePortfolioData.client}
+                          ref={(input) => (clientRef = input)}
+                        />
+                      </div>
+                      <div className="sub_child">
+                        <label htmlFor="client">Duration:</label>
+                        <input
+                          type="text"
+                          placeholder="Duration"
+                          defaultValue={SinglePortfolioData.duration}
+                          ref={(input) => (durationRef = input)}
+                        />
+                      </div>
+                      <div className="sub_child">
+                        <label htmlFor="client">Task:</label>
+                        <input
+                          type="text"
+                          placeholder="Task"
+                          defaultValue={SinglePortfolioData.task}
+                          ref={(input) => (taskRef = input)}
+                        />
                       </div>
                     </div>
                     <div className="rich__text">

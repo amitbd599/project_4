@@ -34,7 +34,7 @@ const PostEditComponent = () => {
   const [value, setValue] = useState(SingleBlogData.description);
   const [type, setType] = useState(SingleBlogData.type);
   const [category, setCategory] = useState(SingleBlogData.category);
-
+  console.log(category);
   const [imgUpload, setImgUpload] = useState("");
   const [imgShowLink, setImgShowLink] = useState(SingleBlogData.img);
   let { titleRef, cateRef } = useRef();
@@ -43,12 +43,12 @@ const PostEditComponent = () => {
 
   const addCategory = () => {
     let cateRefValue = cateRef.value;
-    setCategory([...SingleBlogData.category, cateRefValue]);
+    setCategory([...category, cateRefValue]);
     cateRef.value = "";
   };
 
-  const removeCate = (value) => {
-    const result = category.filter((item) => item !== value);
+  const removeCate = (index) => {
+    const result = category.filter((item, i) => i !== index);
     setCategory(result);
   };
 
@@ -290,7 +290,7 @@ const PostEditComponent = () => {
                               <button key={index}>{value}</button>
                               <span
                                 class="mdi mdi-close"
-                                onClick={() => removeCate(value)}
+                                onClick={() => removeCate(index)}
                               ></span>
                             </div>
                           ))}

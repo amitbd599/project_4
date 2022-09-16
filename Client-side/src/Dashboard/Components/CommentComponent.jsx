@@ -7,6 +7,7 @@ import {
 import { useSelector } from "react-redux";
 import { SuccessTost } from "../../Helper/FormHelper";
 import { DeleteAlertCommentPost } from "../../Helper/DeleteAlert";
+import { Link } from "react-router-dom";
 const CommentComponent = () => {
   useEffect(() => {
     readCommentPost__Request__API();
@@ -48,9 +49,9 @@ const CommentComponent = () => {
                   <table>
                     <tr>
                       <th style={{ width: "2%" }}>No:</th>
-                      <th style={{ width: "20%" }}>Blog Title</th>
+                      <th style={{ width: "15%" }}>Blog Title</th>
                       <th style={{ width: "23%" }}>Comment</th>
-                      <th style={{ width: "10%" }}>Name</th>
+                      <th style={{ width: "15%" }}>Name</th>
                       <th style={{ width: "10%" }}>Email</th>
                       <th style={{ width: "5%" }}>Status</th>
                       <th style={{ width: "5%" }}>Date</th>
@@ -59,8 +60,19 @@ const CommentComponent = () => {
                     {commentData.map((value, index) => (
                       <tr key={index}>
                         <td>{index + 1}</td>
-                        <td>Blog Title ??</td>
-                        <td>{value.description}</td>
+                        <td>
+                          <button className="blogLink">
+                            <Link
+                              target="blank"
+                              to={`/blog-details/${value.blogId}`}
+                            >
+                              See Blog
+                            </Link>
+                          </button>
+                        </td>
+                        <td>
+                          {value.description.split(" ").slice(0, 10).join(" ")}
+                        </td>
                         <td>{value.name}</td>
                         <td>{value.email}</td>
                         <td>

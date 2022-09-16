@@ -67,8 +67,8 @@ const AllProjectComponent = () => {
                     </tr>
                     {PortfolioData.map((value, index) => (
                       <tr key={index}>
-                        <td>1</td>
-                        <td>{value.title}</td>
+                        <td>{index + 1}</td>
+                        <td>{value.title.split(" ").slice(0, 5).join(" ")}</td>
                         <td>
                           <img src={value.img} alt="" />
                         </td>

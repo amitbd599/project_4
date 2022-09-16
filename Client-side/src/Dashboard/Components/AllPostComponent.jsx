@@ -1,7 +1,7 @@
 import React from "react";
 import { useEffect } from "react";
 import { useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import {
   readBlogPost__Request__API,
   singleBlogPost__Request__API,
@@ -61,8 +61,10 @@ const AllPostComponent = () => {
                     </tr>
                     {BlogData.map((value, index) => (
                       <tr key={index}>
-                        <td>1</td>
-                        <td>{value.title}</td>
+                        <td>{index + 1}</td>
+                        <td>
+                          {value.title.split(" ").slice(0, 10).join(" ")} ...
+                        </td>
                         <td>
                           <img src={value.img} alt="" />
                         </td>
@@ -73,6 +75,16 @@ const AllPostComponent = () => {
                               onClick={() => editPost(value._id)}
                             >
                               Edit
+                            </button>
+                          </span>
+                          <span>
+                            <button className="edit open">
+                              <Link
+                                to={`/blog-details/${value._id}`}
+                                target="blank"
+                              >
+                                Open Post
+                              </Link>
                             </button>
                           </span>
                           <span>

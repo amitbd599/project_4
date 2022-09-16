@@ -60,7 +60,7 @@
             border-radius: 10px;
             img {
               transition: all 0.5s linear;
-              height: 496px;
+              height: auto;
               @media #{$md-layout-device} {
                 height: auto;
               }
@@ -95,22 +95,25 @@
           }
           .overlay {
             // width: 86%;
-            margin-bottom: 45px;
+            margin-bottom: 0;
             overflow: hidden;
-            position: absolute;
-            height: 268px;
-            bottom: 0;
-            left: 0;
-            padding: 0 10px;
+            // position: absolute;
+            // height: 268px;
+            // bottom: 0;
+            // left: 0;
+            // padding: 0 10px;
             .textFile {
-              text-align: center;
+              // text-align: center;
               align-items: center;
-              transform: translateY(195px);
+              // transform: translateY(195px);
               transition: all 0.5s linear;
               h3 {
-                font-size: 28px;
+                margin-top: 12px;
+                font-size: 18px;
                 font-weight: 600;
-                color: var(--color-white);
+                color: var(--paragraph-color);
+                transition: all 0.3s linear;
+                cursor: pointer;
               }
               p {
                 font-size: 15px;
@@ -142,7 +145,10 @@
               transform: scale(1.1);
             }
             .textFile {
-              transform: translateY(73px);
+              // transform: translateY(73px);
+              h3 {
+                color: var(--primary-theme-color);
+              }
             }
             .overlay p {
               visibility: visible;

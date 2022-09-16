@@ -95,7 +95,6 @@ router.get(
 );
 router.get(
   "/get-single-comment/:blogId",
-  AuthVerifyMiddleware,
   commentController.readSingleCommentPost
 );
 router.post(

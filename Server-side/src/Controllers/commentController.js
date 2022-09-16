@@ -20,6 +20,7 @@ exports.readCommentPost = async (req, res) => {
       {
         $project: {
           name: 1,
+          blogId: 1,
           email: 1,
           img: 1,
           description: 1,
@@ -40,10 +41,11 @@ exports.readCommentPost = async (req, res) => {
 exports.readSingleCommentPost = async (req, res) => {
   try {
     let data = await commentModel.aggregate([
-      { $match: { blogId: ObjectId(req.params.id) } },
+      { $match: { blogId: req.params.blogId } },
       {
         $project: {
           name: 1,
+          blogId: 1,
           email: 1,
           img: 1,
           description: 1,

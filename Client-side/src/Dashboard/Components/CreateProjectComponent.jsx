@@ -31,7 +31,7 @@ const CreateProjectComponent = () => {
   const [category, setCategory] = useState([]);
   const [imgUpload, setImgUpload] = useState("");
   const [imgShowLink, setImgShowLink] = useState("");
-  let { titleRef, cateRef } = useRef();
+  let { titleRef, cateRef, clientRef, durationRef, taskRef } = useRef();
 
   const addCategory = () => {
     let cateRefValue = cateRef.value;
@@ -60,12 +60,18 @@ const CreateProjectComponent = () => {
   };
   const getData = () => {
     let title = titleRef.value;
+    let client = clientRef.value;
+    let duration = durationRef.value;
+    let task = taskRef.value;
     portfolioCreate__Request__API(
       title,
       value,
       imgShowLink,
       type,
-      category
+      category,
+      client,
+      duration,
+      task
     ).then((res) => {
       if (res === true) {
         navigate("/all-project");
@@ -185,7 +191,7 @@ const CreateProjectComponent = () => {
                 <div className="col">
                   <div className="post__body">
                     <div className="title">
-                      <h3>PROJECT EDIT</h3>
+                      <h3>PROJECT CREATE</h3>
                     </div>{" "}
                     <div className="title__box">
                       <span>Project Title:</span>
@@ -250,6 +256,32 @@ const CreateProjectComponent = () => {
                             </div>
                           ))}
                         </div>
+                      </div>
+                    </div>
+                    <div className="child__asset">
+                      <div className="sub_child">
+                        <label htmlFor="client">Client:</label>
+                        <input
+                          type="text"
+                          placeholder="Client Name"
+                          ref={(input) => (clientRef = input)}
+                        />
+                      </div>
+                      <div className="sub_child">
+                        <label htmlFor="client">Duration:</label>
+                        <input
+                          type="text"
+                          placeholder="Duration"
+                          ref={(input) => (durationRef = input)}
+                        />
+                      </div>
+                      <div className="sub_child">
+                        <label htmlFor="client">Task:</label>
+                        <input
+                          type="text"
+                          placeholder="Task"
+                          ref={(input) => (taskRef = input)}
+                        />
                       </div>
                     </div>
                     <div className="rich__text">

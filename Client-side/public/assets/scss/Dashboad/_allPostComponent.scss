@@ -40,15 +40,33 @@
             &.Disapprove {
               background: #fbb034;
             }
-          }
-          .delete {
-            padding: 2px 15px;
-            border-radius: 5px;
-            color: #fff;
-            margin-left: 5px;
-            background: #d82f2f;
+            &.open {
+              margin-left: 6px;
+              background: #00112c;
+              a {
+                color: #fff;
+              }
+            }
           }
         }
+        .blogLink {
+          padding: 2px 15px;
+          border-radius: 5px;
+          color: #fff;
+          margin-left: 5px;
+          background: #34bf49;
+          a {
+            color: #fff;
+          }
+        }
+        .delete {
+          padding: 2px 15px;
+          border-radius: 5px;
+          color: #fff;
+          margin-left: 5px;
+          background: #d82f2f;
+        }
+
         .pagination {
           margin-top: 10px;
           button {

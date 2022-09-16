@@ -284,7 +284,7 @@ export const singleBlogPost__Request__API = async (id) => {
     const result = await axios.get(URL);
     store.dispatch(hideLoader());
     if (result.status === 200) {
-      store.dispatch(loadSingleData(result.data["data"]));
+      store.dispatch(loadSingleData(result.data["data"][0]));
       return true;
     } else {
       ErrorTost("Something Went Wrong");
@@ -402,21 +402,26 @@ export const showReader__Request__API = async (id, show) => {
 
 export const portfolioCreate__Request__API = async (
   title,
-  description,
-  img,
+  value,
+  imgShowLink,
   type,
-  category
+  category,
+  client,
+  duration,
+  task
 ) => {
   store.dispatch(showLoader());
   let URL = BaseURL + "/createPortfolio";
   let postBody = {
     title: title,
-    img: img,
     type: type,
     category: category,
-    description: description,
+    img: imgShowLink,
+    description: value,
+    client: client,
+    duration: duration,
+    task: task,
     show: 0,
-    author: "admin",
   };
   try {
     const result = await axios.post(URL, postBody, TokenData);
@@ -459,21 +464,27 @@ export const readPortfolioPost__Request__API = async () => {
 //! ==================== Update Portfolio Post API ====================
 export const updatePortfolioPost__Request__API = async (
   title,
-  description,
-  img,
+  value,
+  imgShowLink,
   type,
   category,
+  client,
+  duration,
+  task,
   id
 ) => {
   store.dispatch(showLoader());
   let URL = BaseURL + "/updatePortfolio/" + id;
   let postBody = {
     title: title,
-    description: description,
-    img: img,
     type: type,
     category: category,
-    id: id,
+    img: imgShowLink,
+    description: value,
+    client: client,
+    duration: duration,
+    task: task,
+    show: 0,
   };
 
   try {
@@ -502,7 +513,7 @@ export const singlePortfolioPost__Request__API = async (id) => {
     const result = await axios.get(URL);
     store.dispatch(hideLoader());
     if (result.status === 200) {
-      store.dispatch(loadSinglePortfolioData(result.data["data"]));
+      store.dispatch(loadSinglePortfolioData(result.data["data"][0]));
       return true;
     } else {
       ErrorTost("Something Went Wrong");
@@ -662,7 +673,6 @@ export const CommentCreate__Request__API = async (
   blogId,
   name,
   email,
-  img,
   description
 ) => {
   store.dispatch(showLoader());
@@ -671,7 +681,7 @@ export const CommentCreate__Request__API = async (
     blogId: blogId,
     name: name,
     email: email,
-    img: img,
+    img: "",
     description: description,
     status: false,
   };
