@@ -23,11 +23,6 @@ const Blog = () => {
   useEffect(() => {
     blogPagination__Request__API(params.pageNo);
     readBlogPost__Request__API();
-    verifyEmail(getEmail(), getPassword()).then((res) => {
-      if (res === true) {
-        removeSession();
-      }
-    });
   }, []);
 
   let navigate = useNavigate();

@@ -52,6 +52,7 @@ const AllProjectComponent = () => {
       if (res === true) {
         SuccessTost("Delete Success!");
         readPortfolioPost__Request__API();
+        PortfolioPagination__Request__API(1);
       }
     });
   };

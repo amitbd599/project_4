@@ -1,12 +1,12 @@
 import cogoToast from "cogo-toast";
-let gmailRegx = /^[\w-\.]+@+gmail+[\w-\.]{2,4}$/;
-let emailRegx = /^[\w-\.]+@+gmail+[\w-\.]{2,4}$/;
+// let gmailRegx = /^[\w-\.]+@+gmail+[\w-\.]{2,4}$/;
+let emailRegx = /\S+@\S+\.\S+/;
 class FormHelper {
   IsEmpty(value) {
     return value.length === 0;
   }
   IsGmail(value) {
-    return !gmailRegx.test(value);
+    return !emailRegx.test(value);
   }
   IsEmail(value) {
     return !emailRegx.test(value);

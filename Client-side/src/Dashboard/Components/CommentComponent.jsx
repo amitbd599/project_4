@@ -1,16 +1,33 @@
 import React, { useState } from "react";
 import { useEffect } from "react";
 import {
+  CommentPagination__Request__API,
   readCommentPost__Request__API,
   updateCommentPost__Request__API,
+  verifyEmail,
 } from "../../API/API";
 import { useSelector } from "react-redux";
 import { SuccessTost } from "../../Helper/FormHelper";
 import { DeleteAlertCommentPost } from "../../Helper/DeleteAlert";
-import { Link } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
+import {
+  getEmail,
+  getPassword,
+  removeSession,
+} from "../../Helper/SessionHelper";
+import ReactPaginate from "react-paginate";
+import store from "../../Redux/Store/Store";
+import { ParamsPaginationCommentData } from "../../Redux/stateSlice/CommentSlicer";
 const CommentComponent = () => {
+  const params = useParams();
   useEffect(() => {
     readCommentPost__Request__API();
+    CommentPagination__Request__API(params.pageNo);
+    verifyEmail(getEmail(), getPassword()).then((res) => {
+      if (res === true) {
+        removeSession();
+      }
+    });
   }, []);
 
   const handelApprove = (id, status) => {
@@ -24,6 +41,7 @@ const CommentComponent = () => {
     updateCommentPost__Request__API(id, newStatus).then((res) => {
       if (res === true) {
         readCommentPost__Request__API();
+        CommentPagination__Request__API(params.pageNo);
       }
     });
   };
@@ -33,11 +51,31 @@ const CommentComponent = () => {
       if (res === true) {
         SuccessTost("Delete Success!");
         readCommentPost__Request__API();
+        CommentPagination__Request__API(params.pageNo);
       }
     });
   };
 
-  const commentData = useSelector((state) => state.CommentData.AllComment);
+  const handelPageClick = (event) => {
+    let pageNo = event.selected;
+
+    CommentPagination__Request__API(pageNo + 1).then((res) => {
+      if (res === true) {
+        store.dispatch(ParamsPaginationCommentData(pageNo + 1));
+        navigate(`/comment/${pageNo + 1}`);
+      }
+    });
+  };
+  let navigate = useNavigate();
+  const AllCommentData = useSelector((state) => state.CommentData.AllComment);
+
+  const commentDataPagination = useSelector(
+    (state) => state.CommentData.paginationAllComment
+  );
+  const TotalCommentData = useSelector(
+    (state) => state.CommentData.totalCommentData
+  );
+
   return (
     <div className="allPostComponent">
       <div className="wrapper">
@@ -45,10 +83,16 @@ const CommentComponent = () => {
           <div className="container">
             <div className="row">
               <div className="col">
+                <div className="header__text">
+                  <h2>Total Comment: {AllCommentData.length} </h2>
+                </div>
+              </div>
+            </div>
+            <div className="row">
+              <div className="col">
                 <div className="myTable table-responsive">
                   <table>
                     <tr>
-                      <th style={{ width: "2%" }}>No:</th>
                       <th style={{ width: "15%" }}>Blog Title</th>
                       <th style={{ width: "23%" }}>Comment</th>
                       <th style={{ width: "15%" }}>Name</th>
@@ -57,9 +101,8 @@ const CommentComponent = () => {
                       <th style={{ width: "5%" }}>Date</th>
                       <th style={{ width: "25%" }}>Action</th>
                     </tr>
-                    {commentData.map((value, index) => (
+                    {commentDataPagination.map((value, index) => (
                       <tr key={index}>
-                        <td>{index + 1}</td>
                         <td>
                           <button className="blogLink">
                             <Link
@@ -71,7 +114,7 @@ const CommentComponent = () => {
                           </button>
                         </td>
                         <td>
-                          {value.description.split(" ").slice(0, 10).join(" ")}
+                          {value.description?.split(" ").slice(0, 10).join(" ")}
                         </td>
                         <td>{value.name}</td>
                         <td>{value.email}</td>
@@ -114,12 +157,24 @@ const CommentComponent = () => {
                       </tr>
                     ))}
                   </table>
-                  <div className="pagination">
-                    <button>1</button>
-                    <button>1</button>
-                    <button>1</button>
-                    <button>1</button>
-                  </div>
+                  {TotalCommentData > 6 && (
+                    <div className="pagination__data">
+                      <ReactPaginate
+                        className=""
+                        previousLabel="Next"
+                        nextLabel="Prev"
+                        pageLinkClassName="button"
+                        previousLinkClassName="previousLinkClassName"
+                        nextLinkClassName="nextLinkClassName"
+                        breakLabel=". . ."
+                        pageCount={TotalCommentData / 6}
+                        initialPage={parseInt(params.pageNo - 1)}
+                        activeClassName="active"
+                        onPageChange={handelPageClick}
+                        type="button"
+                      />
+                    </div>
+                  )}
                 </div>
               </div>
             </div>

@@ -9,7 +9,9 @@ import {
 } from "../Helper/SessionHelper";
 import {
   loadMassageData,
+  loadPaginationMassageData,
   loadSingleMassageData,
+  totalMassage,
 } from "../Redux/stateSlice/AllMassageSlicer";
 import {
   commentData,
@@ -19,7 +21,9 @@ import {
 } from "../Redux/stateSlice/BlogDataSlicer";
 import {
   loadCommentData,
+  loadPaginationCommentData,
   loadSingleCommentData,
+  totalPaginationCommentData,
 } from "../Redux/stateSlice/CommentSlicer";
 import { hideLoader, showLoader } from "../Redux/stateSlice/LoaderSettingSlice";
 import {
@@ -156,6 +160,8 @@ export const verifyEmail = async (email, password) => {
   } catch (e) {}
 };
 
+// ========== Blog ==========
+
 //! ================== Create Blog Post API ====================
 export const createBlogPost__Request__API = async (
   title,
@@ -228,12 +234,12 @@ export const blogPagination__Request__API = async (pageNo) => {
 
       return true;
     } else {
-      ErrorTost("Something Went Wrong");
+      ErrorTost("Something Went Wrong1");
       return false;
     }
   } catch (e) {
     store.dispatch(hideLoader());
-    ErrorTost("Something Went Wrong");
+    ErrorTost("Something Went Wrong2");
     return false;
   }
 };
@@ -319,61 +325,7 @@ export const deleteBlogPost__Request__API = async (id) => {
   }
 };
 
-//! ==================== Comment Update Post API =====================
-
-export const comment__Request__API = async (id, name, email, description) => {
-  let URL = BaseURL + "/comment/" + id;
-
-  store.dispatch(showLoader());
-
-  try {
-    let postBody = {
-      comment: {
-        name: name,
-        email: email,
-        description: description,
-        photo: "",
-      },
-    };
-    const result = await axios.post(URL, postBody);
-    console.log(result);
-
-    store.dispatch(hideLoader());
-    if (result.status === 200) {
-      return true;
-    } else {
-      ErrorTost("Something Went Wrong");
-      return false;
-    }
-  } catch (e) {
-    ErrorTost("Something Went Wrong");
-    store.dispatch(hideLoader());
-    return false;
-  }
-};
-//! =================== showReader Update Post API ====================
-
-export const showReader__Request__API = async (id, show) => {
-  let URL = BaseURL + "/totalShowSingleBlog/" + id;
-
-  try {
-    let postBody = {
-      show: show,
-    };
-    const result = await axios.post(URL, postBody);
-
-    if (result.status === 200) {
-      return true;
-    } else {
-      ErrorTost("Something Went Wrong");
-      return false;
-    }
-  } catch (e) {
-    ErrorTost("Something Went Wrong");
-    store.dispatch(hideLoader());
-    return false;
-  }
-};
+// =====   Portfolio =====
 
 //! ==================== Portfolio create Post API ===================
 
@@ -525,7 +477,7 @@ export const deletePortfolio__Request__API = async (id) => {
   }
 };
 
-//! ================== Get All Portfolio by Pagination API ===================
+//! ================== Get All Portfolio by Pagination API  ===================
 export const PortfolioPagination__Request__API = async (pageNo) => {
   store.dispatch(showLoader());
   let URL = BaseURL + "/portfolio-pagination/" + pageNo;
@@ -551,15 +503,17 @@ export const PortfolioPagination__Request__API = async (pageNo) => {
   }
 };
 
+// =====   Massage =====
+
 //! ================== Send Mail API ======================
-export const sendEmail = async (name, email, EmailText, EmailSubject) => {
+export const sendEmail = async (name, email, subject, massage) => {
   store.dispatch(showLoader());
   let URL = BaseURL + "/sendMail";
   let postBody = {
     name: name,
-    subject: EmailSubject,
+    subject: subject,
     email: email,
-    massage: EmailText,
+    description: massage,
   };
   try {
     const result = await axios.post(URL, postBody);
@@ -642,7 +596,31 @@ export const deleteSingleMassage__Request__API = async (id) => {
   }
 };
 
-// =====
+//! ================== Get All Massage by Pagination API  ===================
+export const MassagePagination__Request__API = async (pageNo) => {
+  store.dispatch(showLoader());
+  let URL = BaseURL + "/Massage-pagination/" + pageNo;
+
+  try {
+    const result = await axios.get(URL, TokenData);
+    store.dispatch(hideLoader());
+    if (result.status === 200) {
+      store.dispatch(loadPaginationMassageData(result.data["data"][0]["Row"]));
+      store.dispatch(totalMassage(result.data["data"][0]["Total"][0]["count"]));
+
+      return true;
+    } else {
+      ErrorTost("Something Went Wrong");
+      return false;
+    }
+  } catch (e) {
+    store.dispatch(hideLoader());
+    ErrorTost("Something Went Wrong");
+    return false;
+  }
+};
+
+// =====   Comment =====
 
 //! ==================== Comment create Post API ===================
 
@@ -770,18 +748,18 @@ export const deleteComment__Request__API = async (id) => {
   }
 };
 
-//! ================ Get All Comment Post by Pagination API ================ ?????
+//! ================== Get All Comment by Pagination API  ===================
 export const CommentPagination__Request__API = async (pageNo) => {
   store.dispatch(showLoader());
-  let URL = BaseURL + "/portfolio-list/" + pageNo;
+  let URL = BaseURL + "/comment-pagination/" + pageNo;
 
   try {
-    const result = await axios.get(URL);
+    const result = await axios.get(URL, TokenData);
     store.dispatch(hideLoader());
     if (result.status === 200) {
-      store.dispatch(paginationPortfolioData(result.data["data"][0]["Row"]));
+      store.dispatch(loadPaginationCommentData(result.data["data"][0]["Row"]));
       store.dispatch(
-        totalPortfolioData(result.data["data"][0]["Total"][0]["count"])
+        totalPaginationCommentData(result.data["data"][0]["Total"][0]["count"])
       );
 
       return true;

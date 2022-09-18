@@ -29,12 +29,12 @@ const NavItem = () => {
     {
       navItem: "Massage",
       icon: "mdi-email",
-      dropDown: [{ dropDown__link: "All Massage", link: "/massage" }],
+      dropDown: [{ dropDown__link: "All Massage", link: "/massage/1" }],
     },
     {
       navItem: "Comments",
       icon: "mdi-message-reply",
-      dropDown: [{ dropDown__link: "All Comments", link: "/comment" }],
+      dropDown: [{ dropDown__link: "All Comments", link: "/comment/1" }],
     },
   ];
   let PAGES = [

@@ -124,7 +124,7 @@ export default class Footer extends Component {
           </Row>
           <Row className="copyWrite">
             <Col>
-              <p>Copyright ©Met Cifo 2022 . All Rights Reserved.</p>
+              <p>Copyright ©AmitJS 2022 . All Rights Reserved.</p>
             </Col>
           </Row>
         </Container>

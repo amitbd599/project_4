@@ -129,6 +129,47 @@ exports.DeleteSingleMassage = async (req, res) => {
   }
 };
 
+// ! Get Massage by Pagination API
+
+exports.paginationMassage = async (req, res) => {
+  try {
+    let pageNo = Number(req.params.pageNo);
+    let perPage = 6;
+    let skipRow = (pageNo - 1) * perPage;
+
+    let data = await massageModel.aggregate([
+      { $sort: { _id: -1 } },
+      {
+        $facet: {
+          Total: [{ $count: "count" }],
+
+          Row: [
+            {
+              $project: {
+                email: 1,
+                name: 1,
+                subject: 1,
+                description: 1,
+                isOpen: 1,
+                createdDate: {
+                  $dateToString: { format: "%d-%m-%Y", date: "$createdDate" },
+                },
+              },
+            },
+
+            { $skip: skipRow },
+            { $limit: perPage },
+          ],
+        },
+      },
+    ]);
+
+    res.status(200).json({ status: "Success", data: data });
+  } catch (e) {
+    res.status(200).json({ status: "Fail", error: e });
+  }
+};
+
 // ! Email Verify
 exports.EmailVerifyData = async (req, res) => {
   try {

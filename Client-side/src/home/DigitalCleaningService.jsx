@@ -37,6 +37,7 @@ const DigitalCleaningService = () => {
   const ProjectData = useSelector((state) => state.PortfolioData.data);
   const { aboutUsImg, featureImg } = imgScript();
   const { serviceData_One } = serviceData();
+
   const { HeroSlideSetting, TestimonialSliderSetting } = sliderSetting();
 
   return (
@@ -80,7 +81,7 @@ const DigitalCleaningService = () => {
                             ""
                           )}
                           {value.buttonText ? (
-                            <div className="small_solid_color mt-lg-30 mt-sm-15">
+                            <div className="slide-btn small_solid_color mt-lg-30 mt-sm-15">
                               <a
                                 className="btn-default text-light"
                                 href={`${value.buttonLink}`}
@@ -210,27 +211,17 @@ const DigitalCleaningService = () => {
                     <img className="img-fluid" src={value.icon} alt="" />
                     <h2>{value.title}</h2>
                     <div className="listItems">
-                      <div className="listItem">
-                        <span className="text">
-                          <IoCheckmarkCircle className="mr-10" />
-                          Product Management
-                        </span>
-                      </div>
-                      <div className="listItem">
-                        <span className="text">
-                          <IoCheckmarkCircle className="mr-10" />
-                          Product Management
-                        </span>
-                      </div>
-                      <div className="listItem">
-                        <span className="text">
-                          <IoCheckmarkCircle className="mr-10" />
-                          Product Management
-                        </span>
-                      </div>
-                      <a href="#" className="small_solid_color">
+                      {value.itemsList.map((value, index) => (
+                        <div className="listItem" key={index}>
+                          <span className="text">
+                            <IoCheckmarkCircle className="mr-10" />
+                            {value}
+                          </span>
+                        </div>
+                      ))}
+                      {/* <a href="#" className="small_solid_color">
                         Read More
-                      </a>
+                      </a> */}
                     </div>
                   </div>
                 </Col>
@@ -249,9 +240,12 @@ const DigitalCleaningService = () => {
                 <div className="textBody">
                   <h2>Best Web Development History</h2>
                   <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Tenetur obcaecati quisquam facere corrupti laudantium odit
-                    dolore cumque libero hic fugit?
+                    My favorite in this programming sector is to fix ‍any
+                    Errors. Because in every error there is hope to learn
+                    something new. I won't quit until I can fix the error. In
+                    this programming life, I have tried to solve all kinds of
+                    problems and have succeeded. My policy is to stick with it
+                    until the problem is solved.
                   </p>
                   <div className="listItem">
                     <ul>

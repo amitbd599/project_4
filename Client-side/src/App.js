@@ -50,7 +50,7 @@ export default function App() {
             <Route path="/blog/:pageNo" exact element={<Blog />} />
             <Route path="/blog-details/:id" exact element={<BlogDetails />} />
             <Route path="/contact" exact element={<Contact />} />
-            <Route path="/project" exact element={<Project />} />
+            <Route path="/project/:pageNo" exact element={<Project />} />
             <Route
               path="/project-details/:id"
               exact
@@ -84,7 +84,7 @@ export default function App() {
             <Route path="/blog/:pageNo" exact element={<Blog />} />
             <Route path="/blog-details/:id" exact element={<BlogDetails />} />
             <Route path="/contact" exact element={<Contact />} />
-            <Route path="/project" exact element={<Project />} />
+            <Route path="/project/:pageNo" exact element={<Project />} />
             <Route
               path="/project-details/:id"
               exact
@@ -118,8 +118,8 @@ export default function App() {
               element={<AllProjectPage />}
             />
             <Route path="/all-user" exact element={<UserPage />} />
-            <Route path="/comment" exact element={<CommentPage />} />
-            <Route path="/massage" exact element={<AllMassage />} />
+            <Route path="/comment/:pageNo" exact element={<CommentPage />} />
+            <Route path="/massage/:pageNo" exact element={<AllMassage />} />
             <Route
               path="/single-massage/:id"
               exact

@@ -116,7 +116,7 @@ const AllPostComponent = () => {
                       </tr>
                     ))}
                   </table>
-                  {TotalData > 6 && (
+                  {TotalData > 9 && (
                     <div className="pagination__data">
                       <ReactPaginate
                         className=""
@@ -126,7 +126,7 @@ const AllPostComponent = () => {
                         previousLinkClassName="previousLinkClassName"
                         nextLinkClassName="nextLinkClassName"
                         breakLabel=". . ."
-                        pageCount={TotalData / 6}
+                        pageCount={TotalData / 9}
                         initialPage={parseInt(params.pageNo - 1)}
                         activeClassName="active"
                         onPageChange={handelPageClick}

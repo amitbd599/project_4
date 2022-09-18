@@ -1,21 +1,39 @@
 import React, { Component, useEffect } from "react";
 import { Col, Container, Row } from "react-bootstrap";
+import ReactPaginate from "react-paginate";
 import { useSelector } from "react-redux";
-import { Link } from "react-router-dom";
-import { readPortfolioPost__Request__API } from "../API/API";
+import { Link, useNavigate, useParams } from "react-router-dom";
+import { PortfolioPagination__Request__API } from "../API/API";
 import HelmetData from "../components/common/Helmet";
 import PageIntro from "../components/common/PageIntro";
 import ProjectSection from "../components/FeatureHouse/ProjectSection";
 import Footer from "../components/Footer/Footer";
 import Header from "../components/header/Header";
 import Slider_Project from "../Elements/Slider/Slider_Project";
+import { paramsData } from "../Redux/stateSlice/BlogDataSlicer";
+import store from "../Redux/Store/Store";
 
 const Project = () => {
+  const params = useParams();
   useEffect(() => {
-    readPortfolioPost__Request__API();
+    PortfolioPagination__Request__API(params.pageNo);
   }, []);
 
-  const ProjectData = useSelector((state) => state.PortfolioData.data);
+  let navigate = useNavigate();
+  const handelPageClick = (event) => {
+    let pageNo = event.selected;
+
+    PortfolioPagination__Request__API(pageNo + 1).then((res) => {
+      if (res === true) {
+        store.dispatch(paramsData(pageNo + 1));
+        navigate(`/project/${pageNo + 1}`);
+      }
+    });
+  };
+
+  // const ProjectData = useSelector((state) => state.PortfolioData.data);
+  const PortfolioData = useSelector((state) => state.PortfolioData.pagination);
+  const TotalData = useSelector((state) => state.PortfolioData.total);
   return (
     <React.Fragment>
       {/* Helmat Data Start*/}
@@ -48,35 +66,27 @@ const Project = () => {
             </Row>
             <div className="part_2">
               <div className="wrapperBody text-center">
-                <ProjectSection ProjectData={ProjectData} />
-                <Link className="small_solid_color mt-30 " to={"#"}>
-                  Load More
-                </Link>
+                <ProjectSection ProjectData={PortfolioData} />
+
                 <div className="text-center mt-30">
-                  <div className="pagination">
-                    <ul>
-                      <li className="active">
-                        {" "}
-                        <a href="#">1</a>{" "}
-                      </li>
-                      <li>
-                        {" "}
-                        <a href="#">2</a>{" "}
-                      </li>
-                      <li>
-                        {" "}
-                        <a href="#">3</a>{" "}
-                      </li>
-                      <li>
-                        {" "}
-                        <a href="#">4</a>{" "}
-                      </li>
-                      <li>
-                        {" "}
-                        <a href="#"> 5 </a>{" "}
-                      </li>
-                    </ul>
-                  </div>
+                  {TotalData > 6 && (
+                    <div className="pagination">
+                      <ReactPaginate
+                        className=""
+                        previousLabel="Next"
+                        nextLabel="Prev"
+                        pageLinkClassName="button"
+                        previousLinkClassName="previousLinkClassName"
+                        nextLinkClassName="nextLinkClassName"
+                        breakLabel=". . ."
+                        pageCount={TotalData / 6}
+                        initialPage={parseInt(params.pageNo - 1)}
+                        activeClassName="active"
+                        onPageChange={handelPageClick}
+                        type="button"
+                      />
+                    </div>
+                  )}
                 </div>
               </div>
             </div>
@@ -89,7 +99,7 @@ const Project = () => {
                 <Col>
                   {" "}
                   <div className="wrapperBody">
-                    <Slider_Project />
+                    <Slider_Project PortfolioData={PortfolioData} />
                   </div>
                 </Col>
               </Row>

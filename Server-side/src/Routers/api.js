@@ -75,6 +75,14 @@ router.get(
 router.post("/sendMail", userController.EmailSend);
 router.get("/getMail", userController.GetAllMassage);
 
+// Get Massage By Pagination
+
+router.get(
+  "/Massage-pagination/:pageNo",
+  AuthVerifyMiddleware,
+  userController.paginationMassage
+);
+
 //  ======================== Delete & Read Single Massage ==================
 
 router.delete(
@@ -95,6 +103,11 @@ router.get(
   "/get-all-comment",
   AuthVerifyMiddleware,
   commentController.readCommentPost
+);
+router.get(
+  "/comment-pagination/:pageNo",
+  AuthVerifyMiddleware,
+  commentController.CommentPagination
 );
 router.get(
   "/get-single-comment/:blogId",

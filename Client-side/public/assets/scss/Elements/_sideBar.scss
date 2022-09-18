@@ -29,9 +29,14 @@
     }
     .small_solid_color_opacity {
       color: var(--color-white);
+      border: 1px solid #ddd;
+      padding: 10px 18px;
+      border-radius: 5px;
+      margin-top: 0px;
+      display: inline-block;
       &:hover {
         background-color: var(--color-white);
-        color: var(--primary-theme-color);
+        color: var(--paragraph-color);
       }
     }
   }

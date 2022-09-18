@@ -37,6 +37,7 @@ const BlogDetails = () => {
   const loadBlog = (id) => {
     readBlogPost__Request__API();
     singleBlogPost__Request__API(id);
+    singleCommentPost__Request__API(params.id);
   };
 
   const SingleBlogData = useSelector((state) => state.SingleBlogData.data);

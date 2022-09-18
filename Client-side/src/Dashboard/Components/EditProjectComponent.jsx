@@ -294,7 +294,7 @@ const EditProjectComponent = () => {
                           </button>
                         </div>{" "}
                         <div className="showCategory">
-                          {category.map((value, index) => (
+                          {category?.map((value, index) => (
                             <div className="inner__cat">
                               <span className="text" key={index}>
                                 {value}
