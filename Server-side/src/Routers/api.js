@@ -38,7 +38,7 @@ router.post("/totalShowSingleBlog/:id", blogController.totalShowSingleBlog);
 
 // ========================= Pagination API =============================
 
-router.get("/product-list/:pageNo", blogController.productList);
+router.get("/blog-pagination/:pageNo", blogController.pagination);
 
 // ======================== Project API ==========================
 
@@ -65,7 +65,10 @@ router.get("/readSinglePortfolio/:id", portfolioController.readSinglePortfolio);
 
 // ========================= Pagination API =============================
 
-router.get("/project-list/:pageNo", portfolioController.portfolioList);
+router.get(
+  "/portfolio-pagination/:pageNo",
+  portfolioController.PortfolioPagination
+);
 
 // ======================== Send Email API ==========================
 

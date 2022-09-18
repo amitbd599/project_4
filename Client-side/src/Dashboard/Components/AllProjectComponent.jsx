@@ -1,8 +1,9 @@
 import React from "react";
 import { useEffect } from "react";
 import { useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import {
+  PortfolioPagination__Request__API,
   readBlogPost__Request__API,
   readPortfolioPost__Request__API,
   singleBlogPost__Request__API,
@@ -19,9 +20,14 @@ import {
   getPassword,
   removeSession,
 } from "../../Helper/SessionHelper";
+import store from "../../Redux/Store/Store";
+import { paramsData } from "../../Redux/stateSlice/BlogDataSlicer";
+import ReactPaginate from "react-paginate";
 
 const AllProjectComponent = () => {
+  const params = useParams();
   useEffect(() => {
+    PortfolioPagination__Request__API(1);
     verifyEmail(getEmail(), getPassword()).then((res) => {
       if (res === true) {
         removeSession();
@@ -29,11 +35,10 @@ const AllProjectComponent = () => {
     });
   }, []);
   let navigate = useNavigate();
-  const PortfolioData = useSelector((state) => state.PortfolioData.data);
-  useEffect(() => {
-    readPortfolioPost__Request__API().then((res) => {});
-  }, []);
-
+  // const PortfolioData = useSelector((state) => state.PortfolioData.data);
+  const PortfolioData = useSelector((state) => state.PortfolioData.pagination);
+  const TotalData = useSelector((state) => state.PortfolioData.total);
+  console.log(PortfolioData);
   const editPost = (id) => {
     singlePortfolioPost__Request__API(id).then((res) => {
       if (res === true) {
@@ -47,6 +52,17 @@ const AllProjectComponent = () => {
       if (res === true) {
         SuccessTost("Delete Success!");
         readPortfolioPost__Request__API();
+      }
+    });
+  };
+
+  const handelPageClick = (event) => {
+    let pageNo = event.selected;
+
+    PortfolioPagination__Request__API(pageNo + 1).then((res) => {
+      if (res === true) {
+        store.dispatch(paramsData(pageNo + 1));
+        navigate(`/all-project/${pageNo + 1}`);
       }
     });
   };
@@ -67,8 +83,10 @@ const AllProjectComponent = () => {
                     </tr>
                     {PortfolioData.map((value, index) => (
                       <tr key={index}>
-                        <td>{index + 1}</td>
-                        <td>{value.title.split(" ").slice(0, 5).join(" ")}</td>
+                        <td>1</td>
+                        <td>
+                          {value.title.split(" ").slice(0, 10).join(" ")} ...
+                        </td>
                         <td>
                           <img src={value.img} alt="" />
                         </td>
@@ -79,6 +97,16 @@ const AllProjectComponent = () => {
                               onClick={() => editPost(value._id)}
                             >
                               Edit
+                            </button>
+                          </span>
+                          <span>
+                            <button className="edit open">
+                              <Link
+                                to={`/project-details/${value._id}`}
+                                target="blank"
+                              >
+                                Open Post
+                              </Link>
                             </button>
                           </span>
                           <span>
@@ -93,12 +121,24 @@ const AllProjectComponent = () => {
                       </tr>
                     ))}
                   </table>
-                  <div className="pagination">
-                    <button>1</button>
-                    <button>1</button>
-                    <button>1</button>
-                    <button>1</button>
-                  </div>
+                  {TotalData > 6 && (
+                    <div className="pagination__data">
+                      <ReactPaginate
+                        className=""
+                        previousLabel="Next"
+                        nextLabel="Prev"
+                        pageLinkClassName="button"
+                        previousLinkClassName="previousLinkClassName"
+                        nextLinkClassName="nextLinkClassName"
+                        breakLabel=". . ."
+                        pageCount={TotalData / 6}
+                        initialPage={parseInt(params.pageNo - 1)}
+                        activeClassName="active"
+                        onPageChange={handelPageClick}
+                        type="button"
+                      />
+                    </div>
+                  )}
                 </div>
               </div>
             </div>

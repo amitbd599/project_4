@@ -47,7 +47,7 @@ export default function App() {
             <Route path="/about-us" exact element={<AboutUs />} />
             <Route path="/service" exact element={<Service />} />
             <Route path="/service-details" exact element={<ServiceDetails />} />
-            <Route path="/blog" exact element={<Blog />} />
+            <Route path="/blog/:pageNo" exact element={<Blog />} />
             <Route path="/blog-details/:id" exact element={<BlogDetails />} />
             <Route path="/contact" exact element={<Contact />} />
             <Route path="/project" exact element={<Project />} />
@@ -81,7 +81,7 @@ export default function App() {
             <Route path="/about-us" exact element={<AboutUs />} />
             <Route path="/service" exact element={<Service />} />
             <Route path="/service-details" exact element={<ServiceDetails />} />
-            <Route path="/blog" exact element={<Blog />} />
+            <Route path="/blog/:pageNo" exact element={<Blog />} />
             <Route path="/blog-details/:id" exact element={<BlogDetails />} />
             <Route path="/contact" exact element={<Contact />} />
             <Route path="/project" exact element={<Project />} />
@@ -101,7 +101,7 @@ export default function App() {
             <Route path="/dashboard" exact element={<DashboardPage />} />
             <Route path="/create-new" exact element={<CreateNewPostPage />} />
             <Route path="/edit-post/:id" exact element={<PostEditPage />} />
-            <Route path="/all-post" exact element={<AllPost />} />
+            <Route path="/all-post/:pageNo" exact element={<AllPost />} />
             <Route
               path="/create-project"
               exact
@@ -112,7 +112,11 @@ export default function App() {
               exact
               element={<ProjectEditPage />}
             />
-            <Route path="/all-project" exact element={<AllProjectPage />} />
+            <Route
+              path="/all-project/:pageNo"
+              exact
+              element={<AllProjectPage />}
+            />
             <Route path="/all-user" exact element={<UserPage />} />
             <Route path="/comment" exact element={<CommentPage />} />
             <Route path="/massage" exact element={<AllMassage />} />

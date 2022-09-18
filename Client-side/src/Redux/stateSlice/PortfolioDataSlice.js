@@ -6,6 +6,7 @@ export const PortfolioDataSlice = createSlice({
     data: [],
     pagination: [],
     total: 0,
+    params: 1,
   },
   reducers: {
     loadPortfolioData: (state, action) => {
@@ -17,6 +18,9 @@ export const PortfolioDataSlice = createSlice({
     totalPortfolioData: (state, action) => {
       state.total = action.payload;
     },
+    paramsData: (state, action) => {
+      state.params = action.payload;
+    },
   },
 });
 
@@ -24,5 +28,6 @@ export const {
   loadPortfolioData,
   paginationPortfolioData,
   totalPortfolioData,
+  paramsData,
 } = PortfolioDataSlice.actions;
 export default PortfolioDataSlice.reducer;

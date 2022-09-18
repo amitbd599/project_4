@@ -92,6 +92,49 @@ exports.updateBlogPost = async (req, res) => {
   }
 };
 
+//! Pagination Blog Post
+
+exports.pagination = async (req, res) => {
+  try {
+    let pageNo = Number(req.params.pageNo);
+    let perPage = 9;
+    let skipRow = (pageNo - 1) * perPage;
+
+    let data = await blogModel.aggregate([
+      { $sort: { _id: -1 } },
+      {
+        $facet: {
+          Total: [{ $count: "count" }],
+
+          Row: [
+            {
+              $project: {
+                title: 1,
+                img: 1,
+                description: 1,
+                type: 1,
+                category: 1,
+                author: 1,
+                comment: 1,
+                createdDate: {
+                  $dateToString: { format: "%d-%m-%Y", date: "$createdDate" },
+                },
+              },
+            },
+
+            { $skip: skipRow },
+            { $limit: perPage },
+          ],
+        },
+      },
+    ]);
+
+    res.status(200).json({ status: "Success", data: data });
+  } catch (e) {
+    res.status(200).json({ status: "Fail", error: e });
+  }
+};
+
 //! Comment Update Post
 
 exports.commentPost = async (req, res) => {

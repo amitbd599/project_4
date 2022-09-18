@@ -1,22 +1,53 @@
-import React, { Component, useEffect } from "react";
+import React, { Component, Fragment, useEffect } from "react";
 import { useSelector } from "react-redux";
 import { Col, Container, Row } from "react-bootstrap";
-import { readBlogPost__Request__API } from "../API/API";
+import {
+  blogPagination__Request__API,
+  readBlogPost__Request__API,
+  verifyEmail,
+} from "../API/API";
 import HelmetData from "../components/common/Helmet";
 import PageIntro from "../components/common/PageIntro";
 import LatestNewsItems from "../components/FeatureHouse/LatestNewsItems";
 import Footer from "../components/Footer/Footer";
 import Header from "../components/header/Header";
 import BrandLogoData from "../Elements/BrandLogo/BrandLogoData";
+import { useNavigate, useParams } from "react-router-dom";
+import { getEmail, getPassword, removeSession } from "../Helper/SessionHelper";
+import { paramsData } from "../Redux/stateSlice/BlogDataSlicer";
+import store from "../Redux/Store/Store";
+import ReactPaginate from "react-paginate";
 
 const Blog = () => {
+  const params = useParams();
   useEffect(() => {
+    blogPagination__Request__API(params.pageNo);
     readBlogPost__Request__API();
+    verifyEmail(getEmail(), getPassword()).then((res) => {
+      if (res === true) {
+        removeSession();
+      }
+    });
   }, []);
 
-  const BlogData = useSelector((state) => state.BlogData.data);
+  let navigate = useNavigate();
+  const handelPageClick = (event) => {
+    let pageNo = event.selected;
+
+    blogPagination__Request__API(pageNo + 1).then((res) => {
+      if (res === true) {
+        store.dispatch(paramsData(pageNo + 1));
+        navigate(`/blog/${pageNo + 1}`);
+      }
+    });
+  };
+
+  const BlogData = useSelector((state) => state.BlogData.pagination);
+  const TotalData = useSelector((state) => state.BlogData.total);
+
+  // const BlogData = useSelector((state) => state.BlogData.data);
   return (
-    <React.Fragment>
+    <Fragment>
       {/* Helmat Data Start*/}
       <HelmetData pageTitle="Blog" />
       {/* Helmat Data End*/}
@@ -36,31 +67,25 @@ const Blog = () => {
             <div className="part_2">
               <LatestNewsItems BlogData={BlogData} />
 
-              <div className="text-center mt-30">
-                <div className="pagination">
-                  <ul>
-                    <li className="active">
-                      {" "}
-                      <a href="#">1</a>{" "}
-                    </li>
-                    <li>
-                      {" "}
-                      <a href="#">2</a>{" "}
-                    </li>
-                    <li>
-                      {" "}
-                      <a href="#">3</a>{" "}
-                    </li>
-                    <li>
-                      {" "}
-                      <a href="#">4</a>{" "}
-                    </li>
-                    <li>
-                      {" "}
-                      <a href="#"> 5 </a>{" "}
-                    </li>
-                  </ul>
-                </div>
+              <div className="text-center mt-40">
+                {TotalData > 9 && (
+                  <div className="pagination">
+                    <ReactPaginate
+                      className=""
+                      previousLabel="Next"
+                      nextLabel="Prev"
+                      pageLinkClassName="button"
+                      previousLinkClassName="previousLinkClassName"
+                      nextLinkClassName="nextLinkClassName"
+                      breakLabel=". . ."
+                      pageCount={TotalData / 9}
+                      initialPage={parseInt(params.pageNo - 1)}
+                      activeClassName="active"
+                      onPageChange={handelPageClick}
+                      type="button"
+                    />
+                  </div>
+                )}
               </div>
             </div>
           </Container>
@@ -100,7 +125,7 @@ const Blog = () => {
       {/* Footer Start */}
       <Footer />
       {/* Footer End */}
-    </React.Fragment>
+    </Fragment>
   );
 };
 

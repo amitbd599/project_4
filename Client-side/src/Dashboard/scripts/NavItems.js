@@ -10,7 +10,7 @@ const NavItem = () => {
       icon: "mdi-lan",
       dropDown: [
         { dropDown__link: "Create New", link: "/create-new" },
-        { dropDown__link: "All Post", link: "/all-post" },
+        { dropDown__link: "All Post", link: "/all-post/1" },
       ],
     },
     {
@@ -18,7 +18,7 @@ const NavItem = () => {
       icon: "mdi-view-carousel",
       dropDown: [
         { dropDown__link: "Create New Project", link: "/create-project" },
-        { dropDown__link: "All Project", link: "/all-project" },
+        { dropDown__link: "All Project", link: "/all-project/1" },
       ],
     },
     {

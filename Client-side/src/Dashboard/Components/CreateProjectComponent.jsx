@@ -17,7 +17,7 @@ import axios from "axios";
 import { SuccessTost } from "../../Helper/FormHelper";
 
 const CreateProjectComponent = () => {
-  const [previewImg, setPreviewImg] = useState();
+  const [previewImg, setPreviewImg] = useState("");
   useEffect(() => {
     verifyEmail(getEmail(), getPassword()).then((res) => {
       if (res === true) {
@@ -74,7 +74,7 @@ const CreateProjectComponent = () => {
       task
     ).then((res) => {
       if (res === true) {
-        navigate("/all-project");
+        navigate("/all-project/1");
       }
     });
   };
@@ -236,19 +236,24 @@ const CreateProjectComponent = () => {
                       </div>
                     </div>
                     <div className="category__box">
-                      <span>Project Category:</span>
+                      <span>Category:</span>
                       <div className="adons">
-                        <div>
+                        <div className="input__Data">
                           <input
                             type="text"
+                            placeholder="Category"
                             ref={(input) => (cateRef = input)}
                           />
-                          <button onClick={addCategory}>Add Category</button>
+                          <button onClick={addCategory} className="my__btn">
+                            Add Category
+                          </button>
                         </div>{" "}
                         <div className="showCategory">
                           {category.map((value, index) => (
-                            <div>
-                              <button key={index}>{value}</button>
+                            <div className="inner__cat">
+                              <span className="text" key={index}>
+                                {value}
+                              </span>
                               <span
                                 class="mdi mdi-close"
                                 onClick={() => removeCate(value)}
@@ -260,7 +265,7 @@ const CreateProjectComponent = () => {
                     </div>
                     <div className="child__asset">
                       <div className="sub_child">
-                        <label htmlFor="client">Client:</label>
+                        <span>Client:</span>
                         <input
                           type="text"
                           placeholder="Client Name"
@@ -268,7 +273,7 @@ const CreateProjectComponent = () => {
                         />
                       </div>
                       <div className="sub_child">
-                        <label htmlFor="client">Duration:</label>
+                        <span>Duration:</span>
                         <input
                           type="text"
                           placeholder="Duration"
@@ -276,7 +281,7 @@ const CreateProjectComponent = () => {
                         />
                       </div>
                       <div className="sub_child">
-                        <label htmlFor="client">Task:</label>
+                        <span>Task:</span>
                         <input
                           type="text"
                           placeholder="Task"
@@ -295,28 +300,39 @@ const CreateProjectComponent = () => {
                     </div>
                     <div className="file__upload">
                       <div className="input__box">
-                        <input
-                          type="file"
-                          name=""
-                          id="file__upload"
-                          className="d-none"
-                          onChange={(e) => preview(e)}
-                        />
-                        <label htmlFor="file__upload">Drop A File</label>
-                        <div className="img__file">
-                          <img className="img-fluid" src={previewImg} alt="" />
+                        <div className="box">
+                          <input
+                            type="file"
+                            name=""
+                            id="file__upload"
+                            className="d-none"
+                            onChange={(e) => preview(e)}
+                          />
+                          <label htmlFor="file__upload">Drop A File</label>
                         </div>
-                        {previewImg !== "" && (
-                          <div className="close">
-                            <span
-                              class="mdi mdi-close"
-                              onClick={resetInputFile}
-                            ></span>
-                            <button className="my__btn" onClick={imgUploadFun}>
-                              Upload Img
-                            </button>
+                        <div className="img__file">
+                          <div className="inner">
+                            <img
+                              className="img-fluid"
+                              src={previewImg}
+                              alt=""
+                            />
+                            {previewImg.length !== 0 && (
+                              <div className="close">
+                                <span
+                                  class="mdi mdi-close"
+                                  onClick={resetInputFile}
+                                ></span>
+                                <button
+                                  className="my__btn"
+                                  onClick={imgUploadFun}
+                                >
+                                  Upload Img
+                                </button>
+                              </div>
+                            )}
                           </div>
-                        )}
+                        </div>
                       </div>
                     </div>
                     <div className="submit__file">

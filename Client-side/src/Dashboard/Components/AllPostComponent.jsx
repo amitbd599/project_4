@@ -1,8 +1,10 @@
 import React from "react";
 import { useEffect } from "react";
 import { useSelector } from "react-redux";
-import { Link, useNavigate } from "react-router-dom";
+import ReactPaginate from "react-paginate";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import {
+  blogPagination__Request__API,
   readBlogPost__Request__API,
   singleBlogPost__Request__API,
   verifyEmail,
@@ -14,8 +16,13 @@ import {
   getPassword,
   removeSession,
 } from "../../Helper/SessionHelper";
+import store from "../../Redux/Store/Store";
+import { paramsData } from "../../Redux/stateSlice/BlogDataSlicer";
 const AllPostComponent = () => {
+  const params = useParams();
   useEffect(() => {
+    blogPagination__Request__API(params.pageNo);
+    readBlogPost__Request__API();
     verifyEmail(getEmail(), getPassword()).then((res) => {
       if (res === true) {
         removeSession();
@@ -23,11 +30,17 @@ const AllPostComponent = () => {
     });
   }, []);
   let navigate = useNavigate();
-  const BlogData = useSelector((state) => state.BlogData.data);
-  useEffect(() => {
-    readBlogPost__Request__API().then((res) => {});
-  }, []);
 
+  const handelPageClick = (event) => {
+    let pageNo = event.selected;
+
+    blogPagination__Request__API(pageNo + 1).then((res) => {
+      if (res === true) {
+        store.dispatch(paramsData(pageNo + 1));
+        navigate(`/all-post/${pageNo + 1}`);
+      }
+    });
+  };
   const editPost = (id) => {
     singleBlogPost__Request__API(id).then((res) => {
       if (res === true) {
@@ -40,10 +53,14 @@ const AllPostComponent = () => {
     DeleteAlertBlogPost(id).then((res) => {
       if (res === true) {
         SuccessTost("Delete Success!");
+        blogPagination__Request__API(params.pageNo);
         readBlogPost__Request__API();
       }
     });
   };
+
+  const BlogData = useSelector((state) => state.BlogData.pagination);
+  const TotalData = useSelector((state) => state.BlogData.total);
   return (
     <div className="allPostComponent">
       <div className="wrapper">
@@ -61,7 +78,7 @@ const AllPostComponent = () => {
                     </tr>
                     {BlogData.map((value, index) => (
                       <tr key={index}>
-                        <td>{index + 1}</td>
+                        <td>1</td>
                         <td>
                           {value.title.split(" ").slice(0, 10).join(" ")} ...
                         </td>
@@ -99,12 +116,24 @@ const AllPostComponent = () => {
                       </tr>
                     ))}
                   </table>
-                  <div className="pagination">
-                    <button>1</button>
-                    <button>1</button>
-                    <button>1</button>
-                    <button>1</button>
-                  </div>
+                  {TotalData > 6 && (
+                    <div className="pagination__data">
+                      <ReactPaginate
+                        className=""
+                        previousLabel="Next"
+                        nextLabel="Prev"
+                        pageLinkClassName="button"
+                        previousLinkClassName="previousLinkClassName"
+                        nextLinkClassName="nextLinkClassName"
+                        breakLabel=". . ."
+                        pageCount={TotalData / 6}
+                        initialPage={parseInt(params.pageNo - 1)}
+                        activeClassName="active"
+                        onPageChange={handelPageClick}
+                        type="button"
+                      />
+                    </div>
+                  )}
                 </div>
               </div>
             </div>

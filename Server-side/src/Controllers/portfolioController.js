@@ -96,20 +96,39 @@ exports.updatePortfolio = async (req, res) => {
   }
 };
 
-//! Pagination Controllers
+//! Pagination Portfolio Post
 
-exports.portfolioList = async (req, res) => {
+exports.PortfolioPagination = async (req, res) => {
   try {
     let pageNo = Number(req.params.pageNo);
-    let perPage = 4;
+    let perPage = 6;
     let skipRow = (pageNo - 1) * perPage;
 
     let data = await portfolioModel.aggregate([
+      { $sort: { _id: -1 } },
       {
         $facet: {
           Total: [{ $count: "count" }],
 
-          Row: [{ $skip: skipRow }, { $limit: perPage }],
+          Row: [
+            {
+              $project: {
+                title: 1,
+                img: 1,
+                description: 1,
+                type: 1,
+                category: 1,
+                author: 1,
+                comment: 1,
+                createdDate: {
+                  $dateToString: { format: "%d-%m-%Y", date: "$createdDate" },
+                },
+              },
+            },
+
+            { $skip: skipRow },
+            { $limit: perPage },
+          ],
         },
       },
     ]);

@@ -25,7 +25,7 @@ const EditProjectComponent = () => {
       }
     });
     if (SinglePortfolioData.length === 0) {
-      navigate("/all-project");
+      navigate("/all-project/1");
     }
   }, []);
 
@@ -37,7 +37,7 @@ const EditProjectComponent = () => {
   const [imgShowLink, setImgShowLink] = useState(SinglePortfolioData.img);
   let { titleRef, cateRef, clientRef, durationRef, taskRef } = useRef();
 
-  const [previewImg, setPreviewImg] = useState();
+  const [previewImg, setPreviewImg] = useState("");
 
   const addCategory = () => {
     let cateRefValue = cateRef.value;
@@ -65,6 +65,8 @@ const EditProjectComponent = () => {
         setImgShowLink(res.data["url"]);
       });
   };
+
+  const PortfolioParams = useSelector((state) => state.PortfolioData.params);
   const getData = (id) => {
     let title = titleRef.value;
     let client = clientRef.value;
@@ -82,7 +84,7 @@ const EditProjectComponent = () => {
       id
     ).then((res) => {
       if (res === true) {
-        navigate("/all-project");
+        navigate(`/all-project/${PortfolioParams}`);
       }
     });
   };
@@ -181,7 +183,7 @@ const EditProjectComponent = () => {
   };
 
   return (
-    <div className="createProjectComponent">
+    <div className="createProjectComponent createNewPostComponent">
       <div className="wrapper">
         <div className="wrapper__body">
           <div className="container">
@@ -281,17 +283,22 @@ const EditProjectComponent = () => {
                     <div className="category__box">
                       <span>Category:</span>
                       <div className="adons">
-                        <div>
+                        <div className="input__Data">
                           <input
                             type="text"
+                            placeholder="Category"
                             ref={(input) => (cateRef = input)}
                           />
-                          <button onClick={addCategory}>Add Category</button>
+                          <button onClick={addCategory} className="my__btn">
+                            Add Category
+                          </button>
                         </div>{" "}
                         <div className="showCategory">
-                          {category?.map((value, index) => (
-                            <div>
-                              <button key={index}>{value}</button>
+                          {category.map((value, index) => (
+                            <div className="inner__cat">
+                              <span className="text" key={index}>
+                                {value}
+                              </span>
                               <span
                                 class="mdi mdi-close"
                                 onClick={() => removeCate(index)}
@@ -303,29 +310,26 @@ const EditProjectComponent = () => {
                     </div>
                     <div className="child__asset">
                       <div className="sub_child">
-                        <label htmlFor="client">Client:</label>
+                        <span>Client:</span>
                         <input
                           type="text"
                           placeholder="Client Name"
-                          defaultValue={SinglePortfolioData.client}
                           ref={(input) => (clientRef = input)}
                         />
                       </div>
                       <div className="sub_child">
-                        <label htmlFor="client">Duration:</label>
+                        <span>Duration:</span>
                         <input
                           type="text"
                           placeholder="Duration"
-                          defaultValue={SinglePortfolioData.duration}
                           ref={(input) => (durationRef = input)}
                         />
                       </div>
                       <div className="sub_child">
-                        <label htmlFor="client">Task:</label>
+                        <span>Task:</span>
                         <input
                           type="text"
                           placeholder="Task"
-                          defaultValue={SinglePortfolioData.task}
                           ref={(input) => (taskRef = input)}
                         />
                       </div>
@@ -341,28 +345,39 @@ const EditProjectComponent = () => {
                     </div>
                     <div className="file__upload">
                       <div className="input__box">
-                        <input
-                          type="file"
-                          name=""
-                          id="file__upload"
-                          className="d-none"
-                          onChange={(e) => preview(e)}
-                        />
-                        <label htmlFor="file__upload">Drop A File</label>
-                        <div className="img__file">
-                          <img className="img-fluid" src={previewImg} alt="" />
+                        <div className="box">
+                          <input
+                            type="file"
+                            name=""
+                            id="file__upload"
+                            className="d-none"
+                            onChange={(e) => preview(e)}
+                          />
+                          <label htmlFor="file__upload">Drop A File</label>
                         </div>
-                        {previewImg !== "" && (
-                          <div className="close">
-                            <span
-                              class="mdi mdi-close"
-                              onClick={resetInputFile}
-                            ></span>
-                            <button className="my__btn" onClick={imgUploadFun}>
-                              Upload Img
-                            </button>
+                        <div className="img__file">
+                          <div className="inner">
+                            <img
+                              className="img-fluid"
+                              src={previewImg}
+                              alt=""
+                            />
+                            {previewImg.length !== 0 && (
+                              <div className="close">
+                                <span
+                                  class="mdi mdi-close"
+                                  onClick={resetInputFile}
+                                ></span>
+                                <button
+                                  className="my__btn"
+                                  onClick={imgUploadFun}
+                                >
+                                  Upload Img
+                                </button>
+                              </div>
+                            )}
                           </div>
-                        )}
+                        </div>
                       </div>
                     </div>
                     <div className="submit__file">

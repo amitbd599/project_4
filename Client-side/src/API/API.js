@@ -217,7 +217,7 @@ export const readBlogPost__Request__API = async () => {
 //! ================== Get All Blog Post by Pagination API ===================
 export const blogPagination__Request__API = async (pageNo) => {
   store.dispatch(showLoader());
-  let URL = BaseURL + "/product-list/" + pageNo;
+  let URL = BaseURL + "/blog-pagination/" + pageNo;
 
   try {
     const result = await axios.get(URL);
@@ -375,29 +375,6 @@ export const showReader__Request__API = async (id, show) => {
   }
 };
 
-// //! ==================== Comment Show Dashboard =======================
-
-// export const commentShowDashboard = async () => {
-//   store.dispatch(showLoader());
-//   let URL = BaseURL + "/all-comment";
-
-//   try {
-//     const result = await axios.get(URL);
-//     store.dispatch(hideLoader());
-//     if (result.status === 200) {
-//       store.dispatch(commentData(result.data["data"]));
-//       return true;
-//     } else {
-//       ErrorTost("Something Went Wrong");
-//       return false;
-//     }
-//   } catch (e) {
-//     store.dispatch(hideLoader());
-//     ErrorTost("Something Went Wrong");
-//     return false;
-//   }
-// };
-
 //! ==================== Portfolio create Post API ===================
 
 export const portfolioCreate__Request__API = async (
@@ -548,10 +525,10 @@ export const deletePortfolio__Request__API = async (id) => {
   }
 };
 
-//! ================ Get All Portfolio Post by Pagination API ================
-export const portfolioPagination__Request__API = async (pageNo) => {
+//! ================== Get All Portfolio by Pagination API ===================
+export const PortfolioPagination__Request__API = async (pageNo) => {
   store.dispatch(showLoader());
-  let URL = BaseURL + "/portfolio-list/" + pageNo;
+  let URL = BaseURL + "/portfolio-pagination/" + pageNo;
 
   try {
     const result = await axios.get(URL);

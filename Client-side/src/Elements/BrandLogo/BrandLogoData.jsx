@@ -1,24 +1,68 @@
-import React, { Component } from 'react'
+import React, { Component } from "react";
 
 export default class BrandLogoData extends Component {
   render() {
     return (
       <div>
-          <div className="listData">
-              <ul>
-                  <li><img src="assets/images/BrandLogo/brandLogo-1.png" alt="" /></li>
-                  <li><img src="assets/images/BrandLogo/brandLogo-2.png" alt="" /></li>
-                  <li><img src="assets/images/BrandLogo/brandLogo-3.png" alt="" /></li>
-                  <li><img src="assets/images/BrandLogo/brandLogo-4.png" alt="" /></li>
-                  <li><img src="assets/images/BrandLogo/brandLogo-5.png" alt="" /></li>
-                  <li><img src="assets/images/BrandLogo/brandLogo-6.png" alt="" /></li>
-                  <li><img src="assets/images/BrandLogo/brandLogo-7.png" alt="" /></li>
-                  <li><img src="assets/images/BrandLogo/brandLogo-8.png" alt="" /></li>
-                  <li><img src="assets/images/BrandLogo/brandLogo-9.png" alt="" /></li>
-              </ul>
-          </div>
-        
+        <div className="listData">
+          <ul>
+            <li>
+              <img
+                src="https://res.cloudinary.com/amit-js/image/upload/v1663410974/met_cifo/Root/brandLogo-8_zpzh5d.png"
+                alt=""
+              />
+            </li>
+            <li>
+              <img
+                src="https://res.cloudinary.com/amit-js/image/upload/v1663410974/met_cifo/Root/brandLogo-6_bewilv.png"
+                alt=""
+              />
+            </li>
+            <li>
+              <img
+                src="https://res.cloudinary.com/amit-js/image/upload/v1663410974/met_cifo/Root/brandLogo-9_ocos2w.png"
+                alt=""
+              />
+            </li>
+            <li>
+              <img
+                src="https://res.cloudinary.com/amit-js/image/upload/v1663410974/met_cifo/Root/brandLogo-7_icwzak.png"
+                alt=""
+              />
+            </li>
+            <li>
+              <img
+                src="https://res.cloudinary.com/amit-js/image/upload/v1663410974/met_cifo/Root/brandLogo-1_rocnpr.png"
+                alt=""
+              />
+            </li>
+            <li>
+              <img
+                src="https://res.cloudinary.com/amit-js/image/upload/v1663410974/met_cifo/Root/brandLogo-4_dpi6tx.png"
+                alt=""
+              />
+            </li>
+            <li>
+              <img
+                src="https://res.cloudinary.com/amit-js/image/upload/v1663410974/met_cifo/Root/brandLogo-5_w2xpxf.png"
+                alt=""
+              />
+            </li>
+            <li>
+              <img
+                src="https://res.cloudinary.com/amit-js/image/upload/v1663410974/met_cifo/Root/brandLogo-3_dckuhs.png"
+                alt=""
+              />
+            </li>
+            <li>
+              <img
+                src="https://res.cloudinary.com/amit-js/image/upload/v1663410974/met_cifo/Root/brandLogo-2_g6yfsg.png"
+                alt=""
+              />
+            </li>
+          </ul>
+        </div>
       </div>
-    )
+    );
   }
 }

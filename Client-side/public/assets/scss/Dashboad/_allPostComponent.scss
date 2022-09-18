@@ -67,13 +67,24 @@
           background: #d82f2f;
         }
 
-        .pagination {
-          margin-top: 10px;
-          button {
+        .pagination__data {
+          margin-top: 50px;
+          ul {
+            display: flex;
+            li {
+              &.active a {
+                background: #151529;
+                color: #fff;
+              }
+            }
+          }
+          .button,
+          .previousLinkClassName,
+          .nextLinkClassName {
             padding: 3px 14px;
-            background: #151529;
+            background: transparent;
             border-radius: 4px;
-            color: #fff;
+            color: #151529;
             margin-right: 6px;
             border: 2px solid #151529;
             -webkit-transition: all 0.2s linear;
@@ -82,12 +93,8 @@
             -o-transition: all 0.2s linear;
             transition: all 0.2s linear;
             &:hover {
-              background: transparent;
-              color: #151529;
-            }
-            &.active {
-              background: transparent;
-              color: #151529;
+              background: #151529;
+              color: #fff;
             }
           }
         }

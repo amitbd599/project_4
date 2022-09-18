@@ -468,7 +468,7 @@ const DigitalCleaningService = () => {
               <LatestNewsItems BlogData={BlogData} />
 
               <div className="text-center mt-30">
-                <Link to={"/blog"} className="small_solid_color">
+                <Link to={"/blog/1"} className="small_solid_color">
                   View More
                 </Link>
               </div>
