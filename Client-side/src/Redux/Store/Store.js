@@ -7,6 +7,7 @@ import PortfolioDataReducer from "../stateSlice/PortfolioDataSlice";
 import SinglePortfolioDataReducer from "../stateSlice/SinglePortfolioDataSlicer";
 import AllMassageDataReducer from "../stateSlice/AllMassageSlicer";
 import CommentSlicerReducer from "../stateSlice/CommentSlicer";
+import VisitorSlicer from "../stateSlice/VisitorSlicer";
 
 const store = configureStore({
   reducer: {
@@ -18,6 +19,7 @@ const store = configureStore({
     SinglePortfolioData: SinglePortfolioDataReducer,
     AllMassageData: AllMassageDataReducer,
     CommentData: CommentSlicerReducer,
+    VisitorData: VisitorSlicer,
   },
 });
 

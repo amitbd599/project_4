@@ -4,6 +4,7 @@ const userController = require("../Controllers/userController");
 const blogController = require("../Controllers/blogController");
 const portfolioController = require("../Controllers/portfolioController");
 const commentController = require("../Controllers/commentController");
+const visitorController = require("../Controllers/visitorController");
 const router = express.Router();
 
 // ======================== Admin login API ==========================
@@ -123,5 +124,9 @@ router.delete(
   AuthVerifyMiddleware,
   commentController.deleteCommentPost
 );
+
+//  Visitor Counter
+router.post("/create-visitor", visitorController.createVisitorData);
+router.get("/get-visitor/:date", visitorController.getVisitorData);
 
 module.exports = router;

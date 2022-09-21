@@ -37,7 +37,7 @@ exports.readBlogPost = async (req, res) => {
   }
 };
 
-//! Read single Blog Post
+//! Read single Blog Post 
 exports.readSingleBlogPost = async (req, res) => {
   try {
     let id = req.params.id;

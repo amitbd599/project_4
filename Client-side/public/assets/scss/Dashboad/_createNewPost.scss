@@ -106,6 +106,7 @@
               grid-column-gap: 10px;
               grid-row-gap: 10px;
               .inner__cat {
+                min-width: 160px;
                 display: flex;
                 border: 1px solid #ddd;
                 padding: 2px 10px;
@@ -156,6 +157,9 @@
           margin-top: 20px;
           .ql-container {
             height: 400px;
+            p {
+              font-size: 14px;
+            }
           }
         }
         .file__upload {

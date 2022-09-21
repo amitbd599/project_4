@@ -49,8 +49,11 @@ const mongoose = require("mongoose");
 
 // const URL = `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@cluster0.fsp0qs4.mongodb.net/Met-Cifo?retryWrites=true&w=majority`;
 
+// const URL =
+//   "mongodb+srv://amit:p3ip3c8o6N7xJ8To@cluster0.fsp0qs4.mongodb.net/Met-Cifo?retryWrites=true&w=majority";
+
 const URL =
-  "mongodb+srv://amit:p3ip3c8o6N7xJ8To@cluster0.fsp0qs4.mongodb.net/Met-Cifo?retryWrites=true&w=majority";
+  "mongodb+srv://admin:VctHhXiZH4fA1hdy@testportfolio.m5q5knp.mongodb.net/blog-agency-DB?retryWrites=true&w=majority";
 
 mongoose.connect(
   URL,

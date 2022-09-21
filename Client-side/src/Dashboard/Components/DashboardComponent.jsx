@@ -1,4 +1,5 @@
 import React, { PureComponent } from "react";
+
 import {
   PieChart,
   Pie,
@@ -12,59 +13,91 @@ import {
   YAxis,
   CartesianGrid,
   Scatter,
+  AreaChart,
 } from "recharts";
-const DashboardComponent = () => {
-  const data01 = [
-    { name: "Group A", value: 400 },
-    { name: "Group B", value: 300 },
-    { name: "Group C", value: 300 },
-    { name: "Group D", value: 200 },
-    { name: "Group E", value: 278 },
-    { name: "Group F", value: 189 },
-  ];
+import { useSelector } from "react-redux";
+import { useEffect } from "react";
+import {
+  create_visitor_request_API,
+  getMail,
+  get_visitor_request_API,
+  prevday_get_visitor_request_API,
+  readBlogPost__Request__API,
+  readCommentPost__Request__API,
+  readPortfolioPost__Request__API,
+  today_get_visitor_request_API,
+  yesterday_get_visitor_request_API,
+} from "../../API/API";
 
-  const data = [
+const DashboardComponent = () => {
+  let today = new Date().toISOString().slice(0, 10);
+  let yesterday = new Date(Date.now() - 24 * 60 * 60 * 1000)
+    .toISOString()
+    .slice(0, 10);
+  let prevDay = new Date(Date.now() - 48 * 60 * 60 * 1000)
+    .toISOString()
+    .slice(0, 10);
+  useEffect(() => {
+    readBlogPost__Request__API();
+    readPortfolioPost__Request__API();
+    getMail();
+    readCommentPost__Request__API();
+    today_get_visitor_request_API(today);
+    yesterday_get_visitor_request_API(yesterday);
+    prevday_get_visitor_request_API(prevDay);
+  }, []);
+
+  const totalBlogPost = useSelector((state) => state.BlogData.data);
+  const totalProjectPost = useSelector((state) => state.PortfolioData.data);
+  const totalCommentsPost = useSelector(
+    (state) => state.CommentData.AllComment
+  );
+  const totalMassage = useSelector((state) => state.AllMassageData.MassageData);
+  const todayVisitor = useSelector((state) => state.VisitorData.todayVisitor);
+  const yesterdayVisitor = useSelector(
+    (state) => state.VisitorData.yesterdayVisitor
+  );
+  const prevdayVisitor = useSelector(
+    (state) => state.VisitorData.PrevDayVisitor
+  );
+
+  const visitor = [
     {
-      name: "Page A",
-      uv: 590,
-      pv: 800,
-      amt: 1400,
-      cnt: 490,
+      name: "Today",
+      uv: todayVisitor.length,
+      Total: todayVisitor.length,
     },
     {
-      name: "Page B",
-      uv: 868,
-      pv: 967,
-      amt: 1506,
-      cnt: 590,
+      name: "Yesterday",
+      uv: yesterdayVisitor.length,
+      Total: yesterdayVisitor.length,
     },
     {
-      name: "Page C",
-      uv: 1397,
-      pv: 1098,
-      amt: 989,
-      cnt: 350,
+      name: "Two Days Ago",
+      uv: prevdayVisitor.length,
+      Total: prevdayVisitor.length,
+    },
+  ];
+  const Blog = [
+    {
+      name: "Blog",
+      uv: totalBlogPost.length,
+      Total: totalBlogPost.length,
     },
     {
-      name: "Page D",
-      uv: 1480,
-      pv: 1200,
-      amt: 1228,
-      cnt: 480,
+      name: "Project",
+      uv: totalProjectPost.length,
+      Total: totalProjectPost.length,
     },
     {
-      name: "Page E",
-      uv: 1520,
-      pv: 1108,
-      amt: 1100,
-      cnt: 460,
+      name: "Comment",
+      uv: totalCommentsPost.length,
+      Total: totalCommentsPost.length,
     },
     {
-      name: "Page F",
-      uv: 1400,
-      pv: 680,
-      amt: 1700,
-      cnt: 380,
+      name: "Massage",
+      uv: totalMassage.length,
+      Total: totalMassage.length,
     },
   ];
   return (
@@ -83,7 +116,7 @@ const DashboardComponent = () => {
             <div className="wrapper">
               <div className="wrapper__body">
                 <div className="text__file">
-                  <h2>1254</h2>
+                  <h2>{totalBlogPost.length}</h2>
                   <p>Total Blogs Post</p>
                 </div>
                 <div className="icon__file color__A">
@@ -96,7 +129,7 @@ const DashboardComponent = () => {
             <div className="wrapper">
               <div className="wrapper__body">
                 <div className="text__file">
-                  <h2>52</h2>
+                  <h2>{totalProjectPost.length}</h2>
                   <p>Total Projects</p>
                 </div>
                 <div className="icon__file color__B">
@@ -109,7 +142,7 @@ const DashboardComponent = () => {
             <div className="wrapper">
               <div className="wrapper__body">
                 <div className="text__file">
-                  <h2>52</h2>
+                  <h2>{totalCommentsPost.length}</h2>
                   <p>Total Comments</p>
                 </div>
                 <div className="icon__file color__C">
@@ -122,7 +155,7 @@ const DashboardComponent = () => {
             <div className="wrapper">
               <div className="wrapper__body">
                 <div className="text__file">
-                  <h2>122</h2>
+                  <h2>{totalMassage.length}</h2>
                   <p>Total Message</p>
                 </div>
                 <div className="icon__file color__D">
@@ -136,48 +169,65 @@ const DashboardComponent = () => {
         {/* Dashboard Showing By Pie Chart */}
         <div className="pie__chart">
           <div className="row">
-            <div className="col-md-4">
-              <PieChart width={500} height={500}>
-                <Pie
-                  dataKey="value"
-                  isAnimationActive={false}
-                  data={data01}
-                  cx="50%"
-                  cy="50%"
-                  outerRadius={80}
-                  fill="#8884d8"
-                  label
-                />
-                <Tooltip />
-              </PieChart>
+            <div className="col-md-6">
+              <div>
+                <ComposedChart
+                  width={450}
+                  height={400}
+                  data={Blog}
+                  margin={{
+                    top: 20,
+                    right: 20,
+                    bottom: 20,
+                    left: 20,
+                  }}
+                >
+                  <CartesianGrid stroke="#f5f5f5" />
+                  <XAxis dataKey="name" />
+                  <YAxis />
+                  <Tooltip />
+                  <Legend />
+                  <Bar
+                    dataKey="Total"
+                    barSize={20}
+                    fill="#413ea0"
+                    label={false}
+                  />
+                </ComposedChart>
+              </div>
+              <div className="text__left">
+                <h3>Total Data Showing Graph</h3>
+              </div>
             </div>
-            <div className="col-md-8">
-              <ComposedChart
-                width={500}
-                height={400}
-                data={data}
-                margin={{
-                  top: 20,
-                  right: 20,
-                  bottom: 20,
-                  left: 20,
-                }}
-              >
-                <CartesianGrid stroke="#f5f5f5" />
-                <XAxis dataKey="name" />
-                <YAxis />
-                <Tooltip />
-                <Legend />
-                <Area
-                  type="monotone"
-                  dataKey="amt"
-                  fill="#8884d8"
-                  stroke="#8884d8"
-                />
-                <Bar dataKey="pv" barSize={20} fill="#413ea0" />
-                <Line type="monotone" dataKey="uv" stroke="#ff7300" />
-                <Scatter dataKey="cnt" fill="red" />
-              </ComposedChart>
+            <div className="col-md-6">
+              <div>
+                <AreaChart
+                  width={500}
+                  height={360}
+                  data={visitor}
+                  syncId="anyId"
+                  margin={{
+                    top: 10,
+                    right: 30,
+                    left: 0,
+                    bottom: 0,
+                  }}
+                >
+                  <CartesianGrid strokeDasharray="3 3" />
+                  <XAxis dataKey="name" />
+                  <YAxis />
+                  <Tooltip />
+                  <Area
+                    type="monotone"
+                    dataKey="Total"
+                    stroke="#82ca9d"
+                    fill="#82ca9d"
+                  />
+                </AreaChart>
+              </div>
+              <div className="text__right">
+                <h3>Total Visit Website Graph</h3>
+              </div>
             </div>
           </div>
         </div>

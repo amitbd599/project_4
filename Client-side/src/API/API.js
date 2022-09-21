@@ -34,9 +34,15 @@ import {
 import { getAllUser, getSingleUser } from "../Redux/stateSlice/ProfileSlice";
 import { loadSingleData } from "../Redux/stateSlice/SingleBlogDataSlicer";
 import { loadSinglePortfolioData } from "../Redux/stateSlice/SinglePortfolioDataSlicer";
+import {
+  loadVisitor,
+  loadVisitorPrevDay,
+  loadVisitorToday,
+  loadVisitorYesterday,
+} from "../Redux/stateSlice/VisitorSlicer";
 import store from "../Redux/Store/Store";
 
-// const BaseURL = "https://rest-api-portfolio-main.amitjs.com/api/v1";
+// const BaseURL = "https://met-cifo.amitjs.com/api/v1";
 const BaseURL = "http://192.168.0.105:5000/api/v1";
 
 const TokenData = { headers: { Token: getToken() } };
@@ -761,7 +767,84 @@ export const CommentPagination__Request__API = async (pageNo) => {
       store.dispatch(
         totalPaginationCommentData(result.data["data"][0]["Total"][0]["count"])
       );
+      return true;
+    } else {
+      ErrorTost("Something Went Wrong1");
+      return false;
+    }
+  } catch (e) {
+    store.dispatch(hideLoader());
+    ErrorTost("Something Went Wrong2");
+    return false;
+  }
+};
 
+// ! ================== Create All Visitor ==================
+export const create_visitor_request_API = async () => {
+  store.dispatch(showLoader());
+  let URL = BaseURL + "/create-visitor";
+  try {
+    const result = await axios.post(URL);
+    store.dispatch(hideLoader());
+    if (result.status === 200) {
+      return true;
+    } else {
+      ErrorTost("Something Went Wrong");
+      return false;
+    }
+  } catch (e) {
+    store.dispatch(hideLoader());
+    ErrorTost("Something Went Wrong");
+    return false;
+  }
+};
+// ! ================== Get All Visitor ==================
+export const today_get_visitor_request_API = async (date) => {
+  store.dispatch(showLoader());
+  let URL = BaseURL + "/get-visitor/" + date;
+  try {
+    const result = await axios.get(URL);
+    store.dispatch(hideLoader());
+    if (result.status === 200) {
+      store.dispatch(loadVisitorToday(result.data["data"]));
+      return true;
+    } else {
+      ErrorTost("Something Went Wrong");
+      return false;
+    }
+  } catch (e) {
+    store.dispatch(hideLoader());
+    ErrorTost("Something Went Wrong");
+    return false;
+  }
+};
+export const yesterday_get_visitor_request_API = async (date) => {
+  store.dispatch(showLoader());
+  let URL = BaseURL + "/get-visitor/" + date;
+  try {
+    const result = await axios.get(URL);
+    store.dispatch(hideLoader());
+    if (result.status === 200) {
+      store.dispatch(loadVisitorYesterday(result.data["data"]));
+      return true;
+    } else {
+      ErrorTost("Something Went Wrong");
+      return false;
+    }
+  } catch (e) {
+    store.dispatch(hideLoader());
+    ErrorTost("Something Went Wrong");
+    return false;
+  }
+};
+export const prevday_get_visitor_request_API = async (date) => {
+  store.dispatch(showLoader());
+  let URL = BaseURL + "/get-visitor/" + date;
+  try {
+    const result = await axios.get(URL);
+    store.dispatch(hideLoader());
+    if (result.status === 200) {
+      store.dispatch(loadVisitorPrevDay(result.data["data"]));
       return true;
     } else {
       ErrorTost("Something Went Wrong");
