@@ -1,5 +1,5 @@
 const blogModel = require("../Models/blogModel");
-
+const ObjectId = require("mongoose").Types.ObjectId;
 //! Create Blog Post
 
 exports.createBlogPost = async (req, res) => {
@@ -17,7 +17,7 @@ exports.createBlogPost = async (req, res) => {
 exports.readBlogPost = async (req, res) => {
   try {
     let data = await blogModel.aggregate([
-      { $match: { author: "admin" } },
+      { $sort: { _id: -1 } },
       {
         $project: {
           title: 1,
@@ -41,8 +41,24 @@ exports.readBlogPost = async (req, res) => {
 exports.readSingleBlogPost = async (req, res) => {
   try {
     let id = req.params.id;
-    console.log(id);
-    let data = await blogModel.findOne({ _id: id });
+
+    let data = await blogModel.aggregate([
+      { $match: { _id: ObjectId(req.params.id) } },
+      {
+        $project: {
+          title: 1,
+          img: 1,
+          description: 1,
+          type: 1,
+          category: 1,
+          author: 1,
+          comment: 1,
+          createdDate: {
+            $dateToString: { format: "%d-%m-%Y", date: "$createdDate" },
+          },
+        },
+      },
+    ]);
     res.status(200).json({ status: "Success", data: data });
   } catch (e) {
     res.status(200).json({ status: "Fail", error: e });
@@ -70,6 +86,49 @@ exports.updateBlogPost = async (req, res) => {
     let query = { _id: id };
     let reqBody = req.body;
     let data = await blogModel.updateOne(query, reqBody);
+    res.status(200).json({ status: "Success", data: data });
+  } catch (e) {
+    res.status(200).json({ status: "Fail", error: e });
+  }
+};
+
+//! Pagination Blog Post
+
+exports.pagination = async (req, res) => {
+  try {
+    let pageNo = Number(req.params.pageNo);
+    let perPage = 9;
+    let skipRow = (pageNo - 1) * perPage;
+
+    let data = await blogModel.aggregate([
+      { $sort: { _id: -1 } },
+      {
+        $facet: {
+          Total: [{ $count: "count" }],
+
+          Row: [
+            {
+              $project: {
+                title: 1,
+                img: 1,
+                description: 1,
+                type: 1,
+                category: 1,
+                author: 1,
+                comment: 1,
+                createdDate: {
+                  $dateToString: { format: "%d-%m-%Y", date: "$createdDate" },
+                },
+              },
+            },
+
+            { $skip: skipRow },
+            { $limit: perPage },
+          ],
+        },
+      },
+    ]);
+
     res.status(200).json({ status: "Success", data: data });
   } catch (e) {
     res.status(200).json({ status: "Fail", error: e });

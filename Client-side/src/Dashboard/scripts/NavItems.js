@@ -3,41 +3,38 @@ const NavItem = () => {
     {
       navItem: "Dashboard",
       icon: "mdi-apps",
-      dropDown: [
-        { dropDown__link: "Analytics" },
-        { dropDown__link: "CRM" },
-        { dropDown__link: "Ecommerce" },
-        { dropDown__link: "Crypto" },
-        { dropDown__link: "Projects" },
-        { dropDown__link: "NFT" },
-      ],
+      dropDown: [{ dropDown__link: "Dashboard", link: "/dashboard" }],
     },
     {
-      navItem: "Apps",
+      navItem: "Blogs",
       icon: "mdi-lan",
       dropDown: [
-        { dropDown__link: "Calendar" },
-        { dropDown__link: "Chat" },
-        { dropDown__link: "Email" },
-        { dropDown__link: "Ecommerce" },
-        { dropDown__link: "Projects" },
-        { dropDown__link: "Tasks" },
-        { dropDown__link: "CRM" },
-        { dropDown__link: "Crypto" },
-        { dropDown__link: "Invoices" },
-        { dropDown__link: "Support Tickets" },
-        { dropDown__link: "NFT Marketplace" },
+        { dropDown__link: "Create New", link: "/create-new" },
+        { dropDown__link: "All Post", link: "/all-post/1" },
       ],
     },
     {
-      navItem: "Layouts",
+      navItem: "Project",
       icon: "mdi-view-carousel",
       dropDown: [
-        { dropDown__link: "Horizontal" },
-        { dropDown__link: "Detached" },
-        { dropDown__link: "Two Column" },
-        { dropDown__link: "Hovered" },
+        { dropDown__link: "Create New Project", link: "/create-project" },
+        { dropDown__link: "All Project", link: "/all-project/1" },
       ],
+    },
+    {
+      navItem: "Users",
+      icon: "mdi-account-settings",
+      dropDown: [{ dropDown__link: "All User", link: "/all-user" }],
+    },
+    {
+      navItem: "Massage",
+      icon: "mdi-email",
+      dropDown: [{ dropDown__link: "All Massage", link: "/massage/1" }],
+    },
+    {
+      navItem: "Comments",
+      icon: "mdi-message-reply",
+      dropDown: [{ dropDown__link: "All Comments", link: "/comment/1" }],
     },
   ];
   let PAGES = [

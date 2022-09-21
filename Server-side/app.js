@@ -33,11 +33,11 @@ app.use(bodyParser.json());
 
 //! Rate Limit
 
-const limiter = rateLimit({
-  windowMs: 15 * 60 * 1000,
-  max: 3000,
-});
-app.use(limiter);
+// const limiter = rateLimit({
+//   windowMs: 15 * 60 * 1000,
+//   max: 3000,
+// });
+// app.use(limiter);
 
 //! Database
 
@@ -50,7 +50,7 @@ const mongoose = require("mongoose");
 // const URL = `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@cluster0.fsp0qs4.mongodb.net/Met-Cifo?retryWrites=true&w=majority`;
 
 const URL =
-  "mongodb+srv://amit:p3ip3c8o6N7xJ8To@cluster0.fsp0qs4.mongodb.net/?retryWrites=true&w=majority";
+  "mongodb+srv://amit:p3ip3c8o6N7xJ8To@cluster0.fsp0qs4.mongodb.net/Met-Cifo?retryWrites=true&w=majority";
 
 mongoose.connect(
   URL,

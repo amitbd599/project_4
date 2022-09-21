@@ -45,8 +45,8 @@ export default class PricingTableData extends Component {
               </div>
               <h3 className="title">{value.title}</h3>
               <p className="des">{value.des}</p>
-              <Link to={"/service-details"} className="small_solid_color">
-                Join Now
+              <Link to={"/service"} className="small_solid_color">
+                See More
               </Link>
             </div>
           </Col>

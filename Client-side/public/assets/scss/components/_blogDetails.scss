@@ -16,19 +16,13 @@
           }
           .tagHeader {
             margin: 20px 0;
-            .headTag a,
-            .date a,
-            .comment a {
-              font-size: 18px;
+            .headTag,
+            .date,
+            .comment {
+              font-size: 15px;
               font-weight: 600;
               color: var(--paragraph-color);
-              margin-right: 6px;
-              &:hover {
-                color: var(--primary-theme-color);
-              }
-              &.active {
-                color: var(--primary-theme-color);
-              }
+              margin-right: 15px;
               @media #{$md-layout-device} {
               }
               @media #{$sm-layout-device} {
@@ -236,19 +230,30 @@
             .commentZoon {
               margin-top: 30px;
               display: flex;
-              justify-content: space-between;
+              // justify-content: space-between;
               align-items: flex-start;
               .imgSection {
                 margin-right: 30px;
                 img {
-                  width: 100px;
+                  width: 50px;
                   border-radius: 50%;
                 }
               }
               .textSection {
-                p {
+                width: 100%;
+                h4 {
+                  font-size: 18px;
+                  font-weight: 600;
+                }
+                .date {
+                  margin-left: 20px;
                   font-size: 15px;
                   line-height: 25px;
+                }
+                .des {
+                  font-size: 13px;
+                  line-height: 25px;
+                  margin-top: 5px;
                 }
                 a {
                   color: var(--paragraph-color);

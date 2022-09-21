@@ -3,6 +3,7 @@ const AuthVerifyMiddleware = require("../Middleware/AuthVerifyMiddleware");
 const userController = require("../Controllers/userController");
 const blogController = require("../Controllers/blogController");
 const portfolioController = require("../Controllers/portfolioController");
+const commentController = require("../Controllers/commentController");
 const router = express.Router();
 
 // ======================== Admin login API ==========================
@@ -10,6 +11,9 @@ const router = express.Router();
 router.post("/login", userController.login);
 
 router.post("/login-data", userController.EmailVerifyData);
+
+router.get("/get-all-user", userController.GetAllUser);
+router.post("/get-single-user", userController.GetSingleUser);
 
 // ======================== Blog Post API ==========================
 
@@ -34,12 +38,7 @@ router.post("/totalShowSingleBlog/:id", blogController.totalShowSingleBlog);
 
 // ========================= Pagination API =============================
 
-router.get("/product-list/:pageNo", blogController.productList);
-
-// ========================= Comment API =============================
-
-router.post("/comment/:id", blogController.commentPost);
-router.get("/all-comment", blogController.allCommentPost);
+router.get("/blog-pagination/:pageNo", blogController.pagination);
 
 // ======================== Project API ==========================
 
@@ -66,9 +65,63 @@ router.get("/readSinglePortfolio/:id", portfolioController.readSinglePortfolio);
 
 // ========================= Pagination API =============================
 
-router.get("/project-list/:pageNo", portfolioController.portfolioList);
+router.get(
+  "/portfolio-pagination/:pageNo",
+  portfolioController.PortfolioPagination
+);
 
 // ======================== Send Email API ==========================
 
 router.post("/sendMail", userController.EmailSend);
+router.get("/getMail", userController.GetAllMassage);
+
+// Get Massage By Pagination
+
+router.get(
+  "/Massage-pagination/:pageNo",
+  AuthVerifyMiddleware,
+  userController.paginationMassage
+);
+
+//  ======================== Delete & Read Single Massage ==================
+
+router.delete(
+  "/deleteSingleMassage/:id",
+  AuthVerifyMiddleware,
+  userController.DeleteSingleMassage
+);
+router.get(
+  "/readSingleMassage/:id",
+  AuthVerifyMiddleware,
+  userController.ReadSingleMassage
+);
+
+// ========================= Comment API =============================
+
+router.post("/create-comment", commentController.createCommentPost);
+router.get(
+  "/get-all-comment",
+  AuthVerifyMiddleware,
+  commentController.readCommentPost
+);
+router.get(
+  "/comment-pagination/:pageNo",
+  AuthVerifyMiddleware,
+  commentController.CommentPagination
+);
+router.get(
+  "/get-single-comment/:blogId",
+  commentController.readSingleCommentPost
+);
+router.post(
+  "/update-comment/:id",
+  AuthVerifyMiddleware,
+  commentController.updateCommentPost
+);
+router.delete(
+  "/delete-comment/:id",
+  AuthVerifyMiddleware,
+  commentController.deleteCommentPost
+);
+
 module.exports = router;

@@ -1,0 +1,72 @@
+.dashboard_component {
+  .header__text {
+    margin-top: 30px;
+    h2 {
+      font-size: 22px;
+      color: rgb(54, 61, 69);
+    }
+  }
+  .items {
+    margin-top: 30px;
+    .wrapper {
+      margin-bottom: 25px;
+      -webkit-transition: all 0.2s linear;
+      -moz-transition: all 0.2s linear;
+      -ms-transition: all 0.2s linear;
+      -o-transition: all 0.2s linear;
+      transition: all 0.2s linear;
+      cursor: pointer;
+      .wrapper__body {
+        display: flex;
+        justify-content: space-between;
+        background: #fff;
+        padding: 30px 25px;
+        border-radius: 5px;
+        -webkit-box-shadow: 0 5px 10px rgb(30 32 37 / 12%);
+        box-shadow: 0 5px 10px rgb(30 32 37 / 12%);
+        .text__file {
+          h2 {
+            font-size: 26px;
+          }
+          p {
+            font-size: 14px;
+          }
+        }
+        .icon__file {
+          width: 50px;
+          height: 50px;
+
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          &.color__A {
+            background: #8fbd56;
+          }
+          &.color__B {
+            background: #e984b1;
+          }
+          &.color__C {
+            background: #59adec;
+          }
+          &.color__D {
+            background: #e7c354;
+          }
+          .mdi {
+            font-size: 20px;
+            color: #fff;
+          }
+        }
+      }
+      &:hover {
+        transform: translateY(-5px);
+      }
+    }
+  }
+  .pie__chart {
+    margin: 25px 0;
+    .recharts-wrapper {
+      margin: auto;
+    }
+  }
+}

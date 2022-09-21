@@ -1,0 +1,104 @@
+.allPostComponent {
+  .wrapper {
+    .wrapper__body {
+      padding: 0 25px;
+      .header__text {
+        margin-top: 30px;
+        h2 {
+          font-size: 18px;
+          color: #8348ff;
+        }
+      }
+      .myTable {
+        padding: 35px 20px;
+        margin-top: 50px;
+        border-radius: 5px;
+        background: #fff;
+        overflow-x: auto;
+        box-shadow: 0 0 10px 1px rgb(68 102 242 / 5%);
+        table {
+          min-width: 660px;
+        }
+        th {
+          padding: 10px;
+        }
+        td {
+          padding: 10px;
+        }
+        img {
+          width: 60px;
+        }
+        .button {
+          .edit {
+            padding: 2px 8px;
+            border-radius: 5px;
+            background: #17b978;
+            color: #fff;
+            &.Approve {
+              background: #17b978;
+            }
+            &.Disapprove {
+              background: #fbb034;
+            }
+            &.open {
+              margin-left: 6px;
+              background: #00112c;
+              a {
+                color: #fff;
+              }
+            }
+          }
+        }
+        .blogLink {
+          padding: 2px 15px;
+          border-radius: 5px;
+          color: #fff;
+          margin-left: 5px;
+          background: #34bf49;
+          a {
+            color: #fff;
+          }
+        }
+        .delete {
+          padding: 2px 15px;
+          border-radius: 5px;
+          color: #fff;
+          margin-left: 5px;
+          background: #d82f2f;
+        }
+
+        .pagination__data {
+          margin-top: 50px;
+          ul {
+            display: flex;
+            li {
+              &.active a {
+                background: #151529;
+                color: #fff;
+              }
+            }
+          }
+          .button,
+          .previousLinkClassName,
+          .nextLinkClassName {
+            padding: 3px 14px;
+            background: transparent;
+            border-radius: 4px;
+            color: #151529;
+            margin-right: 6px;
+            border: 2px solid #151529;
+            -webkit-transition: all 0.2s linear;
+            -moz-transition: all 0.2s linear;
+            -ms-transition: all 0.2s linear;
+            -o-transition: all 0.2s linear;
+            transition: all 0.2s linear;
+            &:hover {
+              background: #151529;
+              color: #fff;
+            }
+          }
+        }
+      }
+    }
+  }
+}

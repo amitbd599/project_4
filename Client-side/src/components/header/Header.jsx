@@ -9,7 +9,6 @@ import imgScript from "../../Script/ImgScript";
 export default class Header extends Component {
   constructor(props) {
     super(props);
-    // this.addActiveClass = this.addActiveClass.bind(this);
     this.state = { active: false };
     this.toggleClass = this.toggleClass.bind(this);
     this.menuTrigger = this.menuTrigger.bind(this);
@@ -74,9 +73,7 @@ export default class Header extends Component {
           <div className="header-wrapper" id="header-wrapper">
             <div className="header-left">
               <div className="logo">
-                <Link to={"/"}>
-                  <h2>{logoURL}</h2>
-                </Link>
+                <Link to={"/"}>{logoURL}</Link>
               </div>
             </div>
             <div className="header-right">
@@ -103,27 +100,18 @@ export default class Header extends Component {
                   </li>
                   <li className="dropdown">
                     <Link className="navLinks" to="#">
-                      Page
+                      Actions
                     </Link>
                     <ul className="submenu">
                       <li>
-                        <Link to="/blog">Blog</Link>
+                        <Link to="/blog/1">Blog</Link>
                       </li>
                       <li>
-                        <Link to="/blog-details">Blog Details</Link>
-                      </li>
-                      <li>
-                        <Link to="/project">Project</Link>
-                      </li>
-                      <li>
-                        <Link to="/project-details">Project Details</Link>
-                      </li>
-                      <li>
-                        <Link to="/team">Team</Link>
+                        <Link to="/project/1">Project</Link>
                       </li>
 
                       <li>
-                        <Link to="/404">404</Link>
+                        <Link to="/team">Team</Link>
                       </li>
                     </ul>
                   </li>
@@ -153,7 +141,7 @@ export default class Header extends Component {
                 </ul>
               </nav>
 
-              <div className="dataField">
+              {/* <div className="dataField">
                 <span className="lang" onClick={this.toggleClass}>
                   {" "}
                   <MdOutlineLanguage />{" "}
@@ -164,7 +152,7 @@ export default class Header extends Component {
                     BUY NOW!
                   </a>
                 </span>
-              </div>
+              </div> */}
 
               {/* Start Humberger Menu  */}
               <div className="humberger-menu d-block d-lg-none pl--20 pl_sm--10">
