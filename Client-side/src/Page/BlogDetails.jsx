@@ -49,7 +49,7 @@ const BlogDetails = () => {
     (item) => item.status === true
   );
   const BlogData = useSelector((state) => state.BlogData.data);
-  let SliceBlogData = BlogData.slice(0, 3);
+  let SliceBlogData = BlogData.slice(0, 5);
 
   const createComment = () => {
     let name = nameRef.value;
@@ -160,21 +160,24 @@ const BlogDetails = () => {
                 <div className="topComment">
                   <div className="wrapperBody">
                     <div className="inner">
-                      <div className="imgSection">
-                        <img
-                          src="/assets/images/Testimonail/Testimonial-1.png"
-                          alt=""
-                        />
+                      <div className="imgSection ">
+                        <div className="img__file">
+                          <img
+                            src="https://res.cloudinary.com/amit-js/image/upload/v1663599145/AmitJS.com/profile_img__Data/background_white_pp_size_1_kxvfi9.png"
+                            alt=""
+                          />
+                        </div>
                       </div>
-                      <div className="textSection">
-                        <h3>Alex Json</h3>
+                      <div className="textSection ">
+                        <h3>Amit Biswas</h3>
                         <p>
-                          Lorem ipsum dolor sit amet, consectetur adipisicing
-                          elit. Accusamus molestias vel voluptate quaerat quidem
-                          optio corrupti in quas! Qui vel laborum non asperiores
-                          saepe? Distinctio commodi assumenda quibusdam ad qui
-                          animi molestias porro pariatur vel aliquid harum
-                          eveniet est.
+                          Full Stack Web Developer and Web Application
+                          specializing in front-end and back-end development.
+                          Experienced with all stages of the development cycle
+                          for dynamic websites. Well versed in numerous
+                          programming languages JavaScript ES6 Nodejs,
+                          structured language HTML5 CSS3, Libraries REACT-JS
+                          With MongoDB Database.
                         </p>
                         <div className="icons">
                           <ul>

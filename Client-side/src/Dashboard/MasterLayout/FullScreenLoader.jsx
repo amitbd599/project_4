@@ -10,7 +10,7 @@ const FullScreenLoader = () => {
   });
   return (
     <div>
-      <TopBarProgress />
+      <TopBarProgress /> 
     </div>
   );
 };

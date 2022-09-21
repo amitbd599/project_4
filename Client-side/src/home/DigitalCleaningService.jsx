@@ -22,6 +22,7 @@ import BrandLogoData from "../Elements/BrandLogo/BrandLogoData";
 import sliderSetting from "../Script/Slider_Script_Data";
 import { useEffect } from "react";
 import {
+  create_visitor_request_API,
   readBlogPost__Request__API,
   readPortfolioPost__Request__API,
 } from "../API/API";
@@ -31,6 +32,7 @@ const DigitalCleaningService = () => {
   useEffect(() => {
     readBlogPost__Request__API();
     readPortfolioPost__Request__API();
+    create_visitor_request_API();
   }, []);
 
   const BlogData = useSelector((state) => state.BlogData.data);

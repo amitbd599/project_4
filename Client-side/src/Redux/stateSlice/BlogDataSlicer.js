@@ -1,11 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-export const BlogDataSlice = createSlice({ 
+export const BlogDataSlice = createSlice({
   name: "BlogData",
   initialState: {
     data: [],
     comment: [],
-    pagination: [],  
+    pagination: [],
     total: [],
     params: 1,
   },

@@ -76,7 +76,9 @@ const MasterLayout = (props) => {
       >
         <nav>
           <div className="logo__section">
-            <img src="/assets/images/logo/LogoLight.png" alt="" />
+            <Link to={"/dashboard"}>
+              <img src="/assets/images/logo/LogoLight.png" alt="" />
+            </Link>
           </div>
           <div className="title">
             <p>MENU</p>
@@ -295,14 +297,14 @@ const MasterLayout = (props) => {
                                   <ul>
                                     <li>
                                       {" "}
-                                      <a href="#">
+                                      <Link to="/all-user">
                                         <span class="mdi mdi-account"></span>
                                         <span>Profile</span>
-                                      </a>
+                                      </Link>
                                     </li>
                                     <li>
                                       {" "}
-                                      <Link to="/massage">
+                                      <Link to="/massage/1">
                                         <span class="mdi mdi-email"></span>
                                         <span>Inbox</span>
                                       </Link>
@@ -317,11 +319,11 @@ const MasterLayout = (props) => {
 
                                     <hr />
 
-                                    <li>
+                                    <li onClick={logOut}>
                                       {" "}
                                       <a href="JavaScript:void(0)">
                                         <span class="mdi mdi-logout-variant"></span>
-                                        <span onClick={logOut}>Logout</span>
+                                        <span>Logout</span>
                                       </a>
                                     </li>
                                   </ul>

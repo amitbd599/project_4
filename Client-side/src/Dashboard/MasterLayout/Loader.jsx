@@ -1,16 +1,16 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { HashLoader } from "react-spinners";
+import { PropagateLoader } from "react-spinners";
 const Loader = () => {
   const loader = useSelector((state) => state.LoaderSetting.loader);
   return (
     <div className={"Loader " + loader}>
       <div className="loader__body">
-        <HashLoader
+        <PropagateLoader
           className="ringLoader"
-          color="#17B978"
+          color="#FF5600"
           cssOverride={{}}
-          size={70}
+          size={30}
           loading
           speedMultiplier={1}
         />
